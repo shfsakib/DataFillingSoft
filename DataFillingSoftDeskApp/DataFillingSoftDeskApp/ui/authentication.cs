@@ -17,6 +17,11 @@ namespace DataFillingSoftDeskApp.ui
         public authentication()
         {
             InitializeComponent();
+            //place this code in your form constructor
+            btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
+            btnClose.BackColorChanged += (s, e) => {
+                btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
+            };
         }
 
         private void authentication_Load(object sender, EventArgs e)
@@ -44,6 +49,11 @@ namespace DataFillingSoftDeskApp.ui
             this.Hide();
             log_in login = new log_in();
             login.Show();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -207,7 +207,7 @@
             // 
             // btnloginClose
             // 
-            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close;
+            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close1;
             this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnloginClose.FlatAppearance.BorderSize = 0;

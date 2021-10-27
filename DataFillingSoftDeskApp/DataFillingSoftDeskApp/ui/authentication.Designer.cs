@@ -34,7 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
-            this.btnloginClose = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel1.Controls.Add(this.btnloginClose);
+            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,19 +108,20 @@
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
             // 
-            // btnloginClose
+            // btnClose
             // 
-            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close;
-            this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnloginClose.FlatAppearance.BorderSize = 0;
-            this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnloginClose.Location = new System.Drawing.Point(258, 7);
-            this.btnloginClose.Name = "btnloginClose";
-            this.btnloginClose.Size = new System.Drawing.Size(17, 23);
-            this.btnloginClose.TabIndex = 4;
-            this.btnloginClose.UseVisualStyleBackColor = true;
+            this.btnClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close1;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(258, 7);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(17, 23);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // authentication
             // 
@@ -135,7 +136,7 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "authentication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Authentication";
@@ -157,6 +158,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnback;
-        private System.Windows.Forms.Button btnloginClose;
+        private System.Windows.Forms.Button btnClose;
     }
 }
