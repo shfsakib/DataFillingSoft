@@ -8,3 +8,13 @@ E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\ob
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csproj.GenerateResource.Cache
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.exe
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe.config
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.exe
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.pdb
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.preloader.resources
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.Properties.Resources.resources
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.ui.log_in.resources
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csproj.GenerateResource.Cache

@@ -30,17 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnloginClose = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblName = new System.Windows.Forms.Label();
             this.lblDevelop = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panelUserName = new System.Windows.Forms.Panel();
             this.panelPass = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnloginClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panelUserName.SuspendLayout();
+            this.panelPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,31 +63,16 @@
             this.panel1.Size = new System.Drawing.Size(303, 518);
             this.panel1.TabIndex = 0;
             // 
-            // btnloginClose
+            // lblDevelop
             // 
-            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close;
-            this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnloginClose.FlatAppearance.BorderSize = 0;
-            this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnloginClose.Location = new System.Drawing.Point(724, 12);
-            this.btnloginClose.Name = "btnloginClose";
-            this.btnloginClose.Size = new System.Drawing.Size(31, 26);
-            this.btnloginClose.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.btnloginClose, "Close");
-            this.btnloginClose.UseVisualStyleBackColor = true;
-            this.btnloginClose.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.lblDevelop.AutoSize = true;
+            this.lblDevelop.ForeColor = System.Drawing.Color.White;
+            this.lblDevelop.Location = new System.Drawing.Point(139, 494);
+            this.lblDevelop.Name = "lblDevelop";
+            this.lblDevelop.Size = new System.Drawing.Size(152, 15);
+            this.lblDevelop.TabIndex = 2;
+            this.lblDevelop.Text = "Developed By Sakib Hossain";
+            this.lblDevelop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblName
             // 
@@ -95,17 +86,6 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Company Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDevelop
-            // 
-            this.lblDevelop.AutoSize = true;
-            this.lblDevelop.ForeColor = System.Drawing.Color.White;
-            this.lblDevelop.Location = new System.Drawing.Point(139, 494);
-            this.lblDevelop.Name = "lblDevelop";
-            this.lblDevelop.Size = new System.Drawing.Size(152, 15);
-            this.lblDevelop.TabIndex = 2;
-            this.lblDevelop.Text = "Developed By Sakib Hossain";
-            this.lblDevelop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
@@ -142,6 +122,8 @@
             // panelUserName
             // 
             this.panelUserName.BackColor = System.Drawing.Color.White;
+            this.panelUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUserName.Controls.Add(this.pictureBox2);
             this.panelUserName.Location = new System.Drawing.Point(360, 215);
             this.panelUserName.Name = "panelUserName";
             this.panelUserName.Size = new System.Drawing.Size(336, 38);
@@ -150,10 +132,59 @@
             // panelPass
             // 
             this.panelPass.BackColor = System.Drawing.Color.White;
+            this.panelPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelPass.Controls.Add(this.pictureBox3);
             this.panelPass.Location = new System.Drawing.Point(360, 266);
             this.panelPass.Name = "panelPass";
             this.panelPass.Size = new System.Drawing.Size(336, 38);
             this.panelPass.TabIndex = 6;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::DataFillingSoftDeskApp.Properties.Resources.padlock;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 27);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DataFillingSoftDeskApp.Properties.Resources.man_user;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnloginClose
+            // 
+            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close;
+            this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnloginClose.FlatAppearance.BorderSize = 0;
+            this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnloginClose.Location = new System.Drawing.Point(724, 12);
+            this.btnloginClose.Name = "btnloginClose";
+            this.btnloginClose.Size = new System.Drawing.Size(31, 26);
+            this.btnloginClose.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnloginClose, "Close");
+            this.btnloginClose.UseVisualStyleBackColor = true;
+            this.btnloginClose.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // log_in
             // 
@@ -177,6 +208,10 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.log_in_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelUserName.ResumeLayout(false);
+            this.panelPass.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -196,5 +231,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Panel panelUserName;
         private System.Windows.Forms.Panel panelPass;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
