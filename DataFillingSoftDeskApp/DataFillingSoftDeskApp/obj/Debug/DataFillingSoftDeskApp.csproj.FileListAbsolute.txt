@@ -18,3 +18,4 @@ D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\D
 D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.Properties.Resources.resources
 D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.ui.log_in.resources
 D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csproj.GenerateResource.Cache
+D:\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.ui.authentication.resources

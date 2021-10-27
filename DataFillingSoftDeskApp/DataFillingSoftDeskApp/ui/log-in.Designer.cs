@@ -38,6 +38,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panelUserName = new System.Windows.Forms.Panel();
             this.panelPass = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnloginClose = new System.Windows.Forms.Button();
@@ -105,7 +108,7 @@
             this.txtUserName.Location = new System.Drawing.Point(402, 220);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(294, 27);
+            this.txtUserName.Size = new System.Drawing.Size(288, 27);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
@@ -116,7 +119,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(10);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(294, 27);
+            this.txtPassword.Size = new System.Drawing.Size(288, 27);
             this.txtPassword.TabIndex = 1;
             // 
             // panelUserName
@@ -139,10 +142,52 @@
             this.panelPass.Size = new System.Drawing.Size(336, 38);
             this.panelPass.TabIndex = 6;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(539, 321);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(157, 42);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.White;
+            this.btnRegister.Location = new System.Drawing.Point(360, 321);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(157, 42);
+            this.btnRegister.TabIndex = 8;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Maroon;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(360, 381);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(336, 37);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            // 
             // pictureBox3
             // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::DataFillingSoftDeskApp.Properties.Resources.padlock;
+            this.pictureBox3.Image = global::DataFillingSoftDeskApp.Properties.Resources.lockcolor;
             this.pictureBox3.Location = new System.Drawing.Point(4, 5);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 27);
@@ -152,7 +197,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DataFillingSoftDeskApp.Properties.Resources.man_user;
+            this.pictureBox2.Image = global::DataFillingSoftDeskApp.Properties.Resources.businessman;
             this.pictureBox2.Location = new System.Drawing.Point(4, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 27);
@@ -168,9 +213,9 @@
             this.btnloginClose.FlatAppearance.BorderSize = 0;
             this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnloginClose.Location = new System.Drawing.Point(724, 12);
+            this.btnloginClose.Location = new System.Drawing.Point(738, 12);
             this.btnloginClose.Name = "btnloginClose";
-            this.btnloginClose.Size = new System.Drawing.Size(31, 26);
+            this.btnloginClose.Size = new System.Drawing.Size(17, 23);
             this.btnloginClose.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnloginClose, "Close");
             this.btnloginClose.UseVisualStyleBackColor = true;
@@ -188,9 +233,13 @@
             // 
             // log_in
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 518);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnRegister);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.panelPass);
             this.Controls.Add(this.panelUserName);
             this.Controls.Add(this.txtPassword);
@@ -233,5 +282,8 @@
         private System.Windows.Forms.Panel panelPass;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Button btnReset;
     }
 }

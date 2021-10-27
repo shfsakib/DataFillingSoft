@@ -54,5 +54,12 @@ namespace DataFillingSoftDeskApp.ui
         {
             this.Text = null;
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            authentication authForm=new authentication();
+            authForm.Show();
+        }
     }
 }
