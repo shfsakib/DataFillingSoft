@@ -1,0 +1,10 @@
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe.config
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.pdb
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.preloader.resources
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.Properties.Resources.resources
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.ui.log_in.resources
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csproj.GenerateResource.Cache
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.exe
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
