@@ -77,5 +77,12 @@ namespace DataFillingSoftDeskApp.ui
                 this.Location = mousePos; //move the form to the desired location
             }
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            dashboard dashboard=new dashboard();
+            dashboard.Show();
+        }
     }
 }
