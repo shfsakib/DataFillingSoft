@@ -12,7 +12,7 @@ namespace DataFillingSoftDeskApp.ui
 {
     public partial class authentication : Form
     {
-        private Point mouse_offset;
+        private Point mouse_auth_offset;
 
         public authentication()
         {
@@ -34,14 +34,14 @@ namespace DataFillingSoftDeskApp.ui
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
                 Point mousePos = Control.MousePosition;
-                mousePos.Offset(mouse_offset.X, mouse_offset.Y);
+                mousePos.Offset(mouse_auth_offset.X, mouse_auth_offset.Y);
                 this.Location = mousePos; //move the form to the desired location
             }
         }
 
         private void authentication_MouseDown(object sender, MouseEventArgs e)
         {
-            mouse_offset = new Point(-e.X, -e.Y);
+            mouse_auth_offset = new Point(-e.X, -e.Y);
         }
 
         private void btnback_Click(object sender, EventArgs e)
@@ -53,7 +53,23 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouse_auth_offset = new Point(-e.X, -e.Y);
+
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(mouse_auth_offset.X, mouse_auth_offset.Y);
+                this.Location = mousePos; //move the form to the desired location
+            }
         }
     }
 }

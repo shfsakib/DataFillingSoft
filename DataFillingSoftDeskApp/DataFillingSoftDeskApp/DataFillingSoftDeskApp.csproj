@@ -60,11 +60,23 @@
     <Compile Include="ui\authentication.Designer.cs">
       <DependentUpon>authentication.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\log-in.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ui\log-in.Designer.cs">
       <DependentUpon>log-in.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\registration.Designer.cs">
+      <DependentUpon>registration.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="preloader.resx">
       <DependentUpon>preloader.cs</DependentUpon>
@@ -82,8 +94,14 @@
     <EmbeddedResource Include="ui\authentication.resx">
       <DependentUpon>authentication.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\log-in.resx">
       <DependentUpon>log-in.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\registration.resx">
+      <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -121,6 +139,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power-button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

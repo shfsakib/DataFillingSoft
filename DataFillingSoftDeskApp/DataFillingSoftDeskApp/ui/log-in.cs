@@ -61,5 +61,21 @@ namespace DataFillingSoftDeskApp.ui
             authentication authForm=new authentication();
             authForm.Show();
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouse_offset = new Point(-e.X, -e.Y);
+
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(mouse_offset.X, mouse_offset.Y);
+                this.Location = mousePos; //move the form to the desired location
+            }
+        }
     }
 }
