@@ -22,6 +22,11 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
             };
+            btnMinimize.FlatAppearance.MouseOverBackColor = btnMinimize.BackColor;
+            btnMinimize.BackColorChanged += (s, e) =>
+            {
+                btnMinimize.FlatAppearance.MouseOverBackColor = btnMinimize.BackColor;
+            };
         }
 
         private void dashboard_Load(object sender, EventArgs e)
@@ -68,6 +73,11 @@ namespace DataFillingSoftDeskApp.ui
             {
                 Application.Exit();
             }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
