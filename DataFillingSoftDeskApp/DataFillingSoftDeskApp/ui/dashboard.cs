@@ -68,7 +68,7 @@ namespace DataFillingSoftDeskApp.ui
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult =
-                MessageBox.Show("Are you sure want to exit?", "Confirmation", MessageBoxButtons.YesNo);
+                MessageBox.Show("Are you sure want to exit?", "Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();

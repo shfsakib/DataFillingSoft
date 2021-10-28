@@ -95,7 +95,7 @@
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(14, 20);
-            this.btnClose.TabIndex = 4;
+            this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -144,7 +144,7 @@
             this.textBox1.MaxLength = 3;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(185, 30);
-            this.textBox1.TabIndex = 17;
+            this.textBox1.TabIndex = 1;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label8
@@ -172,7 +172,7 @@
             this.radioMale.Location = new System.Drawing.Point(3, 3);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(64, 27);
-            this.radioMale.TabIndex = 13;
+            this.radioMale.TabIndex = 0;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
@@ -184,7 +184,7 @@
             this.radioFemale.Location = new System.Drawing.Point(73, 2);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(78, 27);
-            this.radioFemale.TabIndex = 14;
+            this.radioFemale.TabIndex = 1;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
             this.radioFemale.UseVisualStyleBackColor = true;
@@ -204,7 +204,7 @@
             this.richAddress.Location = new System.Drawing.Point(98, 158);
             this.richAddress.Name = "richAddress";
             this.richAddress.Size = new System.Drawing.Size(491, 96);
-            this.richAddress.TabIndex = 11;
+            this.richAddress.TabIndex = 0;
             this.richAddress.Text = "";
             // 
             // label7
@@ -223,7 +223,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(185, 30);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.TabIndex = 6;
             // 
             // label5
             // 
@@ -241,7 +241,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.ReadOnly = true;
             this.txtContactNo.Size = new System.Drawing.Size(185, 30);
-            this.txtContactNo.TabIndex = 7;
+            this.txtContactNo.TabIndex = 5;
             // 
             // label6
             // 
@@ -259,7 +259,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(185, 30);
-            this.txtLastName.TabIndex = 5;
+            this.txtLastName.TabIndex = 4;
             // 
             // label4
             // 
@@ -295,7 +295,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(185, 30);
-            this.txtDate.TabIndex = 1;
+            this.txtDate.TabIndex = 2;
             // 
             // label2
             // 
@@ -329,7 +329,7 @@
             this.textBox2.Location = new System.Drawing.Point(136, 143);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(176, 30);
-            this.textBox2.TabIndex = 25;
+            this.textBox2.TabIndex = 3;
             // 
             // label12
             // 
@@ -346,7 +346,7 @@
             this.txtPass.Location = new System.Drawing.Point(136, 107);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(176, 30);
-            this.txtPass.TabIndex = 23;
+            this.txtPass.TabIndex = 2;
             // 
             // label11
             // 
@@ -363,7 +363,7 @@
             this.txtUserId.Location = new System.Drawing.Point(136, 71);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(176, 30);
-            this.txtUserId.TabIndex = 21;
+            this.txtUserId.TabIndex = 1;
             // 
             // label10
             // 
@@ -380,7 +380,7 @@
             this.txtNoForms.Location = new System.Drawing.Point(136, 35);
             this.txtNoForms.Name = "txtNoForms";
             this.txtNoForms.Size = new System.Drawing.Size(100, 30);
-            this.txtNoForms.TabIndex = 19;
+            this.txtNoForms.TabIndex = 0;
             this.txtNoForms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoForms_KeyPress);
             // 
             // label9
@@ -403,7 +403,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(496, 575);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 34);
-            this.btnSubmit.TabIndex = 10;
+            this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
             // 
@@ -417,7 +417,7 @@
             this.btnback.Location = new System.Drawing.Point(245, 575);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(121, 34);
-            this.btnback.TabIndex = 11;
+            this.btnback.TabIndex = 2;
             this.btnback.Text = "Back to login";
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
@@ -432,7 +432,7 @@
             this.btnClear.Location = new System.Drawing.Point(372, 575);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(118, 34);
-            this.btnClear.TabIndex = 12;
+            this.btnClear.TabIndex = 1;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
@@ -453,6 +453,7 @@
             this.Name = "registration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "registration";
+            this.Load += new System.EventHandler(this.registration_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.registration_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.registration_MouseMove);
             this.panel1.ResumeLayout(false);

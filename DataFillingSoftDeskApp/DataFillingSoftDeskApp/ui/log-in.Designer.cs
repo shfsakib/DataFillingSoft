@@ -32,25 +32,25 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDevelop = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnloginClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.panelUserName = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelPass = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnloginClose = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelUserName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelPass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -91,6 +91,32 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Company Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop;
+            this.pictureBox1.Location = new System.Drawing.Point(99, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnloginClose
+            // 
+            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close1;
+            this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnloginClose.FlatAppearance.BorderSize = 0;
+            this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnloginClose.Location = new System.Drawing.Point(738, 7);
+            this.btnloginClose.Name = "btnloginClose";
+            this.btnloginClose.Size = new System.Drawing.Size(17, 23);
+            this.btnloginClose.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.btnloginClose, "Close");
+            this.btnloginClose.UseVisualStyleBackColor = true;
+            this.btnloginClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -134,6 +160,16 @@
             this.panelUserName.Size = new System.Drawing.Size(336, 38);
             this.panelUserName.TabIndex = 5;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DataFillingSoftDeskApp.Properties.Resources.businessman;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // panelPass
             // 
             this.panelPass.BackColor = System.Drawing.Color.White;
@@ -143,6 +179,16 @@
             this.panelPass.Name = "panelPass";
             this.panelPass.Size = new System.Drawing.Size(336, 38);
             this.panelPass.TabIndex = 6;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::DataFillingSoftDeskApp.Properties.Resources.lockcolor;
+            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 27);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
             // 
             // btnLogin
             // 
@@ -188,52 +234,6 @@
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DataFillingSoftDeskApp.Properties.Resources.lockcolor;
-            this.pictureBox3.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 27);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DataFillingSoftDeskApp.Properties.Resources.businessman;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnloginClose
-            // 
-            this.btnloginClose.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.close1;
-            this.btnloginClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnloginClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnloginClose.FlatAppearance.BorderSize = 0;
-            this.btnloginClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnloginClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnloginClose.Location = new System.Drawing.Point(738, 12);
-            this.btnloginClose.Name = "btnloginClose";
-            this.btnloginClose.Size = new System.Drawing.Size(17, 23);
-            this.btnloginClose.TabIndex = 1;
-            this.toolTip1.SetToolTip(this.btnloginClose, "Close");
-            this.btnloginClose.UseVisualStyleBackColor = true;
-            this.btnloginClose.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // log_in
             // 
             this.AcceptButton = this.btnLogin;
@@ -260,11 +260,11 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.log_in_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelUserName.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelPass.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

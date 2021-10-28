@@ -7,26 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataFillingSoftDeskApp.Class;
 
 namespace DataFillingSoftDeskApp.ui
 {
     public partial class authentication : Form
     {
         private Point mouse_auth_offset;
-
+        private Function function;
         public authentication()
         {
             InitializeComponent();
             //place this code in your form constructor
             btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
-            btnClose.BackColorChanged += (s, e) => {
+            btnClose.BackColorChanged += (s, e) =>
+            {
                 btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
             };
+            function = Function.GetInstance();
         }
 
         private void authentication_Load(object sender, EventArgs e)
         {
-          
+
         }
 
         private void authentication_MouseMove(object sender, MouseEventArgs e)
@@ -69,6 +72,36 @@ namespace DataFillingSoftDeskApp.ui
                 Point mousePos = Control.MousePosition;
                 mousePos.Offset(mouse_auth_offset.X, mouse_auth_offset.Y);
                 this.Location = mousePos; //move the form to the desired location
+            }
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (!function.IsConnected())
+            {
+                MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (txtAuthKey.Text == "")
+                {
+                    MessageBox.Show("Authentication key can\'t be null", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}'");
+                if (isExist != "")
+                {
+                    registration registration = new registration();
+                    DataTransferProperty.AuthKey = txtAuthKey.Text;
+                    this.Hide();
+                    registration.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Your authentication key is invalid or already registered", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

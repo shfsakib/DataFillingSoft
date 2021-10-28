@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAuthKey = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnback = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -74,7 +74,7 @@
             this.btnClose.Location = new System.Drawing.Point(258, 7);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(17, 23);
-            this.btnClose.TabIndex = 4;
+            this.btnClose.TabIndex = 0;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -89,12 +89,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Enter Authentication Key";
             // 
-            // textBox1
+            // txtAuthKey
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 34);
-            this.textBox1.TabIndex = 8;
+            this.txtAuthKey.Location = new System.Drawing.Point(16, 84);
+            this.txtAuthKey.Name = "txtAuthKey";
+            this.txtAuthKey.Size = new System.Drawing.Size(257, 34);
+            this.txtAuthKey.TabIndex = 0;
             // 
             // btnSubmit
             // 
@@ -106,9 +106,10 @@
             this.btnSubmit.Location = new System.Drawing.Point(155, 124);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 34);
-            this.btnSubmit.TabIndex = 9;
+            this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnback
             // 
@@ -120,7 +121,7 @@
             this.btnback.Location = new System.Drawing.Point(16, 124);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(121, 34);
-            this.btnback.TabIndex = 10;
+            this.btnback.TabIndex = 2;
             this.btnback.Text = "Back to login";
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
@@ -132,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(285, 183);
             this.Controls.Add(this.btnback);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAuthKey);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,7 +158,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAuthKey;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnback;
         private System.Windows.Forms.Button btnClose;

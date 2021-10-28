@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataFillingSoftDeskApp.Class;
 
 namespace DataFillingSoftDeskApp.ui
 {
@@ -17,8 +18,16 @@ namespace DataFillingSoftDeskApp.ui
         public registration()
         {
             InitializeComponent();
-        }
 
+        }
+        private void registration_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void LoadData()
+        {
+            txtDate.Text = DataTransferProperty.AuthKey;
+        }
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -50,7 +59,7 @@ namespace DataFillingSoftDeskApp.ui
         private void btnback_Click(object sender, EventArgs e)
         {
             this.Hide();
-            log_in login=new log_in();
+            log_in login = new log_in();
             login.Show();
         }
 
@@ -84,5 +93,7 @@ namespace DataFillingSoftDeskApp.ui
             mouse_offset = new Point(-e.X, -e.Y);
 
         }
+
+
     }
 }
