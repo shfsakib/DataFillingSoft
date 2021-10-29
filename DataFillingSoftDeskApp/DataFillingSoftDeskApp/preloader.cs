@@ -20,7 +20,6 @@ namespace DataFillingSoftDeskApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             progressbar.Width += 10;
             if (progressbar.Width > 0 & progressbar.Width < 100)
             {

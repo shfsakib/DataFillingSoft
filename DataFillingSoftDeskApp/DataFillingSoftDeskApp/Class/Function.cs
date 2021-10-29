@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -48,16 +50,56 @@ namespace DataFillingSoftDeskApp.Class
 
         public string Connection1 = @"Data Source=.\local;Initial Catalog=KidsLearningDb;Integrated Security=True";
 
-        public List<string> ListData(string sql)        {            List<string> list = new List<string>();
-            con = new SqlConnection(Connection);            try            {
-                if (con.State != ConnectionState.Open) con.Open();                SqlCommand cmd = new SqlCommand(sql, con);                SqlDataReader rd = cmd.ExecuteReader(); list.Clear();
+        public List<string> ListData(string sql)
+        {
+            List<string> list = new List<string>();
+            con = new SqlConnection(Connection);
+
+            try
+            {
+                if (con.State != ConnectionState.Open) con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataReader rd = cmd.ExecuteReader(); list.Clear();
                 //List.Add("Select");
-                while (rd.Read())                {                    list.Add(rd[0].ToString());                }                rd.Close();            }            catch (Exception ex)            {
+                while (rd.Read())
+                {
+                    list.Add(rd[0].ToString());
+                }
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
                 //ignore
             }
             return list;
         }
+        public string ImageToBase64(Image image,
+            System.Drawing.Imaging.ImageFormat format)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                // Convert Image to byte[]
+                image.Save(ms, format);
+                byte[] imageBytes = ms.ToArray();
 
+                // Convert byte[] to Base64 String
+                string base64String = Convert.ToBase64String(imageBytes);
+                return base64String;
+            }
+        }
+
+        public Image Base64ToImage(string base64String)
+        {
+            // Convert Base64 String to byte[]
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            MemoryStream ms = new MemoryStream(imageBytes, 0,
+                imageBytes.Length);
+
+            // Convert byte[] to Image
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
         public bool Execute(string str)
         {
             bool result = false;
