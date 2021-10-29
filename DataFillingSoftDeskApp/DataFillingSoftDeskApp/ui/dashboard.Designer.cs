@@ -73,12 +73,12 @@
             this.btnWebI = new System.Windows.Forms.Button();
             this.btnWebB = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtState = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtContactNo = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtWebsite = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnFaxR = new System.Windows.Forms.Button();
@@ -89,9 +89,9 @@
             this.btnZipU = new System.Windows.Forms.Button();
             this.btnZipI = new System.Windows.Forms.Button();
             this.btnZipB = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFax = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtZip = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.btnComAddR = new System.Windows.Forms.Button();
             this.btnComAddU = new System.Windows.Forms.Button();
@@ -105,7 +105,7 @@
             this.btnComCodeU = new System.Windows.Forms.Button();
             this.btnComCodeI = new System.Windows.Forms.Button();
             this.btnComCodeB = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richAddress = new System.Windows.Forms.RichTextBox();
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.txtCompanyCode = new System.Windows.Forms.TextBox();
             this.btnFormNoR = new System.Windows.Forms.Button();
@@ -135,12 +135,12 @@
             this.btnSocialI = new System.Windows.Forms.Button();
             this.btnSocialB = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtAdvtPart = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtInvestor = new System.Windows.Forms.TextBox();
+            this.txtFrenPart = new System.Windows.Forms.TextBox();
+            this.txtSocialMedia = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.btnMediaR = new System.Windows.Forms.Button();
@@ -151,9 +151,9 @@
             this.btnBAmU = new System.Windows.Forms.Button();
             this.btnBAmI = new System.Windows.Forms.Button();
             this.btnBAmB = new System.Windows.Forms.Button();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtMediaPart = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtBrandAmbs = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnIndustryR = new System.Windows.Forms.Button();
             this.btnIndustryU = new System.Windows.Forms.Button();
@@ -167,20 +167,20 @@
             this.btnHeadU = new System.Windows.Forms.Button();
             this.btnHeadI = new System.Windows.Forms.Button();
             this.btnHeadB = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.richIndustry = new System.Windows.Forms.RichTextBox();
+            this.txtNoofEmp = new System.Windows.Forms.TextBox();
+            this.txtHeadQuarter = new System.Windows.Forms.TextBox();
             this.btnCountryR = new System.Windows.Forms.Button();
             this.btnCountryU = new System.Windows.Forms.Button();
             this.btnCountryI = new System.Windows.Forms.Button();
             this.btnCountryB = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtCountry = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panelGrp3 = new System.Windows.Forms.Panel();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.richSubClassification = new System.Windows.Forms.RichTextBox();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.btnYearlyR = new System.Windows.Forms.Button();
             this.btnYearlyU = new System.Windows.Forms.Button();
@@ -242,12 +242,17 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressBg = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelGrp1.SuspendLayout();
             this.panelGrp2.SuspendLayout();
             this.panelGrp3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.progressBg.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -321,6 +326,7 @@
             this.btnLoadFiles.TabIndex = 8;
             this.btnLoadFiles.Text = "Load Files";
             this.btnLoadFiles.UseVisualStyleBackColor = true;
+            this.btnLoadFiles.Click += new System.EventHandler(this.btnLoadFiles_Click);
             // 
             // btnNextForm
             // 
@@ -549,12 +555,12 @@
             this.panelGrp1.Controls.Add(this.btnWebI);
             this.panelGrp1.Controls.Add(this.btnWebB);
             this.panelGrp1.Controls.Add(this.label19);
-            this.panelGrp1.Controls.Add(this.textBox6);
+            this.panelGrp1.Controls.Add(this.txtState);
             this.panelGrp1.Controls.Add(this.label18);
             this.panelGrp1.Controls.Add(this.label17);
-            this.panelGrp1.Controls.Add(this.textBox5);
-            this.panelGrp1.Controls.Add(this.textBox4);
-            this.panelGrp1.Controls.Add(this.textBox3);
+            this.panelGrp1.Controls.Add(this.txtContactNo);
+            this.panelGrp1.Controls.Add(this.txtEmail);
+            this.panelGrp1.Controls.Add(this.txtWebsite);
             this.panelGrp1.Controls.Add(this.label14);
             this.panelGrp1.Controls.Add(this.label13);
             this.panelGrp1.Controls.Add(this.btnFaxR);
@@ -565,9 +571,9 @@
             this.panelGrp1.Controls.Add(this.btnZipU);
             this.panelGrp1.Controls.Add(this.btnZipI);
             this.panelGrp1.Controls.Add(this.btnZipB);
-            this.panelGrp1.Controls.Add(this.textBox2);
+            this.panelGrp1.Controls.Add(this.txtFax);
             this.panelGrp1.Controls.Add(this.label12);
-            this.panelGrp1.Controls.Add(this.textBox1);
+            this.panelGrp1.Controls.Add(this.txtZip);
             this.panelGrp1.Controls.Add(this.label11);
             this.panelGrp1.Controls.Add(this.btnComAddR);
             this.panelGrp1.Controls.Add(this.btnComAddU);
@@ -581,7 +587,7 @@
             this.panelGrp1.Controls.Add(this.btnComCodeU);
             this.panelGrp1.Controls.Add(this.btnComCodeI);
             this.panelGrp1.Controls.Add(this.btnComCodeB);
-            this.panelGrp1.Controls.Add(this.richTextBox1);
+            this.panelGrp1.Controls.Add(this.richAddress);
             this.panelGrp1.Controls.Add(this.txtCompanyName);
             this.panelGrp1.Controls.Add(this.txtCompanyCode);
             this.panelGrp1.Controls.Add(this.btnFormNoR);
@@ -608,6 +614,7 @@
             this.btnStateR.TabIndex = 90;
             this.btnStateR.Text = "R";
             this.btnStateR.UseVisualStyleBackColor = true;
+            this.btnStateR.Click += new System.EventHandler(this.btnStateR_Click);
             // 
             // btnStateU
             // 
@@ -618,6 +625,7 @@
             this.btnStateU.TabIndex = 89;
             this.btnStateU.Text = "U";
             this.btnStateU.UseVisualStyleBackColor = true;
+            this.btnStateU.Click += new System.EventHandler(this.btnStateU_Click);
             // 
             // btnStateI
             // 
@@ -628,6 +636,7 @@
             this.btnStateI.TabIndex = 88;
             this.btnStateI.Text = "I";
             this.btnStateI.UseVisualStyleBackColor = true;
+            this.btnStateI.Click += new System.EventHandler(this.btnStateI_Click);
             // 
             // btnStateB
             // 
@@ -638,6 +647,7 @@
             this.btnStateB.TabIndex = 87;
             this.btnStateB.Text = "B";
             this.btnStateB.UseVisualStyleBackColor = true;
+            this.btnStateB.Click += new System.EventHandler(this.btnStateB_Click);
             // 
             // btnContR
             // 
@@ -649,6 +659,7 @@
             this.btnContR.TabIndex = 86;
             this.btnContR.Text = "R";
             this.btnContR.UseVisualStyleBackColor = true;
+            this.btnContR.Click += new System.EventHandler(this.btnContR_Click);
             // 
             // btnContU
             // 
@@ -659,6 +670,7 @@
             this.btnContU.TabIndex = 85;
             this.btnContU.Text = "U";
             this.btnContU.UseVisualStyleBackColor = true;
+            this.btnContU.Click += new System.EventHandler(this.btnContU_Click);
             // 
             // btnContI
             // 
@@ -669,6 +681,7 @@
             this.btnContI.TabIndex = 84;
             this.btnContI.Text = "I";
             this.btnContI.UseVisualStyleBackColor = true;
+            this.btnContI.Click += new System.EventHandler(this.btnContI_Click);
             // 
             // btnContB
             // 
@@ -679,6 +692,7 @@
             this.btnContB.TabIndex = 83;
             this.btnContB.Text = "B";
             this.btnContB.UseVisualStyleBackColor = true;
+            this.btnContB.Click += new System.EventHandler(this.btnContB_Click);
             // 
             // btnEmailR
             // 
@@ -690,6 +704,7 @@
             this.btnEmailR.TabIndex = 82;
             this.btnEmailR.Text = "R";
             this.btnEmailR.UseVisualStyleBackColor = true;
+            this.btnEmailR.Click += new System.EventHandler(this.btnEmailR_Click);
             // 
             // btnEmailU
             // 
@@ -700,6 +715,7 @@
             this.btnEmailU.TabIndex = 81;
             this.btnEmailU.Text = "U";
             this.btnEmailU.UseVisualStyleBackColor = true;
+            this.btnEmailU.Click += new System.EventHandler(this.btnEmailU_Click);
             // 
             // btnEmailI
             // 
@@ -710,6 +726,7 @@
             this.btnEmailI.TabIndex = 80;
             this.btnEmailI.Text = "I";
             this.btnEmailI.UseVisualStyleBackColor = true;
+            this.btnEmailI.Click += new System.EventHandler(this.btnEmailI_Click);
             // 
             // btnEmailB
             // 
@@ -720,6 +737,7 @@
             this.btnEmailB.TabIndex = 79;
             this.btnEmailB.Text = "B";
             this.btnEmailB.UseVisualStyleBackColor = true;
+            this.btnEmailB.Click += new System.EventHandler(this.btnEmailB_Click);
             // 
             // btnWebR
             // 
@@ -731,6 +749,7 @@
             this.btnWebR.TabIndex = 78;
             this.btnWebR.Text = "R";
             this.btnWebR.UseVisualStyleBackColor = true;
+            this.btnWebR.Click += new System.EventHandler(this.btnWebR_Click);
             // 
             // btnWebU
             // 
@@ -741,6 +760,7 @@
             this.btnWebU.TabIndex = 77;
             this.btnWebU.Text = "U";
             this.btnWebU.UseVisualStyleBackColor = true;
+            this.btnWebU.Click += new System.EventHandler(this.btnWebU_Click);
             // 
             // btnWebI
             // 
@@ -751,6 +771,7 @@
             this.btnWebI.TabIndex = 76;
             this.btnWebI.Text = "I";
             this.btnWebI.UseVisualStyleBackColor = true;
+            this.btnWebI.Click += new System.EventHandler(this.btnWebI_Click);
             // 
             // btnWebB
             // 
@@ -761,6 +782,7 @@
             this.btnWebB.TabIndex = 75;
             this.btnWebB.Text = "B";
             this.btnWebB.UseVisualStyleBackColor = true;
+            this.btnWebB.Click += new System.EventHandler(this.btnWebB_Click);
             // 
             // label19
             // 
@@ -771,13 +793,13 @@
             this.label19.Size = new System.Drawing.Size(0, 19);
             this.label19.TabIndex = 74;
             // 
-            // textBox6
+            // txtState
             // 
-            this.textBox6.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(138, 339);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(225, 26);
-            this.textBox6.TabIndex = 73;
+            this.txtState.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtState.Location = new System.Drawing.Point(138, 339);
+            this.txtState.Name = "txtState";
+            this.txtState.Size = new System.Drawing.Size(225, 26);
+            this.txtState.TabIndex = 73;
             // 
             // label18
             // 
@@ -799,29 +821,29 @@
             this.label17.TabIndex = 71;
             this.label17.Text = "Contact No.:";
             // 
-            // textBox5
+            // txtContactNo
             // 
-            this.textBox5.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(138, 302);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(225, 26);
-            this.textBox5.TabIndex = 70;
+            this.txtContactNo.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContactNo.Location = new System.Drawing.Point(138, 302);
+            this.txtContactNo.Name = "txtContactNo";
+            this.txtContactNo.Size = new System.Drawing.Size(225, 26);
+            this.txtContactNo.TabIndex = 70;
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(138, 270);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 26);
-            this.textBox4.TabIndex = 69;
+            this.txtEmail.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(138, 270);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(225, 26);
+            this.txtEmail.TabIndex = 69;
             // 
-            // textBox3
+            // txtWebsite
             // 
-            this.textBox3.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(138, 238);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 26);
-            this.textBox3.TabIndex = 68;
+            this.txtWebsite.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWebsite.Location = new System.Drawing.Point(138, 238);
+            this.txtWebsite.Name = "txtWebsite";
+            this.txtWebsite.Size = new System.Drawing.Size(225, 26);
+            this.txtWebsite.TabIndex = 68;
             // 
             // label14
             // 
@@ -853,6 +875,7 @@
             this.btnFaxR.TabIndex = 63;
             this.btnFaxR.Text = "R";
             this.btnFaxR.UseVisualStyleBackColor = true;
+            this.btnFaxR.Click += new System.EventHandler(this.btnFaxR_Click);
             // 
             // btnFaxU
             // 
@@ -863,6 +886,7 @@
             this.btnFaxU.TabIndex = 62;
             this.btnFaxU.Text = "U";
             this.btnFaxU.UseVisualStyleBackColor = true;
+            this.btnFaxU.Click += new System.EventHandler(this.btnFaxU_Click);
             // 
             // btnFaxI
             // 
@@ -873,6 +897,7 @@
             this.btnFaxI.TabIndex = 61;
             this.btnFaxI.Text = "I";
             this.btnFaxI.UseVisualStyleBackColor = true;
+            this.btnFaxI.Click += new System.EventHandler(this.btnFaxI_Click);
             // 
             // btnFaxB
             // 
@@ -883,6 +908,7 @@
             this.btnFaxB.TabIndex = 60;
             this.btnFaxB.Text = "B";
             this.btnFaxB.UseVisualStyleBackColor = true;
+            this.btnFaxB.Click += new System.EventHandler(this.btnFaxB_Click);
             // 
             // btnZipR
             // 
@@ -894,6 +920,7 @@
             this.btnZipR.TabIndex = 59;
             this.btnZipR.Text = "R";
             this.btnZipR.UseVisualStyleBackColor = true;
+            this.btnZipR.Click += new System.EventHandler(this.btnZipR_Click);
             // 
             // btnZipU
             // 
@@ -904,6 +931,7 @@
             this.btnZipU.TabIndex = 58;
             this.btnZipU.Text = "U";
             this.btnZipU.UseVisualStyleBackColor = true;
+            this.btnZipU.Click += new System.EventHandler(this.btnZipU_Click);
             // 
             // btnZipI
             // 
@@ -914,6 +942,7 @@
             this.btnZipI.TabIndex = 57;
             this.btnZipI.Text = "I";
             this.btnZipI.UseVisualStyleBackColor = true;
+            this.btnZipI.Click += new System.EventHandler(this.btnZipI_Click);
             // 
             // btnZipB
             // 
@@ -924,14 +953,15 @@
             this.btnZipB.TabIndex = 56;
             this.btnZipB.Text = "B";
             this.btnZipB.UseVisualStyleBackColor = true;
+            this.btnZipB.Click += new System.EventHandler(this.btnZipB_Click);
             // 
-            // textBox2
+            // txtFax
             // 
-            this.textBox2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(138, 206);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 26);
-            this.textBox2.TabIndex = 55;
+            this.txtFax.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFax.Location = new System.Drawing.Point(138, 206);
+            this.txtFax.Name = "txtFax";
+            this.txtFax.Size = new System.Drawing.Size(225, 26);
+            this.txtFax.TabIndex = 55;
             // 
             // label12
             // 
@@ -943,13 +973,13 @@
             this.label12.TabIndex = 54;
             this.label12.Text = "Fax:";
             // 
-            // textBox1
+            // txtZip
             // 
-            this.textBox1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(138, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 26);
-            this.textBox1.TabIndex = 53;
+            this.txtZip.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtZip.Location = new System.Drawing.Point(138, 175);
+            this.txtZip.Name = "txtZip";
+            this.txtZip.Size = new System.Drawing.Size(225, 26);
+            this.txtZip.TabIndex = 53;
             // 
             // label11
             // 
@@ -971,6 +1001,7 @@
             this.btnComAddR.TabIndex = 51;
             this.btnComAddR.Text = "R";
             this.btnComAddR.UseVisualStyleBackColor = true;
+            this.btnComAddR.Click += new System.EventHandler(this.btnComAddR_Click);
             // 
             // btnComAddU
             // 
@@ -981,6 +1012,7 @@
             this.btnComAddU.TabIndex = 50;
             this.btnComAddU.Text = "U";
             this.btnComAddU.UseVisualStyleBackColor = true;
+            this.btnComAddU.Click += new System.EventHandler(this.btnComAddU_Click);
             // 
             // btnComAddI
             // 
@@ -991,6 +1023,7 @@
             this.btnComAddI.TabIndex = 49;
             this.btnComAddI.Text = "I";
             this.btnComAddI.UseVisualStyleBackColor = true;
+            this.btnComAddI.Click += new System.EventHandler(this.btnComAddI_Click);
             // 
             // btnComAddB
             // 
@@ -1001,6 +1034,7 @@
             this.btnComAddB.TabIndex = 48;
             this.btnComAddB.Text = "B";
             this.btnComAddB.UseVisualStyleBackColor = true;
+            this.btnComAddB.Click += new System.EventHandler(this.btnComAddB_Click);
             // 
             // btnComNameR
             // 
@@ -1012,6 +1046,7 @@
             this.btnComNameR.TabIndex = 47;
             this.btnComNameR.Text = "R";
             this.btnComNameR.UseVisualStyleBackColor = true;
+            this.btnComNameR.Click += new System.EventHandler(this.btnComNameR_Click);
             // 
             // btnComNameU
             // 
@@ -1022,6 +1057,7 @@
             this.btnComNameU.TabIndex = 46;
             this.btnComNameU.Text = "U";
             this.btnComNameU.UseVisualStyleBackColor = true;
+            this.btnComNameU.Click += new System.EventHandler(this.btnComNameU_Click);
             // 
             // btnComNameI
             // 
@@ -1032,6 +1068,7 @@
             this.btnComNameI.TabIndex = 45;
             this.btnComNameI.Text = "I";
             this.btnComNameI.UseVisualStyleBackColor = true;
+            this.btnComNameI.Click += new System.EventHandler(this.btnComNameI_Click);
             // 
             // btnComNameB
             // 
@@ -1042,6 +1079,7 @@
             this.btnComNameB.TabIndex = 44;
             this.btnComNameB.Text = "B";
             this.btnComNameB.UseVisualStyleBackColor = true;
+            this.btnComNameB.Click += new System.EventHandler(this.btnComNameB_Click);
             // 
             // btnComCodeR
             // 
@@ -1053,6 +1091,7 @@
             this.btnComCodeR.TabIndex = 43;
             this.btnComCodeR.Text = "R";
             this.btnComCodeR.UseVisualStyleBackColor = true;
+            this.btnComCodeR.Click += new System.EventHandler(this.btnComCodeR_Click);
             // 
             // btnComCodeU
             // 
@@ -1063,6 +1102,7 @@
             this.btnComCodeU.TabIndex = 42;
             this.btnComCodeU.Text = "U";
             this.btnComCodeU.UseVisualStyleBackColor = true;
+            this.btnComCodeU.Click += new System.EventHandler(this.btnComCodeU_Click);
             // 
             // btnComCodeI
             // 
@@ -1073,6 +1113,7 @@
             this.btnComCodeI.TabIndex = 41;
             this.btnComCodeI.Text = "I";
             this.btnComCodeI.UseVisualStyleBackColor = true;
+            this.btnComCodeI.Click += new System.EventHandler(this.btnComCodeI_Click);
             // 
             // btnComCodeB
             // 
@@ -1083,15 +1124,16 @@
             this.btnComCodeB.TabIndex = 40;
             this.btnComCodeB.Text = "B";
             this.btnComCodeB.UseVisualStyleBackColor = true;
+            this.btnComCodeB.Click += new System.EventHandler(this.btnComCodeB_Click);
             // 
-            // richTextBox1
+            // richAddress
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(138, 103);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(226, 65);
-            this.richTextBox1.TabIndex = 39;
-            this.richTextBox1.Text = "";
+            this.richAddress.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richAddress.Location = new System.Drawing.Point(138, 103);
+            this.richAddress.Name = "richAddress";
+            this.richAddress.Size = new System.Drawing.Size(226, 65);
+            this.richAddress.TabIndex = 39;
+            this.richAddress.Text = "";
             // 
             // txtCompanyName
             // 
@@ -1119,6 +1161,7 @@
             this.btnFormNoR.TabIndex = 36;
             this.btnFormNoR.Text = "R";
             this.btnFormNoR.UseVisualStyleBackColor = true;
+            this.btnFormNoR.Click += new System.EventHandler(this.btnFormNoR_Click);
             // 
             // btnFormNoU
             // 
@@ -1129,6 +1172,7 @@
             this.btnFormNoU.TabIndex = 35;
             this.btnFormNoU.Text = "U";
             this.btnFormNoU.UseVisualStyleBackColor = true;
+            this.btnFormNoU.Click += new System.EventHandler(this.btnFormNoU_Click);
             // 
             // btnFormNoI
             // 
@@ -1139,6 +1183,7 @@
             this.btnFormNoI.TabIndex = 34;
             this.btnFormNoI.Text = "I";
             this.btnFormNoI.UseVisualStyleBackColor = true;
+            this.btnFormNoI.Click += new System.EventHandler(this.btnFormNoI_Click);
             // 
             // btnFormNoB
             // 
@@ -1149,6 +1194,7 @@
             this.btnFormNoB.TabIndex = 33;
             this.btnFormNoB.Text = "B";
             this.btnFormNoB.UseVisualStyleBackColor = true;
+            this.btnFormNoB.Click += new System.EventHandler(this.btnFormNoB_Click);
             // 
             // txtFormNo
             // 
@@ -1219,12 +1265,12 @@
             this.panelGrp2.Controls.Add(this.btnSocialI);
             this.panelGrp2.Controls.Add(this.btnSocialB);
             this.panelGrp2.Controls.Add(this.label15);
-            this.panelGrp2.Controls.Add(this.textBox7);
+            this.panelGrp2.Controls.Add(this.txtAdvtPart);
             this.panelGrp2.Controls.Add(this.label20);
             this.panelGrp2.Controls.Add(this.label21);
-            this.panelGrp2.Controls.Add(this.textBox8);
-            this.panelGrp2.Controls.Add(this.textBox9);
-            this.panelGrp2.Controls.Add(this.textBox10);
+            this.panelGrp2.Controls.Add(this.txtInvestor);
+            this.panelGrp2.Controls.Add(this.txtFrenPart);
+            this.panelGrp2.Controls.Add(this.txtSocialMedia);
             this.panelGrp2.Controls.Add(this.label22);
             this.panelGrp2.Controls.Add(this.label23);
             this.panelGrp2.Controls.Add(this.btnMediaR);
@@ -1235,9 +1281,9 @@
             this.panelGrp2.Controls.Add(this.btnBAmU);
             this.panelGrp2.Controls.Add(this.btnBAmI);
             this.panelGrp2.Controls.Add(this.btnBAmB);
-            this.panelGrp2.Controls.Add(this.textBox11);
+            this.panelGrp2.Controls.Add(this.txtMediaPart);
             this.panelGrp2.Controls.Add(this.label24);
-            this.panelGrp2.Controls.Add(this.textBox12);
+            this.panelGrp2.Controls.Add(this.txtBrandAmbs);
             this.panelGrp2.Controls.Add(this.label25);
             this.panelGrp2.Controls.Add(this.btnIndustryR);
             this.panelGrp2.Controls.Add(this.btnIndustryU);
@@ -1251,14 +1297,14 @@
             this.panelGrp2.Controls.Add(this.btnHeadU);
             this.panelGrp2.Controls.Add(this.btnHeadI);
             this.panelGrp2.Controls.Add(this.btnHeadB);
-            this.panelGrp2.Controls.Add(this.richTextBox2);
-            this.panelGrp2.Controls.Add(this.textBox13);
-            this.panelGrp2.Controls.Add(this.textBox14);
+            this.panelGrp2.Controls.Add(this.richIndustry);
+            this.panelGrp2.Controls.Add(this.txtNoofEmp);
+            this.panelGrp2.Controls.Add(this.txtHeadQuarter);
             this.panelGrp2.Controls.Add(this.btnCountryR);
             this.panelGrp2.Controls.Add(this.btnCountryU);
             this.panelGrp2.Controls.Add(this.btnCountryI);
             this.panelGrp2.Controls.Add(this.btnCountryB);
-            this.panelGrp2.Controls.Add(this.textBox15);
+            this.panelGrp2.Controls.Add(this.txtCountry);
             this.panelGrp2.Controls.Add(this.label26);
             this.panelGrp2.Controls.Add(this.label27);
             this.panelGrp2.Controls.Add(this.label28);
@@ -1442,13 +1488,13 @@
             this.label15.Size = new System.Drawing.Size(0, 19);
             this.label15.TabIndex = 74;
             // 
-            // textBox7
+            // txtAdvtPart
             // 
-            this.textBox7.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(137, 336);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(225, 26);
-            this.textBox7.TabIndex = 73;
+            this.txtAdvtPart.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdvtPart.Location = new System.Drawing.Point(137, 336);
+            this.txtAdvtPart.Name = "txtAdvtPart";
+            this.txtAdvtPart.Size = new System.Drawing.Size(225, 26);
+            this.txtAdvtPart.TabIndex = 73;
             // 
             // label20
             // 
@@ -1470,29 +1516,29 @@
             this.label21.TabIndex = 71;
             this.label21.Text = "Investor:";
             // 
-            // textBox8
+            // txtInvestor
             // 
-            this.textBox8.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(137, 302);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(225, 26);
-            this.textBox8.TabIndex = 70;
+            this.txtInvestor.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvestor.Location = new System.Drawing.Point(137, 302);
+            this.txtInvestor.Name = "txtInvestor";
+            this.txtInvestor.Size = new System.Drawing.Size(225, 26);
+            this.txtInvestor.TabIndex = 70;
             // 
-            // textBox9
+            // txtFrenPart
             // 
-            this.textBox9.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(137, 270);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(225, 26);
-            this.textBox9.TabIndex = 69;
+            this.txtFrenPart.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFrenPart.Location = new System.Drawing.Point(137, 270);
+            this.txtFrenPart.Name = "txtFrenPart";
+            this.txtFrenPart.Size = new System.Drawing.Size(225, 26);
+            this.txtFrenPart.TabIndex = 69;
             // 
-            // textBox10
+            // txtSocialMedia
             // 
-            this.textBox10.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(137, 238);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(225, 26);
-            this.textBox10.TabIndex = 68;
+            this.txtSocialMedia.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSocialMedia.Location = new System.Drawing.Point(137, 238);
+            this.txtSocialMedia.Name = "txtSocialMedia";
+            this.txtSocialMedia.Size = new System.Drawing.Size(225, 26);
+            this.txtSocialMedia.TabIndex = 68;
             // 
             // label22
             // 
@@ -1596,13 +1642,13 @@
             this.btnBAmB.Text = "B";
             this.btnBAmB.UseVisualStyleBackColor = true;
             // 
-            // textBox11
+            // txtMediaPart
             // 
-            this.textBox11.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(137, 206);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(225, 26);
-            this.textBox11.TabIndex = 55;
+            this.txtMediaPart.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMediaPart.Location = new System.Drawing.Point(137, 206);
+            this.txtMediaPart.Name = "txtMediaPart";
+            this.txtMediaPart.Size = new System.Drawing.Size(225, 26);
+            this.txtMediaPart.TabIndex = 55;
             // 
             // label24
             // 
@@ -1614,13 +1660,13 @@
             this.label24.TabIndex = 54;
             this.label24.Text = "Media Partner:";
             // 
-            // textBox12
+            // txtBrandAmbs
             // 
-            this.textBox12.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(137, 175);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(225, 26);
-            this.textBox12.TabIndex = 53;
+            this.txtBrandAmbs.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrandAmbs.Location = new System.Drawing.Point(137, 175);
+            this.txtBrandAmbs.Name = "txtBrandAmbs";
+            this.txtBrandAmbs.Size = new System.Drawing.Size(225, 26);
+            this.txtBrandAmbs.TabIndex = 53;
             // 
             // label25
             // 
@@ -1755,30 +1801,30 @@
             this.btnHeadB.Text = "B";
             this.btnHeadB.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // richIndustry
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(137, 103);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(226, 65);
-            this.richTextBox2.TabIndex = 39;
-            this.richTextBox2.Text = "";
+            this.richIndustry.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richIndustry.Location = new System.Drawing.Point(137, 103);
+            this.richIndustry.Name = "richIndustry";
+            this.richIndustry.Size = new System.Drawing.Size(226, 65);
+            this.richIndustry.TabIndex = 39;
+            this.richIndustry.Text = "";
             // 
-            // textBox13
+            // txtNoofEmp
             // 
-            this.textBox13.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(137, 71);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(226, 26);
-            this.textBox13.TabIndex = 38;
+            this.txtNoofEmp.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoofEmp.Location = new System.Drawing.Point(137, 71);
+            this.txtNoofEmp.Name = "txtNoofEmp";
+            this.txtNoofEmp.Size = new System.Drawing.Size(226, 26);
+            this.txtNoofEmp.TabIndex = 38;
             // 
-            // textBox14
+            // txtHeadQuarter
             // 
-            this.textBox14.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(137, 41);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(226, 26);
-            this.textBox14.TabIndex = 37;
+            this.txtHeadQuarter.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeadQuarter.Location = new System.Drawing.Point(137, 41);
+            this.txtHeadQuarter.Name = "txtHeadQuarter";
+            this.txtHeadQuarter.Size = new System.Drawing.Size(226, 26);
+            this.txtHeadQuarter.TabIndex = 37;
             // 
             // btnCountryR
             // 
@@ -1821,13 +1867,13 @@
             this.btnCountryB.Text = "B";
             this.btnCountryB.UseVisualStyleBackColor = true;
             // 
-            // textBox15
+            // txtCountry
             // 
-            this.textBox15.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(137, 9);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(226, 26);
-            this.textBox15.TabIndex = 32;
+            this.txtCountry.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCountry.Location = new System.Drawing.Point(137, 9);
+            this.txtCountry.Name = "txtCountry";
+            this.txtCountry.Size = new System.Drawing.Size(226, 26);
+            this.txtCountry.TabIndex = 32;
             // 
             // label26
             // 
@@ -1873,7 +1919,7 @@
             // 
             this.panelGrp3.AutoScroll = true;
             this.panelGrp3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelGrp3.Controls.Add(this.richTextBox3);
+            this.panelGrp3.Controls.Add(this.richSubClassification);
             this.panelGrp3.Controls.Add(this.textBox26);
             this.panelGrp3.Controls.Add(this.btnYearlyR);
             this.panelGrp3.Controls.Add(this.btnYearlyU);
@@ -1940,14 +1986,14 @@
             this.panelGrp3.Size = new System.Drawing.Size(563, 200);
             this.panelGrp3.TabIndex = 92;
             // 
-            // richTextBox3
+            // richSubClassification
             // 
-            this.richTextBox3.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(135, 167);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(226, 64);
-            this.richTextBox3.TabIndex = 91;
-            this.richTextBox3.Text = "";
+            this.richSubClassification.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richSubClassification.Location = new System.Drawing.Point(135, 167);
+            this.richSubClassification.Name = "richSubClassification";
+            this.richSubClassification.Size = new System.Drawing.Size(226, 64);
+            this.richSubClassification.TabIndex = 91;
+            this.richSubClassification.Text = "";
             // 
             // textBox26
             // 
@@ -2555,11 +2601,46 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // progressBg
+            // 
+            this.progressBg.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.border_01;
+            this.progressBg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.progressBg.Controls.Add(this.label16);
+            this.progressBg.Controls.Add(this.panel3);
+            this.progressBg.Location = new System.Drawing.Point(221, 722);
+            this.progressBg.Name = "progressBg";
+            this.progressBg.Size = new System.Drawing.Size(300, 22);
+            this.progressBg.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.progressbar_01;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(5, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 12);
+            this.panel3.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(141, 2);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 16);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "15%";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1365, 749);
+            this.Controls.Add(this.progressBg);
             this.Controls.Add(this.panelGrp3);
             this.Controls.Add(this.panelGrp2);
             this.Controls.Add(this.panelGrp1);
@@ -2605,6 +2686,8 @@
             this.panelGrp3.ResumeLayout(false);
             this.panelGrp3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.progressBg.ResumeLayout(false);
+            this.progressBg.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2660,7 +2743,7 @@
         private System.Windows.Forms.Button btnComCodeU;
         private System.Windows.Forms.Button btnComCodeI;
         private System.Windows.Forms.Button btnComCodeB;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richAddress;
         private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.TextBox txtCompanyCode;
         private System.Windows.Forms.Button btnStateR;
@@ -2680,12 +2763,12 @@
         private System.Windows.Forms.Button btnWebI;
         private System.Windows.Forms.Button btnWebB;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtState;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtContactNo;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtWebsite;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnFaxR;
@@ -2696,9 +2779,9 @@
         private System.Windows.Forms.Button btnZipU;
         private System.Windows.Forms.Button btnZipI;
         private System.Windows.Forms.Button btnZipB;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panelGrp2;
         private System.Windows.Forms.Button btnAdR;
@@ -2718,12 +2801,12 @@
         private System.Windows.Forms.Button btnSocialI;
         private System.Windows.Forms.Button btnSocialB;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAdvtPart;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtInvestor;
+        private System.Windows.Forms.TextBox txtFrenPart;
+        private System.Windows.Forms.TextBox txtSocialMedia;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnMediaR;
@@ -2734,9 +2817,9 @@
         private System.Windows.Forms.Button btnBAmU;
         private System.Windows.Forms.Button btnBAmI;
         private System.Windows.Forms.Button btnBAmB;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtMediaPart;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox txtBrandAmbs;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnIndustryR;
         private System.Windows.Forms.Button btnIndustryU;
@@ -2750,20 +2833,20 @@
         private System.Windows.Forms.Button btnHeadU;
         private System.Windows.Forms.Button btnHeadI;
         private System.Windows.Forms.Button btnHeadB;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.RichTextBox richIndustry;
+        private System.Windows.Forms.TextBox txtNoofEmp;
+        private System.Windows.Forms.TextBox txtHeadQuarter;
         private System.Windows.Forms.Button btnCountryR;
         private System.Windows.Forms.Button btnCountryU;
         private System.Windows.Forms.Button btnCountryI;
         private System.Windows.Forms.Button btnCountryB;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtCountry;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panelGrp3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox richSubClassification;
         private System.Windows.Forms.TextBox textBox26;
         private System.Windows.Forms.Button btnYearlyR;
         private System.Windows.Forms.Button btnYearlyU;
@@ -2825,5 +2908,9 @@
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Panel progressBg;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

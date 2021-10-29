@@ -17,7 +17,7 @@ namespace DataFillingSoftDeskApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new preloader());
+            Application.Run(new dashboard()); 
         }
     }
 }
