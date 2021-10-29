@@ -9,5 +9,7 @@ namespace DataFillingSoftDeskApp.Class
     public class DataTransferProperty
     {
         public static string AuthKey { get; set; }
+        public static string UserId { get; set; }
+
     }
 }

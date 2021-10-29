@@ -79,28 +79,46 @@ namespace DataFillingSoftDeskApp.ui
         {
             if (!function.IsConnected())
             {
-                MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 if (txtAuthKey.Text == "")
                 {
-                    MessageBox.Show("Authentication key can\'t be null", "Error", MessageBoxButtons.OK,
+                    function.MessageBox("Authentication key can\'t be null", "Error", MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
+                    // MessageBox.Show("Authentication key can\'t be null", "Error", MessageBoxButtons.OK,
+                    // MessageBoxIcon.Warning);
                     return;
                 }
-                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}'");
+                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND MacAddress=''");
                 if (isExist != "")
                 {
-                    registration registration = new registration();
-                    DataTransferProperty.AuthKey = txtAuthKey.Text;
-                    this.Hide();
-                    registration.Show();
+                    //bool ans = function.Execute(
+                    //    $"UPDATE USERS SET MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{txtAuthKey.Text}'");
+                    //if (ans)
+                    //{
+                        registration registration = new registration();
+                        DataTransferProperty.AuthKey = txtAuthKey.Text;
+                        Properties.Settings.Default.AuthKey = txtAuthKey.Text;
+                        Properties.Settings.Default.Save();
+                        this.Hide();
+                        registration.Show();
+                    //}
+                    //else
+                    //{
+                    //    function.MessageBox("Failed to get mac address, please update you network drive", "Error",
+                    //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+
                 }
                 else
                 {
-                    MessageBox.Show("Your authentication key is invalid or already registered", "Error",
+                    function.MessageBox("Your authentication key is invalid or already registered", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show("Your authentication key is invalid or already registered", "Error",
+                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

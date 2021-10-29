@@ -68,7 +68,7 @@ namespace DataFillingSoftDeskApp.ui
         private void btnClose_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult =
-                MessageBox.Show("Are you sure want to exit?", "Confirmation", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                MessageBox.Show("Are you sure want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 Application.Exit();
@@ -78,6 +78,24 @@ namespace DataFillingSoftDeskApp.ui
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnGroup1_Click(object sender, EventArgs e)
+        {
+            panelGrp1.Enabled = true;
+            panelGrp2.Enabled = panelGrp3.Enabled = false;
+        }
+
+        private void btnGroup2_Click(object sender, EventArgs e)
+        {
+            panelGrp2.Enabled = true;
+            panelGrp1.Enabled = panelGrp3.Enabled = false;
+        }
+
+        private void btnGroup3_Click(object sender, EventArgs e)
+        {
+            panelGrp3.Enabled = true;
+            panelGrp1.Enabled = panelGrp2.Enabled = false;
         }
     }
 }

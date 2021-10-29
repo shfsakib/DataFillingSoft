@@ -233,6 +233,7 @@
             this.btnReset.TabIndex = 9;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // log_in
             // 

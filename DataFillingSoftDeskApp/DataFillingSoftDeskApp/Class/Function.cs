@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
-using System.Web; 
+using System.Web;
 using System.Windows.Forms;
 
 namespace DataFillingSoftDeskApp.Class
@@ -33,7 +33,8 @@ namespace DataFillingSoftDeskApp.Class
             }
         }
 
-        public string Connection = new SqlConnectionStringBuilder {
+        public string Connection = new SqlConnectionStringBuilder
+        {
             DataSource = ".\\local",
             InitialCatalog = "DataFillingDb",
             UserID = "sa",
@@ -42,10 +43,11 @@ namespace DataFillingSoftDeskApp.Class
             ConnectTimeout = 0,
             Pooling = true,
             MinPoolSize = 0,
-            MaxPoolSize = 4096 }.ToString();
+            MaxPoolSize = 4096
+        }.ToString();
 
         public string Connection1 = @"Data Source=.\local;Initial Catalog=KidsLearningDb;Integrated Security=True";
-         
+
         public List<string> ListData(string sql)        {            List<string> list = new List<string>();
             con = new SqlConnection(Connection);            try            {
                 if (con.State != ConnectionState.Open) con.Open();                SqlCommand cmd = new SqlCommand(sql, con);                SqlDataReader rd = cmd.ExecuteReader(); list.Clear();
@@ -55,7 +57,7 @@ namespace DataFillingSoftDeskApp.Class
             }
             return list;
         }
-         
+
         public bool Execute(string str)
         {
             bool result = false;
@@ -74,6 +76,22 @@ namespace DataFillingSoftDeskApp.Class
             }
             catch (Exception ex) { if (Conn.State != ConnectionState.Closed) Conn.Close(); }
             return result;
+        }
+
+        public void MessageBox(string msg, string title, MessageBoxButtons button, MessageBoxIcon icon)
+        {
+            System.Windows.Forms.MessageBox.Show(msg, title, button, icon);
+        }
+
+        public string MacAddress()
+        {
+            var macAddr =
+            (
+                from nic in NetworkInterface.GetAllNetworkInterfaces()
+                where nic.OperationalStatus == OperationalStatus.Up
+                select nic.GetPhysicalAddress().ToString()
+            ).FirstOrDefault();
+            return macAddr.ToString();
         }
         public string IsExist(string str)
         {
@@ -126,7 +144,7 @@ namespace DataFillingSoftDeskApp.Class
 
             return false;
         }
-        
+
         public string Date()
         {
             string date = DateTime.Now.ToString("dd/MM/yyyy_hh:mm:ss");
@@ -138,7 +156,7 @@ namespace DataFillingSoftDeskApp.Class
             DateTime printDate = TimeZoneInfo.ConvertTime(datetime, timezoneInfo);
             return printDate;
         }
-         
+
         public bool EmailValidation(string email)
         {
             try
@@ -162,7 +180,7 @@ namespace DataFillingSoftDeskApp.Class
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(table);
-                ob.DataSource = table; 
+                ob.DataSource = table;
                 if (con.State != ConnectionState.Closed) con.Close();
             }
             catch (Exception ex)
@@ -170,7 +188,7 @@ namespace DataFillingSoftDeskApp.Class
                 if (con.State != ConnectionState.Closed) con.Close();
             }
         }
-         
+
 
         public bool MobileNoValidation(string mobileNo)
         {

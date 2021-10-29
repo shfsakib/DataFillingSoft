@@ -32,7 +32,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioMale = new System.Windows.Forms.RadioButton();
@@ -51,7 +51,7 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtConfirmPass = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -108,12 +108,12 @@
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 27);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtAge);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.lblGen);
@@ -134,18 +134,18 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.groupBox1.Size = new System.Drawing.Size(606, 306);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal Information";
             // 
-            // textBox1
+            // txtAge
             // 
-            this.textBox1.Location = new System.Drawing.Point(404, 262);
-            this.textBox1.MaxLength = 3;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 30);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtAge.Location = new System.Drawing.Point(404, 262);
+            this.txtAge.MaxLength = 3;
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(185, 30);
+            this.txtAge.TabIndex = 7;
+            this.txtAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label8
             // 
@@ -164,7 +164,7 @@
             this.panel2.Location = new System.Drawing.Point(98, 260);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(161, 33);
-            this.panel2.TabIndex = 15;
+            this.panel2.TabIndex = 6;
             // 
             // radioMale
             // 
@@ -176,7 +176,6 @@
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
-            this.radioMale.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioFemale
             // 
@@ -204,7 +203,7 @@
             this.richAddress.Location = new System.Drawing.Point(98, 158);
             this.richAddress.Name = "richAddress";
             this.richAddress.Size = new System.Drawing.Size(491, 96);
-            this.richAddress.TabIndex = 0;
+            this.richAddress.TabIndex = 5;
             this.richAddress.Text = "";
             // 
             // label7
@@ -223,7 +222,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(185, 30);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 4;
             // 
             // label5
             // 
@@ -241,7 +240,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.ReadOnly = true;
             this.txtContactNo.Size = new System.Drawing.Size(185, 30);
-            this.txtContactNo.TabIndex = 5;
+            this.txtContactNo.TabIndex = 3;
             // 
             // label6
             // 
@@ -259,7 +258,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(185, 30);
-            this.txtLastName.TabIndex = 4;
+            this.txtLastName.TabIndex = 2;
             // 
             // label4
             // 
@@ -277,7 +276,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(185, 30);
-            this.txtFirstName.TabIndex = 3;
+            this.txtFirstName.TabIndex = 1;
             // 
             // label3
             // 
@@ -286,7 +285,7 @@
             this.label3.Location = new System.Drawing.Point(8, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 19);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 0;
             this.label3.Text = "First Name";
             // 
             // txtDate
@@ -295,7 +294,7 @@
             this.txtDate.Name = "txtDate";
             this.txtDate.ReadOnly = true;
             this.txtDate.Size = new System.Drawing.Size(185, 30);
-            this.txtDate.TabIndex = 2;
+            this.txtDate.TabIndex = 0;
             // 
             // label2
             // 
@@ -304,12 +303,12 @@
             this.label2.Location = new System.Drawing.Point(356, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 19);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Date";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtConfirmPass);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtPass);
             this.groupBox2.Controls.Add(this.label11);
@@ -320,16 +319,18 @@
             this.groupBox2.Location = new System.Drawing.Point(9, 377);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(606, 192);
-            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Project Related Information";
             // 
-            // textBox2
+            // txtConfirmPass
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 143);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 30);
-            this.textBox2.TabIndex = 3;
+            this.txtConfirmPass.Location = new System.Drawing.Point(136, 143);
+            this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
+            this.txtConfirmPass.Size = new System.Drawing.Size(176, 30);
+            this.txtConfirmPass.TabIndex = 3;
+            this.txtConfirmPass.UseSystemPasswordChar = true;
             // 
             // label12
             // 
@@ -403,9 +404,10 @@
             this.btnSubmit.Location = new System.Drawing.Point(496, 575);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(118, 34);
-            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.TabIndex = 2;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnback
             // 
@@ -417,7 +419,7 @@
             this.btnback.Location = new System.Drawing.Point(245, 575);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(121, 34);
-            this.btnback.TabIndex = 2;
+            this.btnback.TabIndex = 4;
             this.btnback.Text = "Back to login";
             this.btnback.UseVisualStyleBackColor = false;
             this.btnback.Click += new System.EventHandler(this.btnback_Click);
@@ -432,9 +434,10 @@
             this.btnClear.Location = new System.Drawing.Point(372, 575);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(118, 34);
-            this.btnClear.TabIndex = 1;
+            this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // registration
             // 
@@ -490,14 +493,14 @@
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNoForms;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtUserId;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtConfirmPass;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label label11;
