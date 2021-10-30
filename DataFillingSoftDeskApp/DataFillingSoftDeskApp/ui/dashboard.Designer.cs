@@ -243,8 +243,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBg = new System.Windows.Forms.Panel();
-            this.panelProgressBar = new System.Windows.Forms.Panel();
             this.lblPercentage = new System.Windows.Forms.Label();
+            this.panelProgressBar = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblFormSl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -415,6 +415,7 @@
             this.btnViewData.TabIndex = 2;
             this.btnViewData.Text = "View Data";
             this.btnViewData.UseVisualStyleBackColor = true;
+            this.btnViewData.Click += new System.EventHandler(this.btnViewData_Click);
             // 
             // label2
             // 
@@ -490,6 +491,7 @@
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnSubmit.Enabled = false;
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -500,6 +502,7 @@
             this.btnSubmit.TabIndex = 22;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label5
             // 
@@ -2698,15 +2701,6 @@
             this.progressBg.Size = new System.Drawing.Size(300, 22);
             this.progressBg.TabIndex = 5;
             // 
-            // panelProgressBar
-            // 
-            this.panelProgressBar.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.progressbar_01;
-            this.panelProgressBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelProgressBar.Location = new System.Drawing.Point(5, 5);
-            this.panelProgressBar.Name = "panelProgressBar";
-            this.panelProgressBar.Size = new System.Drawing.Size(0, 12);
-            this.panelProgressBar.TabIndex = 5;
-            // 
             // lblPercentage
             // 
             this.lblPercentage.AutoSize = true;
@@ -2716,6 +2710,15 @@
             this.lblPercentage.Size = new System.Drawing.Size(24, 16);
             this.lblPercentage.TabIndex = 6;
             this.lblPercentage.Text = "0%";
+            // 
+            // panelProgressBar
+            // 
+            this.panelProgressBar.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.progressbar_01;
+            this.panelProgressBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelProgressBar.Location = new System.Drawing.Point(5, 5);
+            this.panelProgressBar.Name = "panelProgressBar";
+            this.panelProgressBar.Size = new System.Drawing.Size(0, 12);
+            this.panelProgressBar.TabIndex = 5;
             // 
             // openFileDialog1
             // 

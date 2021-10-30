@@ -92,7 +92,7 @@ namespace DataFillingSoftDeskApp.ui
                     // MessageBoxIcon.Warning);
                     return;
                 }
-                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND MacAddress=''");
+                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND (MacAddress='' OR MacAddress IS NUll)");
                 if (isExist != "")
                 {
                     //bool ans = function.Execute(

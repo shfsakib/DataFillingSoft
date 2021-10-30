@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.15.0\lib\net40\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -80,6 +89,18 @@
     <Compile Include="ui\registration.Designer.cs">
       <DependentUpon>registration.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\submission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\submission.Designer.cs">
+      <DependentUpon>submission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\view-data.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\view-data.Designer.cs">
+      <DependentUpon>view-data.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\warning.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +132,16 @@
     <EmbeddedResource Include="ui\registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\submission.resx">
+      <DependentUpon>submission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\view-data.resx">
+      <DependentUpon>view-data.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\warning.resx">
       <DependentUpon>warning.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="File\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

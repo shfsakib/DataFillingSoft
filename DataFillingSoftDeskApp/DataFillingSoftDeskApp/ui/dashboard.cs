@@ -43,6 +43,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             btnGroup1.Enabled = false;
             LoadData();
+            lblFormSl.Text = "";
         }
 
         private void LoadData()
@@ -82,7 +83,10 @@ namespace DataFillingSoftDeskApp.ui
             if (taken == done)
             {
                 btnSave.Enabled = false;
+                btnSubmit.Enabled = true;
             }
+
+            lblDate.Text = DateTime.Now.ToString();
         }
 
         private void dashboard_MouseMove(object sender, MouseEventArgs e)
@@ -122,7 +126,9 @@ namespace DataFillingSoftDeskApp.ui
                 MessageBox.Show("Are you sure want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Hide();
+                log_in login=new log_in();
+                login.Show();
             }
         }
 
@@ -954,31 +960,36 @@ namespace DataFillingSoftDeskApp.ui
             txtProduct.Text = txtServices.Text = txtManager.Text = txtRegDate.Text = txtYearlyRev.Text =
                 richSubClassification.Text =
                     txtLandMark.Text = txtAccAudit.Text = txtCurrency.Text = txtYearlyExpense.Text = null;
-            pictureBox1.Image = null;
+            lblFormSl.Text = "";
+            nextClick = 0;
+            pictureBox1.Image = Properties.Resources.picture;
             panelGrp1.Enabled = true;
             panelGrp2.Enabled = panelGrp3.Enabled = false;
+            btnGroup1.Enabled = false;
+            btnGroup2.Enabled = btnGroup3.Enabled = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (imageString == "")
-            {
-                function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
 
-            }
-            else if (txtFormNo.Text == "" || txtCompanyCode.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "" || txtZip.Text == "" || txtFax.Text == "" || txtWebsite.Text == "" || txtEmail.Text == "" || txtContactNo.Text == "" || txtState.Text == "")
+            if (txtFormNo.Text == "" || txtCompanyCode.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "" || txtZip.Text == "" || txtFax.Text == "" || txtWebsite.Text == "" || txtEmail.Text == "" || txtContactNo.Text == "" || txtState.Text == "")
             {
                 function.MessageBox("Please at least fill up group 1 fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
             {
-                if (lblFormSl.Text == "")
+                if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
                 {
+                    if (imageString == "")
+                    {
+                        function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+
+                    }
                     bool ans = function.Execute(
                                   $@"INSERT INTO FormData(FormNo,CompanyCode,CompanyName,CompanyAddress,ZipCode,Fax,Website,Email,ContactNo,State,Country,Headquarter,NoOfEmployees,Industry,BrandAmbassador,MediaPartner,SocialMedia,FrenchiesPartner,Investor,AdvertisingPartner,Product,Services,Manager,RegistrationDate,YearlyRevenue,Subclassification,Landmark,AccoutAudit,Currency,YearlyExpense,FileName,AuthenticationKey,EntryTime) 
-VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{richAddress.Text}','{txtZip.Text}','{txtFax.Text}','{txtWebsite.Text}','{txtEmail.Text}','{txtContactNo.Text}','{txtState.Text}','{txtCountry.Text}','{txtHeadQuarter.Text}','{txtNoofEmp.Text}','{richIndustry.ForeColor}','{txtBrandAmbs.Text}','{txtMediaPart.Text}','{txtSocialMedia.Text}','{txtFrenPart.Text}','{txtInvestor.Text}','{txtAdvtPart.Text}','{txtProduct.Text}','{txtServices.Text}','{txtManager.Text}','{txtRegDate.Text}','{txtYearlyRev}','{richSubClassification.Text}','{txtLandMark.Text}','{txtAccAudit.Text}','{txtCurrency.Text}','{txtYearlyExpense.Text}','{fileName}','{Properties.Settings.Default.AuthKey}','{function.Date()}')");
+VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{richAddress.Text}','{txtZip.Text}','{txtFax.Text}','{txtWebsite.Text}','{txtEmail.Text}','{txtContactNo.Text}','{txtState.Text}','{txtCountry.Text}','{txtHeadQuarter.Text}','{txtNoofEmp.Text}','{richIndustry.Text}','{txtBrandAmbs.Text}','{txtMediaPart.Text}','{txtSocialMedia.Text}','{txtFrenPart.Text}','{txtInvestor.Text}','{txtAdvtPart.Text}','{txtProduct.Text}','{txtServices.Text}','{txtManager.Text}','{txtRegDate.Text}','{txtYearlyRev.Text}','{richSubClassification.Text}','{txtLandMark.Text}','{txtAccAudit.Text}','{txtCurrency.Text}','{txtYearlyExpense.Text}','{fileName}','{Properties.Settings.Default.AuthKey}','{function.Date()}')");
                     if (ans)
                     {
                         Clear();
@@ -989,7 +1000,19 @@ VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{rich
                 }
                 else
                 {
-
+                    bool ans = function.Execute($@"UPDATE FormData SET FormNo='{txtFormNo.Text}',CompanyCode='{txtCompanyCode.Text}',CompanyName='{txtCompanyName.Text}',
+CompanyAddress='{richAddress.Text}',ZipCode='{txtZip.Text}',Fax='{txtFax.Text}',Website='{txtWebsite.Text}',Email='{txtEmail.Text}',ContactNo='{txtContactNo.Text}',State='{txtState.Text}',
+Country='{txtCountry.Text}',Headquarter='{txtHeadQuarter.Text}',NoOfEmployees='{txtNoofEmp.Text}',Industry='{richIndustry.Text}',BrandAmbassador='{txtBrandAmbs.Text}',MediaPartner='{txtMediaPart.Text}',
+SocialMedia='{txtSocialMedia.Text}',FrenchiesPartner='{txtFrenPart.Text}',Investor='{txtInvestor.Text}',AdvertisingPartner='{txtAdvtPart.Text}',Product='{txtProduct.Text}',Services='{txtServices.Text}',
+Manager='{txtManager.Text}',RegistrationDate='{txtRegDate.Text}',YearlyRevenue='{txtYearlyRev.Text}',Subclassification='{richSubClassification.Text}',Landmark='{txtLandMark.Text}',AccoutAudit='{txtAccAudit.Text}',
+Currency='{txtCurrency.Text}',YearlyExpense='{txtYearlyExpense.Text}' WHERE FormSerial='{lblFormSl.Text}'");
+                    if (ans)
+                    {
+                        Clear();
+                        LoadData();
+                        lblFormSl.Text = "";
+                        function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
             }
@@ -998,11 +1021,13 @@ VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{rich
 
         private void btnNextForm_Click(object sender, EventArgs e)
         {
-            lblFormSl.Text =
-                function.IsExist(
-                    $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            string topId = "";
+            topId = function.IsExist(
+                $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+
             if (nextClick == 0)
             {
+                lblFormSl.Text = topId;
                 nextClick = 1;
                 GetFieldFirstData(lblFormSl.Text);
             }
@@ -1014,81 +1039,140 @@ VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{rich
 
         private void btnPrevForm_Click(object sender, EventArgs e)
         {
-
+            if (lblFormSl.Text != "")
+            {
+                GetFieldPrevData(lblFormSl.Text);
+            }
         }
 
         private void GetFieldFirstData(string serial)
         {
+            //lblFormSl.Text = function.IsExist(
+            //    $"SELECT TOP 1 FormSerial FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
             txtFormNo.Text = function.IsExist(
                 $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial='{serial}'");
-            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
-            //string picture = function.IsExist($"SELECT TOP 1 Picture FROM FormData WHERE FormSerial='{lblFormSl.Text}'");
+            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial='{serial}'");
+            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial='{serial}'");
+            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial='{serial}'");
+            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial='{serial}'");
+            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial='{serial}'");
+            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial='{serial}'");
+            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial='{serial}'");
+            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial='{serial}'");
+            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial='{serial}'");
+            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial='{serial}'");
+            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial='{serial}'");
+            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial='{serial}'");
+            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial='{serial}'");
+            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial='{serial}'");
+            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial='{serial}'");
+            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial='{serial}'");
+            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial='{serial}'");
+            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial='{serial}'");
+            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial='{serial}'");
+            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial='{serial}'");
+            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial='{serial}'");
+            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial='{serial}'");
+            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial='{serial}'");
+            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial='{serial}'");
+            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial='{serial}'");
+            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial='{serial}'");
+            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial='{serial}'");
+            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial='{serial}'");
+            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial='{serial}'");
+            //string picture = function.IsExist($"SELECT TOP 1 Picture FROM FormData WHERE FormSerial='{serial}'");
             //byte[] picByte = Encoding.ASCII.GetBytes(picture);
             //pictureBox1.Image = Image.FromStream(new MemoryStream(picByte));
 
         }
         private void GetFieldNextData(string serial)
         {
+            string x = function.IsExist(
+                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            if (x == "")
+            {
+                function.MessageBox("No more data found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             txtFormNo.Text = function.IsExist(
-                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial>'{serial}'");
-            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
-            //string picture = function.IsExist($"SELECT TOP 1 Picture FROM FormData WHERE FormSerial>'{lblFormSl.Text}'");
+                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial>'{serial}' ORDER BY FormSerial ASC");
+            //string picture = function.IsExist($"SELECT TOP 1 Picture FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial ASC");
+            //byte[] picByte = Encoding.ASCII.GetBytes(picture);
+            //pictureBox1.Image = Image.FromStream(new MemoryStream(picByte));
+
+        }
+        private void GetFieldPrevData(string serial)
+        {
+            string x = function.IsExist(
+                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial ASC");
+            if (x == "")
+            {
+                function.MessageBox("No more data found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            //serial = function.IsExist(
+            //    $"SELECT TOP 1 FormSerial FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial ASC");
+            txtFormNo.Text = function.IsExist(
+                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
+            //string picture = function.IsExist($"SELECT TOP 1 Picture FROM FormData WHERE FormSerial<'{serial}' ORDER BY FormSerial DESC");
             //byte[] picByte = Encoding.ASCII.GetBytes(picture);
             //pictureBox1.Image = Image.FromStream(new MemoryStream(picByte));
 
@@ -1099,6 +1183,27 @@ VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{rich
                 (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnViewData_Click(object sender, EventArgs e)
+        {
+            view_data viewData = new view_data();
+            viewData.ShowDialog();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult =
+                MessageBox.Show(
+                    "Have your project completed?\r\n\r\nAfter submission of your project you will not able to work with this project\r\n\r\nAre you sure?",
+                    "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                submission submission = new submission();
+                submission.Show();
+
             }
         }
     }

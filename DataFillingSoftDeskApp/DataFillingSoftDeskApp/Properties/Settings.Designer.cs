@@ -34,5 +34,15 @@ namespace DataFillingSoftDeskApp.Properties {
                 this["AuthKey"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\local;Initial Catalog=DataFillingDb;Integrated Security=True")]
+        public string DataFillingDbConnectionString {
+            get {
+                return ((string)(this["DataFillingDbConnectionString"]));
+            }
+        }
     }
 }

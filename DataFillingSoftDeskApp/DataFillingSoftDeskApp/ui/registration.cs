@@ -153,7 +153,7 @@ namespace DataFillingSoftDeskApp.ui
                     $"UPDATE Users SET Address='{richAddress.Text}',Gender='{gender}',Age='{txtAge.Text}',FormNo='{txtNoForms.Text}',UserName='{txtUserId.Text}',DesktopPassword='{txtPass.Text}',MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
                 if (ans)
                 {
-                    DialogResult dialogResult = MessageBox.Show($"Message \r\n Registration Successfull\r\nRemember This For Login Details\r\n\r\nUser Id: {txtUserId.Text}\r\nPassword: {txtPass.Text}\r\n\r\nThis Form Will Automatically Close and Login Window Will Open", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult dialogResult = MessageBox.Show($"Message \r\nRegistration Successfull\r\nRemember This For Login Details\r\n\r\nUser Id: {txtUserId.Text}\r\nPassword: {txtPass.Text}\r\n\r\nThis Form Will Automatically Close and Login Window Will Open", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.OK)
                     {
                         log_in login = new log_in();

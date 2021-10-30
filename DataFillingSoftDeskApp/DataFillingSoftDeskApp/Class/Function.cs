@@ -230,7 +230,26 @@ namespace DataFillingSoftDeskApp.Class
                 if (con.State != ConnectionState.Closed) con.Close();
             }
         }
-
+        public DataTable LoadTable(string query)
+        {
+            DataTable table = new DataTable();
+            SqlConnection con = new SqlConnection(Connection);
+            try
+            {
+                 
+                if (con.State != ConnectionState.Open) con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(table);
+                if (con.State != ConnectionState.Closed) con.Close();
+                return table;
+            }
+            catch (Exception ex)
+            {
+                if (con.State != ConnectionState.Closed) con.Close();
+                return null;
+            }
+        }
 
         public bool MobileNoValidation(string mobileNo)
         {
