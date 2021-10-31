@@ -30,11 +30,13 @@ namespace DataFillingSoftDeskApp.ui
                 btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
             };
             function = Function.GetInstance();
+
         }
 
         private void submission_Load(object sender, EventArgs e)
         {
             LoadData();
+            txtPassword.Focus();
         }
         private void LoadData()
         {

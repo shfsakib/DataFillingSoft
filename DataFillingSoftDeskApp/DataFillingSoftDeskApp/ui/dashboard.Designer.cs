@@ -2727,7 +2727,7 @@
             // lblFormSl
             // 
             this.lblFormSl.AutoSize = true;
-            this.lblFormSl.Location = new System.Drawing.Point(314, 643);
+            this.lblFormSl.Location = new System.Drawing.Point(302, 634);
             this.lblFormSl.Name = "lblFormSl";
             this.lblFormSl.Size = new System.Drawing.Size(63, 23);
             this.lblFormSl.TabIndex = 27;
