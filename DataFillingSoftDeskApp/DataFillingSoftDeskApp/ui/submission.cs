@@ -87,14 +87,14 @@ namespace DataFillingSoftDeskApp.ui
                     try
                     {
                         if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormFolder\" + userName + ".xlsx"))
+                                        @"\FormZipFolder\" + userName + ".xlsx"))
                         {
                             File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormFolder\" + userName + ".xlsx");
+                                        @"\FormZipFolder\" + userName + ".xlsx");
                         }
 
                         Directory.CreateDirectory(
-                            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder");
+                            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
                         worksheet.SaveAs(filePath, Type.Missing);
                         excelApp.Quit();
                         return true;
@@ -126,7 +126,7 @@ namespace DataFillingSoftDeskApp.ui
                 {
 
                     zip.Password = "123";
-                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder";
+                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
                     zip.AddDirectory(fileName);
                     zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
 
@@ -164,7 +164,7 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
-                ExportToExcel(TableData(), Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder\" + userName + ".xlsx");
+                ExportToExcel(TableData(), Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName + ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 SaveZip();
                 try
