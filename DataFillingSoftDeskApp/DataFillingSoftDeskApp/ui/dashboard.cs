@@ -87,6 +87,16 @@ namespace DataFillingSoftDeskApp.ui
             }
 
             lblDate.Text = DateTime.Now.ToString();
+            string regDate =
+                function.IsExist(
+                    $@"SELECT RegistrationDate FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            lblExpireDate.Text = (Convert.ToDateTime(regDate).AddDays(21)).ToString();
+            if (Convert.ToDateTime(lblDate.Text)>=Convert.ToDateTime(lblExpireDate.Text))
+            {
+                btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
+                    btnGroup1.Enabled = btnGroup2.Enabled =
+                        btnGroup3.Enabled = btnSave.Enabled = btnViewData.Enabled =panelGrp1.Enabled= false;
+            }
         }
 
         private void dashboard_MouseMove(object sender, MouseEventArgs e)
@@ -206,26 +216,29 @@ namespace DataFillingSoftDeskApp.ui
 
         private void AddTextToTextbox(TextBox textBox, string dataText)
         {
-            if (textBox.Text.Contains(dataText))
-            {
-                textBox.Text = textBox.Text.Replace(dataText, null);
-            }
-            else
-            {
+            //if (textBox.Text.Contains(dataText))
+            //{
+            //    textBox.Text = textBox.Text.Replace(dataText, null);
+            //}
+            //else
+            //{
                 textBox.Text = dataText + textBox.Text;
-            }
+                textBox.Focus();
+
+            //}
 
         }
         private void AddTextToRichTextbox(RichTextBox textBox, string dataText)
         {
-            if (textBox.Text.Contains(dataText))
-            {
-                textBox.Text = textBox.Text.Replace(dataText, null);
-            }
-            else
-            {
+            //if (textBox.Text.Contains(dataText))
+            //{
+            //    textBox.Text = textBox.Text.Replace(dataText, null);
+            //}
+            //else
+            //{
                 textBox.Text = dataText + textBox.Text;
-            }
+                textBox.Focus();
+                //}
 
         }
         private void btnFormNoB_Click(object sender, EventArgs e)

@@ -48,8 +48,8 @@ namespace DataFillingSoftDeskApp.ui
 
         private DataTable TableData()
         {
-            return function.LoadTable($@"SELECT        FormSerial, FormNo, CompanyCode, CompanyName, CompanyAddress, ZipCode, Fax, Website, Email, ContactNo, State, Country, Headquarter, NoOfEmployees, Industry, BrandAmbassador, MediaPartner, SocialMedia, 
-            FrenchiesPartner, Investor, AdvertisingPartner, Product, Services, Manager, RegistrationDate, YearlyRevenue, Subclassification, Landmark, AccoutAudit, Currency, YearlyExpense, FileName
+            return function.LoadTable($@"SELECT  FileName,FormSerial, FormNo, CompanyCode, CompanyName, CompanyAddress, ZipCode, Fax, Website, Email, ContactNo, State, Country, Headquarter, NoOfEmployees, COALESCE(NULLIF(Industry,''), 'Data Not Available') Industry, BrandAmbassador, MediaPartner, SocialMedia, 
+            FrenchiesPartner, Investor, AdvertisingPartner, Product, Services, Manager, RegistrationDate, YearlyRevenue, Subclassification, Landmark, AccoutAudit, Currency, YearlyExpense
                 FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
 
         }

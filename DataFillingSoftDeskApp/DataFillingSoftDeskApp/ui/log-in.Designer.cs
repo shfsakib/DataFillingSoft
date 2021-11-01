@@ -71,10 +71,11 @@
             // lblDevelop
             // 
             this.lblDevelop.AutoSize = true;
+            this.lblDevelop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDevelop.ForeColor = System.Drawing.Color.White;
             this.lblDevelop.Location = new System.Drawing.Point(139, 494);
             this.lblDevelop.Name = "lblDevelop";
-            this.lblDevelop.Size = new System.Drawing.Size(152, 15);
+            this.lblDevelop.Size = new System.Drawing.Size(145, 13);
             this.lblDevelop.TabIndex = 2;
             this.lblDevelop.Text = "Developed By Sakib Hossain";
             this.lblDevelop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -83,11 +84,11 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblName.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(12, 172);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(212, 38);
+            this.lblName.Size = new System.Drawing.Size(221, 31);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Company Name";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -121,33 +122,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(412, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 33);
+            this.label1.Size = new System.Drawing.Size(240, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Login to your account";
             // 
             // txtUserName
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUserName.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(402, 220);
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(402, 223);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(5);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(288, 27);
+            this.txtUserName.Size = new System.Drawing.Size(288, 22);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(402, 271);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(402, 274);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(10);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(288, 27);
+            this.txtPassword.Size = new System.Drawing.Size(288, 22);
             this.txtPassword.TabIndex = 1;
             // 
             // panelUserName
@@ -155,6 +156,7 @@
             this.panelUserName.BackColor = System.Drawing.Color.White;
             this.panelUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelUserName.Controls.Add(this.pictureBox2);
+            this.panelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelUserName.Location = new System.Drawing.Point(360, 215);
             this.panelUserName.Name = "panelUserName";
             this.panelUserName.Size = new System.Drawing.Size(336, 38);
@@ -175,6 +177,7 @@
             this.panelPass.BackColor = System.Drawing.Color.White;
             this.panelPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelPass.Controls.Add(this.pictureBox3);
+            this.panelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelPass.Location = new System.Drawing.Point(360, 266);
             this.panelPass.Name = "panelPass";
             this.panelPass.Size = new System.Drawing.Size(336, 38);
@@ -195,7 +198,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.DarkCyan;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(539, 321);
             this.btnLogin.Name = "btnLogin";
@@ -210,7 +213,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.ForestGreen;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(360, 321);
             this.btnRegister.Name = "btnRegister";
@@ -225,7 +228,7 @@
             this.btnReset.BackColor = System.Drawing.Color.Maroon;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(360, 381);
             this.btnReset.Name = "btnReset";

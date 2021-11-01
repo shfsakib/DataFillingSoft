@@ -41,11 +41,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 27);
+            this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Registration";
             // 
@@ -81,19 +81,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(12, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 23);
+            this.label3.Size = new System.Drawing.Size(185, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Enter Authentication Key";
             // 
             // txtAuthKey
             // 
+            this.txtAuthKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtAuthKey.Location = new System.Drawing.Point(16, 84);
             this.txtAuthKey.Name = "txtAuthKey";
-            this.txtAuthKey.Size = new System.Drawing.Size(257, 34);
+            this.txtAuthKey.Size = new System.Drawing.Size(257, 29);
             this.txtAuthKey.TabIndex = 0;
             // 
             // btnSubmit
@@ -101,7 +102,7 @@
             this.btnSubmit.BackColor = System.Drawing.Color.DarkCyan;
             this.btnSubmit.FlatAppearance.BorderSize = 0;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.Location = new System.Drawing.Point(155, 124);
             this.btnSubmit.Name = "btnSubmit";
@@ -116,7 +117,7 @@
             this.btnback.BackColor = System.Drawing.Color.BlueViolet;
             this.btnback.FlatAppearance.BorderSize = 0;
             this.btnback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnback.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnback.ForeColor = System.Drawing.Color.White;
             this.btnback.Location = new System.Drawing.Point(16, 124);
             this.btnback.Name = "btnback";

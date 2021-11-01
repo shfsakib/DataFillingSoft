@@ -41,7 +41,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(56, 74);
+            this.label1.Location = new System.Drawing.Point(60, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(383, 29);
             this.label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.progressBg.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.border_01;
             this.progressBg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.progressBg.Controls.Add(this.progressbar);
-            this.progressBg.Location = new System.Drawing.Point(65, 189);
+            this.progressBg.Location = new System.Drawing.Point(62, 189);
             this.progressBg.Name = "progressBg";
             this.progressBg.Size = new System.Drawing.Size(380, 20);
             this.progressBg.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             this.progressbar.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.progressbar_01;
             this.progressbar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.progressbar.Location = new System.Drawing.Point(7, 4);
+            this.progressbar.Location = new System.Drawing.Point(5, 4);
             this.progressbar.Name = "progressbar";
             this.progressbar.Size = new System.Drawing.Size(70, 12);
             this.progressbar.TabIndex = 5;

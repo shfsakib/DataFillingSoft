@@ -51,33 +51,32 @@
             // 
             this.lblAsk.AutoSize = true;
             this.lblAsk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsk.Location = new System.Drawing.Point(15, 127);
+            this.lblAsk.Location = new System.Drawing.Point(14, 126);
             this.lblAsk.Name = "lblAsk";
-            this.lblAsk.Size = new System.Drawing.Size(432, 15);
+            this.lblAsk.Size = new System.Drawing.Size(398, 15);
             this.lblAsk.TabIndex = 9;
-            this.lblAsk.Text = "This Will Delete All Form Entered By You\\r\\n As Well  As Registration\\r\\n Details" +
-    "";
+            this.lblAsk.Text = "This Will Delete All Form Entered By You As Well  As Registration Details";
             this.lblAsk.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(163, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 31);
+            this.label1.Size = new System.Drawing.Size(100, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "Warning";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(55, 151);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(322, 31);
+            this.label2.Size = new System.Drawing.Size(304, 26);
             this.label2.TabIndex = 10;
             this.label2.Text = "Are you sure want to reset?";
             // 
@@ -86,7 +85,7 @@
             this.btnReset.BackColor = System.Drawing.Color.Red;
             this.btnReset.FlatAppearance.BorderSize = 0;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
             this.btnReset.Location = new System.Drawing.Point(229, 194);
             this.btnReset.Name = "btnReset";
@@ -101,7 +100,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.DarkCyan;
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(61, 194);
             this.btnCancel.Name = "btnCancel";
