@@ -64,7 +64,7 @@ namespace DataFillingSoftDeskApp.ui
             else if (percent < 100)
             {
                 panelProgressBar.Width = Convert.ToInt32(percent) * 3;
-                lblPercentage.Text = percent.ToString() + "%";
+                lblPercentage.Text = percent.ToString("0.00") + "%";
             }
             else if (percent == 100)
             {
@@ -91,11 +91,11 @@ namespace DataFillingSoftDeskApp.ui
                 function.IsExist(
                     $@"SELECT RegistrationDate FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
             lblExpireDate.Text = (Convert.ToDateTime(regDate).AddDays(21)).ToString();
-            if (Convert.ToDateTime(lblDate.Text)>=Convert.ToDateTime(lblExpireDate.Text))
+            if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
                 btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
                     btnGroup1.Enabled = btnGroup2.Enabled =
-                        btnGroup3.Enabled = btnSave.Enabled = btnViewData.Enabled =panelGrp1.Enabled= false;
+                        btnGroup3.Enabled = btnSave.Enabled = btnViewData.Enabled = panelGrp1.Enabled = false;
             }
         }
 
@@ -207,6 +207,7 @@ namespace DataFillingSoftDeskApp.ui
                             contentType = "image/bmp";
                             break;
                     }
+                    Clear();
 
                     pictureBox1.Image = Image.FromStream(new MemoryStream(bytes));
                     imageString = function.ImageToBase64(pictureBox1.Image, ImageFormat.Png);
@@ -216,30 +217,29 @@ namespace DataFillingSoftDeskApp.ui
 
         private void AddTextToTextbox(TextBox textBox, string dataText)
         {
-            //if (textBox.Text.Contains(dataText))
-            //{
-            //    textBox.Text = textBox.Text.Replace(dataText, null);
-            //}
-            //else
-            //{
+            if (textBox.Text.Contains(dataText))
+            {
+                textBox.Text = textBox.Text.Replace(dataText, null);
+            }
+            else
+            {
                 textBox.Text = dataText + textBox.Text;
                 textBox.Focus();
 
-            //}
+            }
 
         }
         private void AddTextToRichTextbox(RichTextBox textBox, string dataText)
         {
-            //if (textBox.Text.Contains(dataText))
-            //{
-            //    textBox.Text = textBox.Text.Replace(dataText, null);
-            //}
-            //else
-            //{
+            if (textBox.Text.Contains(dataText))
+            {
+                textBox.Text = textBox.Text.Replace(dataText, null);
+            }
+            else
+            {
                 textBox.Text = dataText + textBox.Text;
-                textBox.Focus();
-                //}
-
+            textBox.Focus();
+            }
         }
         private void btnFormNoB_Click(object sender, EventArgs e)
         {
@@ -987,9 +987,9 @@ namespace DataFillingSoftDeskApp.ui
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (txtFormNo.Text == "" || txtCompanyCode.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "" || txtZip.Text == "" || txtFax.Text == "" || txtWebsite.Text == "" || txtEmail.Text == "" || txtContactNo.Text == "" || txtState.Text == "")
+            if (txtFormNo.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "")
             {
-                function.MessageBox("Please at least fill up group 1 fields", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                function.MessageBox("Form no, company name & company address is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else

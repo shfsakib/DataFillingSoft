@@ -48,6 +48,8 @@
             this.txtFileDone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblExpireDate = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
@@ -247,8 +249,6 @@
             this.panelProgressBar = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblFormSl = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblExpireDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelGrp1.SuspendLayout();
@@ -469,6 +469,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1365, 19);
             this.panel2.TabIndex = 21;
+            // 
+            // lblExpireDate
+            // 
+            this.lblExpireDate.AutoSize = true;
+            this.lblExpireDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpireDate.ForeColor = System.Drawing.Color.White;
+            this.lblExpireDate.Location = new System.Drawing.Point(667, 3);
+            this.lblExpireDate.Name = "lblExpireDate";
+            this.lblExpireDate.Size = new System.Drawing.Size(59, 13);
+            this.lblExpireDate.TabIndex = 25;
+            this.lblExpireDate.Text = "expire date";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(527, 2);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(130, 13);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Your project will expire on:";
             // 
             // lblDate
             // 
@@ -2709,6 +2731,7 @@
             // lblPercentage
             // 
             this.lblPercentage.AutoSize = true;
+            this.lblPercentage.BackColor = System.Drawing.Color.Transparent;
             this.lblPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentage.Location = new System.Drawing.Point(141, 4);
             this.lblPercentage.Name = "lblPercentage";
@@ -2738,28 +2761,6 @@
             this.lblFormSl.TabIndex = 27;
             this.lblFormSl.Text = "label16";
             this.lblFormSl.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(527, 2);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(130, 13);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Your project will expire on:";
-            // 
-            // lblExpireDate
-            // 
-            this.lblExpireDate.AutoSize = true;
-            this.lblExpireDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpireDate.ForeColor = System.Drawing.Color.White;
-            this.lblExpireDate.Location = new System.Drawing.Point(667, 3);
-            this.lblExpireDate.Name = "lblExpireDate";
-            this.lblExpireDate.Size = new System.Drawing.Size(59, 13);
-            this.lblExpireDate.TabIndex = 25;
-            this.lblExpireDate.Text = "expire date";
             // 
             // dashboard
             // 

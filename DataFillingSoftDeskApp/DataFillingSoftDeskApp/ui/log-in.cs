@@ -87,7 +87,7 @@ namespace DataFillingSoftDeskApp.ui
             string pass =
                 function.IsExist(
                     $"SELECT DesktopPassword FROM Users WHERE UserName='{txtUserName.Text}' AND DesktopPassword='{txtPassword.Text}' AND UserStatus='A' AND MacAddress='{function.MacAddress()}' COLLATE Latin1_General_CS_AI");
-            if (pass == txtPassword.Text.Trim())
+            if (pass == txtPassword.Text.Trim() && pass!="")
             {
                 DataTransferProperty.UserId = txtUserName.Text;
                 DataTransferProperty.AuthKey = Properties.Settings.Default.AuthKey;
@@ -98,6 +98,7 @@ namespace DataFillingSoftDeskApp.ui
             else
             {
                 function.MessageBox("Incorrect Email or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUserName.Focus();
             }
 
         }
