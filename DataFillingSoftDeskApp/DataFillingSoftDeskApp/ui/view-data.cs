@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataFillingSoftDeskApp.Class;
 using Ionic.Zip;
+using System.Globalization;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace DataFillingSoftDeskApp.ui
@@ -36,9 +37,12 @@ namespace DataFillingSoftDeskApp.ui
 
         private void LoadData()
         {
-            function.LoadGrid(dataGridView1, $@"SELECT  COALESCE(NULLIF(FormSerial,''), 'Data Not Available') FormSerial,COALESCE(NULLIF(FileName,''), 'Data Not Available') FileName,COALESCE(NULLIF(FormNo,''), 'Data Not Available') FormNo,COALESCE(NULLIF(CompanyCode,''), 'Data Not Available') CompanyCode,COALESCE(NULLIF(CompanyName,''), 'Data Not Available') CompanyName,COALESCE(NULLIF(CompanyAddress,''), 'Data Not Available') CompanyAddress,COALESCE(NULLIF(ZipCode,''), 'Data Not Available') ZipCode,COALESCE(NULLIF(Fax,''), 'Data Not Available') Fax,COALESCE(NULLIF(Website,''), 'Data Not Available') Website,COALESCE(NULLIF(Email,''), 'Data Not Available') Email,COALESCE(NULLIF(ContactNo,''), 'Data Not Available') ContactNo,COALESCE(NULLIF(State,''), 'Data Not Available') State,COALESCE(NULLIF(Country,''), 'Data Not Available') Country,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available') Headquarter,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available')  NoOfEmployees,COALESCE(NULLIF(Industry,''), 'Data Not Available') Industry,COALESCE(NULLIF(BrandAmbassador,''), 'Data Not Available') BrandAmbassador,COALESCE(NULLIF(MediaPartner,''), 'Data Not Available') MediaPartner,COALESCE(NULLIF(SocialMedia,''), 'Data Not Available') SocialMedia, 
-            COALESCE(NULLIF(FrenchiesPartner,''), 'Data Not Available') FrenchiesPartner,COALESCE(NULLIF(Investor,''), 'Data Not Available') Investor,COALESCE(NULLIF(AdvertisingPartner,''), 'Data Not Available') AdvertisingPartner,COALESCE(NULLIF(Product,''), 'Data Not Available') Product,COALESCE(NULLIF(Services,''), 'Data Not Available') Services,COALESCE(NULLIF(Manager,''), 'Data Not Available') Manager,COALESCE(NULLIF(RegistrationDate,''), 'Data Not Available') RegistrationDate,COALESCE(NULLIF(YearlyRevenue,''), 'Data Not Available') YearlyRevenue,COALESCE(NULLIF(Subclassification,''), 'Data Not Available') Subclassification,COALESCE(NULLIF(Landmark,''), 'Data Not Available') Landmark,COALESCE(NULLIF(AccoutAudit,''), 'Data Not Available') AccoutAudit,COALESCE(NULLIF(Currency,''), 'Data Not Available') Currency,COALESCE(NULLIF(YearlyExpense,''), 'Data Not Available') YearlyExpense
-                FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+            //function.LoadGrid(dataGridView1, $@"SELECT  COALESCE(NULLIF(FormSerial,''), 'Data Not Available') FormSerial,COALESCE(NULLIF(FileName,''), 'Data Not Available') FileName,COALESCE(NULLIF(FormNo,''), 'Data Not Available') FormNo,COALESCE(NULLIF(CompanyCode,''), 'Data Not Available') CompanyCode,COALESCE(NULLIF(CompanyName,''), 'Data Not Available') CompanyName,COALESCE(NULLIF(CompanyAddress,''), 'Data Not Available') CompanyAddress,COALESCE(NULLIF(ZipCode,''), 'Data Not Available') ZipCode,COALESCE(NULLIF(Fax,''), 'Data Not Available') Fax,COALESCE(NULLIF(Website,''), 'Data Not Available') Website,COALESCE(NULLIF(Email,''), 'Data Not Available') Email,COALESCE(NULLIF(ContactNo,''), 'Data Not Available') ContactNo,COALESCE(NULLIF(State,''), 'Data Not Available') State,COALESCE(NULLIF(Country,''), 'Data Not Available') Country,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available') Headquarter,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available')  NoOfEmployees,COALESCE(NULLIF(Industry,''), 'Data Not Available') Industry,COALESCE(NULLIF(BrandAmbassador,''), 'Data Not Available') BrandAmbassador,COALESCE(NULLIF(MediaPartner,''), 'Data Not Available') MediaPartner,COALESCE(NULLIF(SocialMedia,''), 'Data Not Available') SocialMedia, 
+            //COALESCE(NULLIF(FrenchiesPartner,''), 'Data Not Available') FrenchiesPartner,COALESCE(NULLIF(Investor,''), 'Data Not Available') Investor,COALESCE(NULLIF(AdvertisingPartner,''), 'Data Not Available') AdvertisingPartner,COALESCE(NULLIF(Product,''), 'Data Not Available') Product,COALESCE(NULLIF(Services,''), 'Data Not Available') Services,COALESCE(NULLIF(Manager,''), 'Data Not Available') Manager,COALESCE(NULLIF(RegistrationDate,''), 'Data Not Available') RegistrationDate,COALESCE(NULLIF(YearlyRevenue,''), 'Data Not Available') YearlyRevenue,COALESCE(NULLIF(Subclassification,''), 'Data Not Available') Subclassification,COALESCE(NULLIF(Landmark,''), 'Data Not Available') Landmark,COALESCE(NULLIF(AccoutAudit,''), 'Data Not Available') AccoutAudit,COALESCE(NULLIF(Currency,''), 'Data Not Available') Currency,COALESCE(NULLIF(YearlyExpense,''), 'Data Not Available') YearlyExpense
+            //    FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+            function.LoadGrid(dataGridView1, $@"SELECT        FormSerial, FileName, FormNo, CompanyCode, CompanyName, CompanyAddress, ZipCode, Fax, Website, Email, ContactNo, State, Country, Headquarter, NoOfEmployees, Industry, BrandAmbassador, MediaPartner, 
+                         SocialMedia, FrenchiesPartner, Investor, AdvertisingPartner, Product, Services, Manager, RegistrationDate, YearlyRevenue, Subclassification, Landmark, AccoutAudit, Currency, YearlyExpense
+FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -48,9 +52,9 @@ namespace DataFillingSoftDeskApp.ui
 
         private DataTable TableData()
         {
-            return function.LoadTable($@"SELECT  COALESCE(NULLIF(FormSerial,''), 'Data Not Available') FormSerial,COALESCE(NULLIF(FileName,''), 'Data Not Available') FileName,COALESCE(NULLIF(FormNo,''), 'Data Not Available') FormNo,COALESCE(NULLIF(CompanyCode,''), 'Data Not Available') CompanyCode,COALESCE(NULLIF(CompanyName,''), 'Data Not Available') CompanyName,COALESCE(NULLIF(CompanyAddress,''), 'Data Not Available') CompanyAddress,COALESCE(NULLIF(ZipCode,''), 'Data Not Available') ZipCode,COALESCE(NULLIF(Fax,''), 'Data Not Available') Fax,COALESCE(NULLIF(Website,''), 'Data Not Available') Website,COALESCE(NULLIF(Email,''), 'Data Not Available') Email,COALESCE(NULLIF(ContactNo,''), 'Data Not Available') ContactNo,COALESCE(NULLIF(State,''), 'Data Not Available') State,COALESCE(NULLIF(Country,''), 'Data Not Available') Country,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available') Headquarter,COALESCE(NULLIF(NoOfEmployees,''), 'Data Not Available')  NoOfEmployees,COALESCE(NULLIF(Industry,''), 'Data Not Available') Industry,COALESCE(NULLIF(BrandAmbassador,''), 'Data Not Available') BrandAmbassador,COALESCE(NULLIF(MediaPartner,''), 'Data Not Available') MediaPartner,COALESCE(NULLIF(SocialMedia,''), 'Data Not Available') SocialMedia, 
-            COALESCE(NULLIF(FrenchiesPartner,''), 'Data Not Available') FrenchiesPartner,COALESCE(NULLIF(Investor,''), 'Data Not Available') Investor,COALESCE(NULLIF(AdvertisingPartner,''), 'Data Not Available') AdvertisingPartner,COALESCE(NULLIF(Product,''), 'Data Not Available') Product,COALESCE(NULLIF(Services,''), 'Data Not Available') Services,COALESCE(NULLIF(Manager,''), 'Data Not Available') Manager,COALESCE(NULLIF(RegistrationDate,''), 'Data Not Available') RegistrationDate,COALESCE(NULLIF(YearlyRevenue,''), 'Data Not Available') YearlyRevenue,COALESCE(NULLIF(Subclassification,''), 'Data Not Available') Subclassification,COALESCE(NULLIF(Landmark,''), 'Data Not Available') Landmark,COALESCE(NULLIF(AccoutAudit,''), 'Data Not Available') AccoutAudit,COALESCE(NULLIF(Currency,''), 'Data Not Available') Currency,COALESCE(NULLIF(YearlyExpense,''), 'Data Not Available') YearlyExpense
-                FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+            return function.LoadTable($@"SELECT        FormSerial, FileName, FormNo, CompanyCode, CompanyName, CompanyAddress, ZipCode, Fax, Website, Email, ContactNo, State, Country, Headquarter, NoOfEmployees, Industry, BrandAmbassador, MediaPartner, 
+                         SocialMedia, FrenchiesPartner, Investor, AdvertisingPartner, Product, Services, Manager, RegistrationDate, YearlyRevenue, Subclassification, Landmark, AccoutAudit, Currency, YearlyExpense
+FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
 
         }
         private void ExportToExcel(DataTable dataTable, string filePath)
@@ -78,6 +82,12 @@ namespace DataFillingSoftDeskApp.ui
                     for (int j = 0; j < dataTable.Columns.Count; j++)
                     {
                         worksheet.Cells[(i + 2), (j + 1)] = dataTable.Rows[i][j];
+                        //if (dataTable.Rows[i][j].ToString() == "544644444")
+                        //{
+                        //    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                        //    worksheet.Cells[(i + 2), (j + 1)].AddComment("Title"+"\r\n"+"Hello");
+                        //    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame.Characters(5, 10).Font.Bold = false;
+                        //}
                     }
                 }
                 //check filepath
@@ -126,5 +136,7 @@ namespace DataFillingSoftDeskApp.ui
             //Thread.Sleep(TimeSpan.FromSeconds(5));
             //SaveZip();
         }
+
+      
     }
 }

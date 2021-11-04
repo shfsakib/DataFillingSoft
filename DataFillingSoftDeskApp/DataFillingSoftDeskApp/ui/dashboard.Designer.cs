@@ -268,7 +268,7 @@
             this.panel1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1365, 39);
+            this.panel1.Size = new System.Drawing.Size(1235, 39);
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -283,7 +283,7 @@
             this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.ForeColor = System.Drawing.Color.Coral;
-            this.btnMinimize.Location = new System.Drawing.Point(1304, 6);
+            this.btnMinimize.Location = new System.Drawing.Point(1174, 6);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(15, 25);
             this.btnMinimize.TabIndex = 5;
@@ -301,7 +301,7 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Coral;
-            this.btnClose.Location = new System.Drawing.Point(1330, 6);
+            this.btnClose.Location = new System.Drawing.Point(1200, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
             this.btnClose.TabIndex = 4;
@@ -323,7 +323,7 @@
             // btnLoadFiles
             // 
             this.btnLoadFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadFiles.Location = new System.Drawing.Point(12, 626);
+            this.btnLoadFiles.Location = new System.Drawing.Point(12, 591);
             this.btnLoadFiles.Name = "btnLoadFiles";
             this.btnLoadFiles.Size = new System.Drawing.Size(102, 40);
             this.btnLoadFiles.TabIndex = 9;
@@ -334,7 +334,7 @@
             // btnNextForm
             // 
             this.btnNextForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNextForm.Location = new System.Drawing.Point(665, 626);
+            this.btnNextForm.Location = new System.Drawing.Point(578, 583);
             this.btnNextForm.Name = "btnNextForm";
             this.btnNextForm.Size = new System.Drawing.Size(102, 31);
             this.btnNextForm.TabIndex = 5;
@@ -345,7 +345,7 @@
             // btnPrevForm
             // 
             this.btnPrevForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevForm.Location = new System.Drawing.Point(557, 626);
+            this.btnPrevForm.Location = new System.Drawing.Point(470, 583);
             this.btnPrevForm.Name = "btnPrevForm";
             this.btnPrevForm.Size = new System.Drawing.Size(102, 31);
             this.btnPrevForm.TabIndex = 4;
@@ -356,7 +356,7 @@
             // btnGroup3
             // 
             this.btnGroup3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroup3.Location = new System.Drawing.Point(665, 663);
+            this.btnGroup3.Location = new System.Drawing.Point(578, 619);
             this.btnGroup3.Name = "btnGroup3";
             this.btnGroup3.Size = new System.Drawing.Size(102, 32);
             this.btnGroup3.TabIndex = 8;
@@ -367,7 +367,7 @@
             // btnGroup2
             // 
             this.btnGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroup2.Location = new System.Drawing.Point(557, 663);
+            this.btnGroup2.Location = new System.Drawing.Point(470, 619);
             this.btnGroup2.Name = "btnGroup2";
             this.btnGroup2.Size = new System.Drawing.Size(102, 32);
             this.btnGroup2.TabIndex = 7;
@@ -378,7 +378,7 @@
             // btnGroup1
             // 
             this.btnGroup1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGroup1.Location = new System.Drawing.Point(449, 663);
+            this.btnGroup1.Location = new System.Drawing.Point(362, 619);
             this.btnGroup1.Name = "btnGroup1";
             this.btnGroup1.Size = new System.Drawing.Size(102, 32);
             this.btnGroup1.TabIndex = 6;
@@ -389,7 +389,7 @@
             // btnNewForm
             // 
             this.btnNewForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewForm.Location = new System.Drawing.Point(449, 626);
+            this.btnNewForm.Location = new System.Drawing.Point(362, 583);
             this.btnNewForm.Name = "btnNewForm";
             this.btnNewForm.Size = new System.Drawing.Size(102, 31);
             this.btnNewForm.TabIndex = 3;
@@ -400,7 +400,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(557, 701);
+            this.btnSave.Location = new System.Drawing.Point(470, 657);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 32);
             this.btnSave.TabIndex = 1;
@@ -411,7 +411,7 @@
             // btnViewData
             // 
             this.btnViewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewData.Location = new System.Drawing.Point(665, 701);
+            this.btnViewData.Location = new System.Drawing.Point(578, 657);
             this.btnViewData.Name = "btnViewData";
             this.btnViewData.Size = new System.Drawing.Size(102, 32);
             this.btnViewData.TabIndex = 2;
@@ -423,7 +423,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 694);
+            this.label2.Location = new System.Drawing.Point(12, 649);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 15);
             this.label2.TabIndex = 17;
@@ -432,7 +432,7 @@
             // txtFileTaken
             // 
             this.txtFileTaken.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileTaken.Location = new System.Drawing.Point(83, 692);
+            this.txtFileTaken.Location = new System.Drawing.Point(83, 647);
             this.txtFileTaken.Name = "txtFileTaken";
             this.txtFileTaken.ReadOnly = true;
             this.txtFileTaken.Size = new System.Drawing.Size(100, 20);
@@ -441,7 +441,7 @@
             // txtFileDone
             // 
             this.txtFileDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFileDone.Location = new System.Drawing.Point(83, 720);
+            this.txtFileDone.Location = new System.Drawing.Point(83, 673);
             this.txtFileDone.Name = "txtFileDone";
             this.txtFileDone.ReadOnly = true;
             this.txtFileDone.Size = new System.Drawing.Size(100, 20);
@@ -451,7 +451,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 722);
+            this.label3.Location = new System.Drawing.Point(17, 675);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 19;
@@ -465,9 +465,9 @@
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 730);
+            this.panel2.Location = new System.Drawing.Point(0, 716);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1365, 19);
+            this.panel2.Size = new System.Drawing.Size(1235, 19);
             this.panel2.TabIndex = 21;
             // 
             // lblExpireDate
@@ -475,7 +475,7 @@
             this.lblExpireDate.AutoSize = true;
             this.lblExpireDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpireDate.ForeColor = System.Drawing.Color.White;
-            this.lblExpireDate.Location = new System.Drawing.Point(667, 3);
+            this.lblExpireDate.Location = new System.Drawing.Point(410, 3);
             this.lblExpireDate.Name = "lblExpireDate";
             this.lblExpireDate.Size = new System.Drawing.Size(59, 13);
             this.lblExpireDate.TabIndex = 25;
@@ -486,7 +486,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(527, 2);
+            this.label16.Location = new System.Drawing.Point(270, 2);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(130, 13);
             this.label16.TabIndex = 24;
@@ -522,7 +522,7 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(1229, 45);
+            this.btnSubmit.Location = new System.Drawing.Point(1099, 45);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(126, 43);
             this.btnSubmit.TabIndex = 22;
@@ -534,7 +534,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(790, 45);
+            this.label5.Location = new System.Drawing.Point(693, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 15);
             this.label5.TabIndex = 23;
@@ -544,7 +544,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(979, 45);
+            this.label6.Location = new System.Drawing.Point(882, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 15);
             this.label6.TabIndex = 24;
@@ -553,7 +553,7 @@
             // txtClientName
             // 
             this.txtClientName.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClientName.Location = new System.Drawing.Point(792, 66);
+            this.txtClientName.Location = new System.Drawing.Point(695, 66);
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.ReadOnly = true;
             this.txtClientName.Size = new System.Drawing.Size(178, 22);
@@ -562,10 +562,10 @@
             // txtUserIdRegDate
             // 
             this.txtUserIdRegDate.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserIdRegDate.Location = new System.Drawing.Point(981, 66);
+            this.txtUserIdRegDate.Location = new System.Drawing.Point(884, 66);
             this.txtUserIdRegDate.Name = "txtUserIdRegDate";
             this.txtUserIdRegDate.ReadOnly = true;
-            this.txtUserIdRegDate.Size = new System.Drawing.Size(233, 22);
+            this.txtUserIdRegDate.Size = new System.Drawing.Size(207, 22);
             this.txtUserIdRegDate.TabIndex = 26;
             // 
             // panelGrp1
@@ -634,16 +634,16 @@
             this.panelGrp1.Controls.Add(this.label8);
             this.panelGrp1.Controls.Add(this.label7);
             this.panelGrp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelGrp1.Location = new System.Drawing.Point(792, 98);
+            this.panelGrp1.Location = new System.Drawing.Point(695, 94);
             this.panelGrp1.Name = "panelGrp1";
-            this.panelGrp1.Size = new System.Drawing.Size(563, 200);
+            this.panelGrp1.Size = new System.Drawing.Size(529, 192);
             this.panelGrp1.TabIndex = 0;
             // 
             // btnStateR
             // 
             this.btnStateR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStateR.ForeColor = System.Drawing.Color.Red;
-            this.btnStateR.Location = new System.Drawing.Point(501, 337);
+            this.btnStateR.Location = new System.Drawing.Point(466, 337);
             this.btnStateR.Name = "btnStateR";
             this.btnStateR.Size = new System.Drawing.Size(38, 27);
             this.btnStateR.TabIndex = 90;
@@ -654,7 +654,7 @@
             // btnStateU
             // 
             this.btnStateU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStateU.Location = new System.Drawing.Point(457, 337);
+            this.btnStateU.Location = new System.Drawing.Point(422, 337);
             this.btnStateU.Name = "btnStateU";
             this.btnStateU.Size = new System.Drawing.Size(38, 27);
             this.btnStateU.TabIndex = 89;
@@ -665,7 +665,7 @@
             // btnStateI
             // 
             this.btnStateI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStateI.Location = new System.Drawing.Point(413, 337);
+            this.btnStateI.Location = new System.Drawing.Point(378, 337);
             this.btnStateI.Name = "btnStateI";
             this.btnStateI.Size = new System.Drawing.Size(38, 27);
             this.btnStateI.TabIndex = 88;
@@ -676,7 +676,7 @@
             // btnStateB
             // 
             this.btnStateB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStateB.Location = new System.Drawing.Point(369, 337);
+            this.btnStateB.Location = new System.Drawing.Point(334, 337);
             this.btnStateB.Name = "btnStateB";
             this.btnStateB.Size = new System.Drawing.Size(38, 27);
             this.btnStateB.TabIndex = 87;
@@ -688,7 +688,7 @@
             // 
             this.btnContR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContR.ForeColor = System.Drawing.Color.Red;
-            this.btnContR.Location = new System.Drawing.Point(501, 300);
+            this.btnContR.Location = new System.Drawing.Point(466, 300);
             this.btnContR.Name = "btnContR";
             this.btnContR.Size = new System.Drawing.Size(38, 27);
             this.btnContR.TabIndex = 86;
@@ -699,7 +699,7 @@
             // btnContU
             // 
             this.btnContU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContU.Location = new System.Drawing.Point(457, 300);
+            this.btnContU.Location = new System.Drawing.Point(422, 300);
             this.btnContU.Name = "btnContU";
             this.btnContU.Size = new System.Drawing.Size(38, 27);
             this.btnContU.TabIndex = 85;
@@ -710,7 +710,7 @@
             // btnContI
             // 
             this.btnContI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContI.Location = new System.Drawing.Point(413, 300);
+            this.btnContI.Location = new System.Drawing.Point(378, 300);
             this.btnContI.Name = "btnContI";
             this.btnContI.Size = new System.Drawing.Size(38, 27);
             this.btnContI.TabIndex = 84;
@@ -721,7 +721,7 @@
             // btnContB
             // 
             this.btnContB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContB.Location = new System.Drawing.Point(369, 300);
+            this.btnContB.Location = new System.Drawing.Point(334, 300);
             this.btnContB.Name = "btnContB";
             this.btnContB.Size = new System.Drawing.Size(38, 27);
             this.btnContB.TabIndex = 83;
@@ -733,7 +733,7 @@
             // 
             this.btnEmailR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmailR.ForeColor = System.Drawing.Color.Red;
-            this.btnEmailR.Location = new System.Drawing.Point(501, 268);
+            this.btnEmailR.Location = new System.Drawing.Point(466, 268);
             this.btnEmailR.Name = "btnEmailR";
             this.btnEmailR.Size = new System.Drawing.Size(38, 27);
             this.btnEmailR.TabIndex = 82;
@@ -744,7 +744,7 @@
             // btnEmailU
             // 
             this.btnEmailU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmailU.Location = new System.Drawing.Point(457, 268);
+            this.btnEmailU.Location = new System.Drawing.Point(422, 268);
             this.btnEmailU.Name = "btnEmailU";
             this.btnEmailU.Size = new System.Drawing.Size(38, 27);
             this.btnEmailU.TabIndex = 81;
@@ -755,7 +755,7 @@
             // btnEmailI
             // 
             this.btnEmailI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmailI.Location = new System.Drawing.Point(413, 268);
+            this.btnEmailI.Location = new System.Drawing.Point(378, 268);
             this.btnEmailI.Name = "btnEmailI";
             this.btnEmailI.Size = new System.Drawing.Size(38, 27);
             this.btnEmailI.TabIndex = 80;
@@ -766,7 +766,7 @@
             // btnEmailB
             // 
             this.btnEmailB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmailB.Location = new System.Drawing.Point(369, 268);
+            this.btnEmailB.Location = new System.Drawing.Point(334, 268);
             this.btnEmailB.Name = "btnEmailB";
             this.btnEmailB.Size = new System.Drawing.Size(38, 27);
             this.btnEmailB.TabIndex = 79;
@@ -778,7 +778,7 @@
             // 
             this.btnWebR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWebR.ForeColor = System.Drawing.Color.Red;
-            this.btnWebR.Location = new System.Drawing.Point(501, 237);
+            this.btnWebR.Location = new System.Drawing.Point(466, 237);
             this.btnWebR.Name = "btnWebR";
             this.btnWebR.Size = new System.Drawing.Size(38, 27);
             this.btnWebR.TabIndex = 78;
@@ -789,7 +789,7 @@
             // btnWebU
             // 
             this.btnWebU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWebU.Location = new System.Drawing.Point(457, 237);
+            this.btnWebU.Location = new System.Drawing.Point(422, 237);
             this.btnWebU.Name = "btnWebU";
             this.btnWebU.Size = new System.Drawing.Size(38, 27);
             this.btnWebU.TabIndex = 77;
@@ -800,7 +800,7 @@
             // btnWebI
             // 
             this.btnWebI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWebI.Location = new System.Drawing.Point(413, 237);
+            this.btnWebI.Location = new System.Drawing.Point(378, 237);
             this.btnWebI.Name = "btnWebI";
             this.btnWebI.Size = new System.Drawing.Size(38, 27);
             this.btnWebI.TabIndex = 76;
@@ -811,7 +811,7 @@
             // btnWebB
             // 
             this.btnWebB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWebB.Location = new System.Drawing.Point(369, 237);
+            this.btnWebB.Location = new System.Drawing.Point(334, 237);
             this.btnWebB.Name = "btnWebB";
             this.btnWebB.Size = new System.Drawing.Size(38, 27);
             this.btnWebB.TabIndex = 75;
@@ -833,7 +833,7 @@
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtState.Location = new System.Drawing.Point(138, 339);
             this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(225, 23);
+            this.txtState.Size = new System.Drawing.Size(188, 23);
             this.txtState.TabIndex = 9;
             this.txtState.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtState_PreviewKeyDown);
             // 
@@ -862,7 +862,7 @@
             this.txtContactNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContactNo.Location = new System.Drawing.Point(138, 302);
             this.txtContactNo.Name = "txtContactNo";
-            this.txtContactNo.Size = new System.Drawing.Size(225, 23);
+            this.txtContactNo.Size = new System.Drawing.Size(188, 23);
             this.txtContactNo.TabIndex = 8;
             this.txtContactNo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtContactNo_PreviewKeyDown);
             // 
@@ -871,7 +871,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(138, 270);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(225, 23);
+            this.txtEmail.Size = new System.Drawing.Size(188, 23);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtEmail_PreviewKeyDown);
             // 
@@ -880,7 +880,7 @@
             this.txtWebsite.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWebsite.Location = new System.Drawing.Point(138, 239);
             this.txtWebsite.Name = "txtWebsite";
-            this.txtWebsite.Size = new System.Drawing.Size(225, 23);
+            this.txtWebsite.Size = new System.Drawing.Size(188, 23);
             this.txtWebsite.TabIndex = 6;
             this.txtWebsite.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtWebsite_PreviewKeyDown);
             // 
@@ -908,7 +908,7 @@
             // 
             this.btnFaxR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaxR.ForeColor = System.Drawing.Color.Red;
-            this.btnFaxR.Location = new System.Drawing.Point(501, 204);
+            this.btnFaxR.Location = new System.Drawing.Point(466, 204);
             this.btnFaxR.Name = "btnFaxR";
             this.btnFaxR.Size = new System.Drawing.Size(38, 27);
             this.btnFaxR.TabIndex = 63;
@@ -919,7 +919,7 @@
             // btnFaxU
             // 
             this.btnFaxU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaxU.Location = new System.Drawing.Point(457, 204);
+            this.btnFaxU.Location = new System.Drawing.Point(422, 204);
             this.btnFaxU.Name = "btnFaxU";
             this.btnFaxU.Size = new System.Drawing.Size(38, 27);
             this.btnFaxU.TabIndex = 62;
@@ -930,7 +930,7 @@
             // btnFaxI
             // 
             this.btnFaxI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaxI.Location = new System.Drawing.Point(413, 204);
+            this.btnFaxI.Location = new System.Drawing.Point(378, 204);
             this.btnFaxI.Name = "btnFaxI";
             this.btnFaxI.Size = new System.Drawing.Size(38, 27);
             this.btnFaxI.TabIndex = 61;
@@ -941,7 +941,7 @@
             // btnFaxB
             // 
             this.btnFaxB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFaxB.Location = new System.Drawing.Point(369, 204);
+            this.btnFaxB.Location = new System.Drawing.Point(334, 204);
             this.btnFaxB.Name = "btnFaxB";
             this.btnFaxB.Size = new System.Drawing.Size(38, 27);
             this.btnFaxB.TabIndex = 60;
@@ -953,7 +953,7 @@
             // 
             this.btnZipR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnZipR.ForeColor = System.Drawing.Color.Red;
-            this.btnZipR.Location = new System.Drawing.Point(501, 174);
+            this.btnZipR.Location = new System.Drawing.Point(466, 174);
             this.btnZipR.Name = "btnZipR";
             this.btnZipR.Size = new System.Drawing.Size(38, 27);
             this.btnZipR.TabIndex = 59;
@@ -964,7 +964,7 @@
             // btnZipU
             // 
             this.btnZipU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZipU.Location = new System.Drawing.Point(457, 174);
+            this.btnZipU.Location = new System.Drawing.Point(422, 174);
             this.btnZipU.Name = "btnZipU";
             this.btnZipU.Size = new System.Drawing.Size(38, 27);
             this.btnZipU.TabIndex = 58;
@@ -975,7 +975,7 @@
             // btnZipI
             // 
             this.btnZipI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZipI.Location = new System.Drawing.Point(413, 174);
+            this.btnZipI.Location = new System.Drawing.Point(378, 174);
             this.btnZipI.Name = "btnZipI";
             this.btnZipI.Size = new System.Drawing.Size(38, 27);
             this.btnZipI.TabIndex = 57;
@@ -986,7 +986,7 @@
             // btnZipB
             // 
             this.btnZipB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZipB.Location = new System.Drawing.Point(369, 174);
+            this.btnZipB.Location = new System.Drawing.Point(334, 174);
             this.btnZipB.Name = "btnZipB";
             this.btnZipB.Size = new System.Drawing.Size(38, 27);
             this.btnZipB.TabIndex = 56;
@@ -999,7 +999,7 @@
             this.txtFax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFax.Location = new System.Drawing.Point(138, 206);
             this.txtFax.Name = "txtFax";
-            this.txtFax.Size = new System.Drawing.Size(225, 23);
+            this.txtFax.Size = new System.Drawing.Size(188, 23);
             this.txtFax.TabIndex = 5;
             this.txtFax.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFax_PreviewKeyDown);
             // 
@@ -1018,7 +1018,7 @@
             this.txtZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZip.Location = new System.Drawing.Point(138, 176);
             this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(225, 23);
+            this.txtZip.Size = new System.Drawing.Size(188, 23);
             this.txtZip.TabIndex = 4;
             this.txtZip.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtZip_PreviewKeyDown);
             // 
@@ -1036,7 +1036,7 @@
             // 
             this.btnComAddR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComAddR.ForeColor = System.Drawing.Color.Red;
-            this.btnComAddR.Location = new System.Drawing.Point(501, 122);
+            this.btnComAddR.Location = new System.Drawing.Point(466, 122);
             this.btnComAddR.Name = "btnComAddR";
             this.btnComAddR.Size = new System.Drawing.Size(38, 27);
             this.btnComAddR.TabIndex = 51;
@@ -1047,7 +1047,7 @@
             // btnComAddU
             // 
             this.btnComAddU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComAddU.Location = new System.Drawing.Point(457, 122);
+            this.btnComAddU.Location = new System.Drawing.Point(422, 122);
             this.btnComAddU.Name = "btnComAddU";
             this.btnComAddU.Size = new System.Drawing.Size(38, 27);
             this.btnComAddU.TabIndex = 50;
@@ -1058,7 +1058,7 @@
             // btnComAddI
             // 
             this.btnComAddI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComAddI.Location = new System.Drawing.Point(413, 122);
+            this.btnComAddI.Location = new System.Drawing.Point(378, 122);
             this.btnComAddI.Name = "btnComAddI";
             this.btnComAddI.Size = new System.Drawing.Size(38, 27);
             this.btnComAddI.TabIndex = 49;
@@ -1069,7 +1069,7 @@
             // btnComAddB
             // 
             this.btnComAddB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComAddB.Location = new System.Drawing.Point(369, 122);
+            this.btnComAddB.Location = new System.Drawing.Point(334, 122);
             this.btnComAddB.Name = "btnComAddB";
             this.btnComAddB.Size = new System.Drawing.Size(38, 27);
             this.btnComAddB.TabIndex = 48;
@@ -1081,7 +1081,7 @@
             // 
             this.btnComNameR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComNameR.ForeColor = System.Drawing.Color.Red;
-            this.btnComNameR.Location = new System.Drawing.Point(501, 72);
+            this.btnComNameR.Location = new System.Drawing.Point(466, 72);
             this.btnComNameR.Name = "btnComNameR";
             this.btnComNameR.Size = new System.Drawing.Size(38, 27);
             this.btnComNameR.TabIndex = 47;
@@ -1092,7 +1092,7 @@
             // btnComNameU
             // 
             this.btnComNameU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComNameU.Location = new System.Drawing.Point(457, 72);
+            this.btnComNameU.Location = new System.Drawing.Point(422, 72);
             this.btnComNameU.Name = "btnComNameU";
             this.btnComNameU.Size = new System.Drawing.Size(38, 27);
             this.btnComNameU.TabIndex = 46;
@@ -1103,7 +1103,7 @@
             // btnComNameI
             // 
             this.btnComNameI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComNameI.Location = new System.Drawing.Point(413, 72);
+            this.btnComNameI.Location = new System.Drawing.Point(378, 72);
             this.btnComNameI.Name = "btnComNameI";
             this.btnComNameI.Size = new System.Drawing.Size(38, 27);
             this.btnComNameI.TabIndex = 45;
@@ -1114,7 +1114,7 @@
             // btnComNameB
             // 
             this.btnComNameB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComNameB.Location = new System.Drawing.Point(369, 72);
+            this.btnComNameB.Location = new System.Drawing.Point(334, 72);
             this.btnComNameB.Name = "btnComNameB";
             this.btnComNameB.Size = new System.Drawing.Size(38, 27);
             this.btnComNameB.TabIndex = 44;
@@ -1126,7 +1126,7 @@
             // 
             this.btnComCodeR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComCodeR.ForeColor = System.Drawing.Color.Red;
-            this.btnComCodeR.Location = new System.Drawing.Point(501, 39);
+            this.btnComCodeR.Location = new System.Drawing.Point(466, 39);
             this.btnComCodeR.Name = "btnComCodeR";
             this.btnComCodeR.Size = new System.Drawing.Size(38, 27);
             this.btnComCodeR.TabIndex = 43;
@@ -1137,7 +1137,7 @@
             // btnComCodeU
             // 
             this.btnComCodeU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComCodeU.Location = new System.Drawing.Point(457, 40);
+            this.btnComCodeU.Location = new System.Drawing.Point(422, 40);
             this.btnComCodeU.Name = "btnComCodeU";
             this.btnComCodeU.Size = new System.Drawing.Size(38, 27);
             this.btnComCodeU.TabIndex = 42;
@@ -1148,7 +1148,7 @@
             // btnComCodeI
             // 
             this.btnComCodeI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComCodeI.Location = new System.Drawing.Point(413, 41);
+            this.btnComCodeI.Location = new System.Drawing.Point(378, 41);
             this.btnComCodeI.Name = "btnComCodeI";
             this.btnComCodeI.Size = new System.Drawing.Size(38, 27);
             this.btnComCodeI.TabIndex = 41;
@@ -1159,7 +1159,7 @@
             // btnComCodeB
             // 
             this.btnComCodeB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComCodeB.Location = new System.Drawing.Point(369, 41);
+            this.btnComCodeB.Location = new System.Drawing.Point(334, 41);
             this.btnComCodeB.Name = "btnComCodeB";
             this.btnComCodeB.Size = new System.Drawing.Size(38, 27);
             this.btnComCodeB.TabIndex = 40;
@@ -1172,7 +1172,7 @@
             this.richAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richAddress.Location = new System.Drawing.Point(138, 103);
             this.richAddress.Name = "richAddress";
-            this.richAddress.Size = new System.Drawing.Size(226, 65);
+            this.richAddress.Size = new System.Drawing.Size(188, 65);
             this.richAddress.TabIndex = 3;
             this.richAddress.Text = "";
             this.richAddress.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richAddress_PreviewKeyDown);
@@ -1182,7 +1182,7 @@
             this.txtCompanyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompanyName.Location = new System.Drawing.Point(138, 73);
             this.txtCompanyName.Name = "txtCompanyName";
-            this.txtCompanyName.Size = new System.Drawing.Size(226, 23);
+            this.txtCompanyName.Size = new System.Drawing.Size(188, 23);
             this.txtCompanyName.TabIndex = 2;
             this.txtCompanyName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCompanyName_PreviewKeyDown);
             // 
@@ -1191,7 +1191,7 @@
             this.txtCompanyCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCompanyCode.Location = new System.Drawing.Point(138, 43);
             this.txtCompanyCode.Name = "txtCompanyCode";
-            this.txtCompanyCode.Size = new System.Drawing.Size(226, 23);
+            this.txtCompanyCode.Size = new System.Drawing.Size(188, 23);
             this.txtCompanyCode.TabIndex = 1;
             this.txtCompanyCode.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCompanyCode_PreviewKeyDown);
             // 
@@ -1199,7 +1199,7 @@
             // 
             this.btnFormNoR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFormNoR.ForeColor = System.Drawing.Color.Red;
-            this.btnFormNoR.Location = new System.Drawing.Point(501, 9);
+            this.btnFormNoR.Location = new System.Drawing.Point(466, 9);
             this.btnFormNoR.Name = "btnFormNoR";
             this.btnFormNoR.Size = new System.Drawing.Size(38, 27);
             this.btnFormNoR.TabIndex = 36;
@@ -1210,7 +1210,7 @@
             // btnFormNoU
             // 
             this.btnFormNoU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormNoU.Location = new System.Drawing.Point(457, 9);
+            this.btnFormNoU.Location = new System.Drawing.Point(422, 9);
             this.btnFormNoU.Name = "btnFormNoU";
             this.btnFormNoU.Size = new System.Drawing.Size(38, 27);
             this.btnFormNoU.TabIndex = 35;
@@ -1221,7 +1221,7 @@
             // btnFormNoI
             // 
             this.btnFormNoI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormNoI.Location = new System.Drawing.Point(413, 9);
+            this.btnFormNoI.Location = new System.Drawing.Point(378, 9);
             this.btnFormNoI.Name = "btnFormNoI";
             this.btnFormNoI.Size = new System.Drawing.Size(38, 27);
             this.btnFormNoI.TabIndex = 34;
@@ -1232,7 +1232,7 @@
             // btnFormNoB
             // 
             this.btnFormNoB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormNoB.Location = new System.Drawing.Point(369, 9);
+            this.btnFormNoB.Location = new System.Drawing.Point(334, 9);
             this.btnFormNoB.Name = "btnFormNoB";
             this.btnFormNoB.Size = new System.Drawing.Size(38, 27);
             this.btnFormNoB.TabIndex = 33;
@@ -1245,7 +1245,7 @@
             this.txtFormNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFormNo.Location = new System.Drawing.Point(138, 10);
             this.txtFormNo.Name = "txtFormNo";
-            this.txtFormNo.Size = new System.Drawing.Size(226, 23);
+            this.txtFormNo.Size = new System.Drawing.Size(188, 23);
             this.txtFormNo.TabIndex = 0;
             this.txtFormNo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFormNo_PreviewKeyDown);
             // 
@@ -1355,16 +1355,16 @@
             this.panelGrp2.Controls.Add(this.label28);
             this.panelGrp2.Controls.Add(this.label29);
             this.panelGrp2.Enabled = false;
-            this.panelGrp2.Location = new System.Drawing.Point(792, 314);
+            this.panelGrp2.Location = new System.Drawing.Point(695, 294);
             this.panelGrp2.Name = "panelGrp2";
-            this.panelGrp2.Size = new System.Drawing.Size(563, 200);
+            this.panelGrp2.Size = new System.Drawing.Size(529, 192);
             this.panelGrp2.TabIndex = 0;
             // 
             // btnAdR
             // 
             this.btnAdR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdR.ForeColor = System.Drawing.Color.Red;
-            this.btnAdR.Location = new System.Drawing.Point(500, 334);
+            this.btnAdR.Location = new System.Drawing.Point(463, 334);
             this.btnAdR.Name = "btnAdR";
             this.btnAdR.Size = new System.Drawing.Size(38, 27);
             this.btnAdR.TabIndex = 90;
@@ -1375,7 +1375,7 @@
             // btnAdU
             // 
             this.btnAdU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdU.Location = new System.Drawing.Point(456, 334);
+            this.btnAdU.Location = new System.Drawing.Point(419, 334);
             this.btnAdU.Name = "btnAdU";
             this.btnAdU.Size = new System.Drawing.Size(38, 27);
             this.btnAdU.TabIndex = 89;
@@ -1386,7 +1386,7 @@
             // btnAdI
             // 
             this.btnAdI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdI.Location = new System.Drawing.Point(412, 334);
+            this.btnAdI.Location = new System.Drawing.Point(375, 334);
             this.btnAdI.Name = "btnAdI";
             this.btnAdI.Size = new System.Drawing.Size(38, 27);
             this.btnAdI.TabIndex = 88;
@@ -1397,7 +1397,7 @@
             // btnAdB
             // 
             this.btnAdB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdB.Location = new System.Drawing.Point(368, 334);
+            this.btnAdB.Location = new System.Drawing.Point(331, 334);
             this.btnAdB.Name = "btnAdB";
             this.btnAdB.Size = new System.Drawing.Size(38, 27);
             this.btnAdB.TabIndex = 87;
@@ -1409,7 +1409,7 @@
             // 
             this.btnInvestorR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInvestorR.ForeColor = System.Drawing.Color.Red;
-            this.btnInvestorR.Location = new System.Drawing.Point(500, 300);
+            this.btnInvestorR.Location = new System.Drawing.Point(463, 300);
             this.btnInvestorR.Name = "btnInvestorR";
             this.btnInvestorR.Size = new System.Drawing.Size(38, 27);
             this.btnInvestorR.TabIndex = 86;
@@ -1420,7 +1420,7 @@
             // btnInvestorU
             // 
             this.btnInvestorU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvestorU.Location = new System.Drawing.Point(456, 300);
+            this.btnInvestorU.Location = new System.Drawing.Point(419, 300);
             this.btnInvestorU.Name = "btnInvestorU";
             this.btnInvestorU.Size = new System.Drawing.Size(38, 27);
             this.btnInvestorU.TabIndex = 85;
@@ -1431,7 +1431,7 @@
             // btnInvestorI
             // 
             this.btnInvestorI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvestorI.Location = new System.Drawing.Point(412, 300);
+            this.btnInvestorI.Location = new System.Drawing.Point(375, 300);
             this.btnInvestorI.Name = "btnInvestorI";
             this.btnInvestorI.Size = new System.Drawing.Size(38, 27);
             this.btnInvestorI.TabIndex = 84;
@@ -1442,7 +1442,7 @@
             // btnInvestorB
             // 
             this.btnInvestorB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvestorB.Location = new System.Drawing.Point(368, 300);
+            this.btnInvestorB.Location = new System.Drawing.Point(331, 300);
             this.btnInvestorB.Name = "btnInvestorB";
             this.btnInvestorB.Size = new System.Drawing.Size(38, 27);
             this.btnInvestorB.TabIndex = 83;
@@ -1454,7 +1454,7 @@
             // 
             this.btnFrenPtR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFrenPtR.ForeColor = System.Drawing.Color.Red;
-            this.btnFrenPtR.Location = new System.Drawing.Point(500, 268);
+            this.btnFrenPtR.Location = new System.Drawing.Point(463, 268);
             this.btnFrenPtR.Name = "btnFrenPtR";
             this.btnFrenPtR.Size = new System.Drawing.Size(38, 27);
             this.btnFrenPtR.TabIndex = 82;
@@ -1465,7 +1465,7 @@
             // btnFrenPtU
             // 
             this.btnFrenPtU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrenPtU.Location = new System.Drawing.Point(456, 268);
+            this.btnFrenPtU.Location = new System.Drawing.Point(419, 268);
             this.btnFrenPtU.Name = "btnFrenPtU";
             this.btnFrenPtU.Size = new System.Drawing.Size(38, 27);
             this.btnFrenPtU.TabIndex = 81;
@@ -1476,7 +1476,7 @@
             // btnFrenPtI
             // 
             this.btnFrenPtI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrenPtI.Location = new System.Drawing.Point(412, 268);
+            this.btnFrenPtI.Location = new System.Drawing.Point(375, 268);
             this.btnFrenPtI.Name = "btnFrenPtI";
             this.btnFrenPtI.Size = new System.Drawing.Size(38, 27);
             this.btnFrenPtI.TabIndex = 80;
@@ -1487,7 +1487,7 @@
             // btnFrenPtB
             // 
             this.btnFrenPtB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFrenPtB.Location = new System.Drawing.Point(368, 268);
+            this.btnFrenPtB.Location = new System.Drawing.Point(331, 268);
             this.btnFrenPtB.Name = "btnFrenPtB";
             this.btnFrenPtB.Size = new System.Drawing.Size(38, 27);
             this.btnFrenPtB.TabIndex = 79;
@@ -1499,7 +1499,7 @@
             // 
             this.btnSocialR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSocialR.ForeColor = System.Drawing.Color.Red;
-            this.btnSocialR.Location = new System.Drawing.Point(500, 237);
+            this.btnSocialR.Location = new System.Drawing.Point(463, 237);
             this.btnSocialR.Name = "btnSocialR";
             this.btnSocialR.Size = new System.Drawing.Size(38, 27);
             this.btnSocialR.TabIndex = 78;
@@ -1510,7 +1510,7 @@
             // btnSocialU
             // 
             this.btnSocialU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSocialU.Location = new System.Drawing.Point(456, 237);
+            this.btnSocialU.Location = new System.Drawing.Point(419, 237);
             this.btnSocialU.Name = "btnSocialU";
             this.btnSocialU.Size = new System.Drawing.Size(38, 27);
             this.btnSocialU.TabIndex = 77;
@@ -1521,7 +1521,7 @@
             // btnSocialI
             // 
             this.btnSocialI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSocialI.Location = new System.Drawing.Point(412, 237);
+            this.btnSocialI.Location = new System.Drawing.Point(375, 237);
             this.btnSocialI.Name = "btnSocialI";
             this.btnSocialI.Size = new System.Drawing.Size(38, 27);
             this.btnSocialI.TabIndex = 76;
@@ -1532,7 +1532,7 @@
             // btnSocialB
             // 
             this.btnSocialB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSocialB.Location = new System.Drawing.Point(368, 237);
+            this.btnSocialB.Location = new System.Drawing.Point(331, 237);
             this.btnSocialB.Name = "btnSocialB";
             this.btnSocialB.Size = new System.Drawing.Size(38, 27);
             this.btnSocialB.TabIndex = 75;
@@ -1554,7 +1554,7 @@
             this.txtAdvtPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdvtPart.Location = new System.Drawing.Point(137, 336);
             this.txtAdvtPart.Name = "txtAdvtPart";
-            this.txtAdvtPart.Size = new System.Drawing.Size(225, 23);
+            this.txtAdvtPart.Size = new System.Drawing.Size(188, 23);
             this.txtAdvtPart.TabIndex = 9;
             this.txtAdvtPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtAdvtPart_PreviewKeyDown);
             // 
@@ -1583,7 +1583,7 @@
             this.txtInvestor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInvestor.Location = new System.Drawing.Point(137, 302);
             this.txtInvestor.Name = "txtInvestor";
-            this.txtInvestor.Size = new System.Drawing.Size(225, 23);
+            this.txtInvestor.Size = new System.Drawing.Size(188, 23);
             this.txtInvestor.TabIndex = 8;
             this.txtInvestor.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtInvestor_PreviewKeyDown);
             // 
@@ -1592,7 +1592,7 @@
             this.txtFrenPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFrenPart.Location = new System.Drawing.Point(137, 270);
             this.txtFrenPart.Name = "txtFrenPart";
-            this.txtFrenPart.Size = new System.Drawing.Size(225, 23);
+            this.txtFrenPart.Size = new System.Drawing.Size(188, 23);
             this.txtFrenPart.TabIndex = 7;
             this.txtFrenPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFrenPart_PreviewKeyDown);
             // 
@@ -1601,7 +1601,7 @@
             this.txtSocialMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSocialMedia.Location = new System.Drawing.Point(137, 239);
             this.txtSocialMedia.Name = "txtSocialMedia";
-            this.txtSocialMedia.Size = new System.Drawing.Size(225, 23);
+            this.txtSocialMedia.Size = new System.Drawing.Size(188, 23);
             this.txtSocialMedia.TabIndex = 6;
             this.txtSocialMedia.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtSocialMedia_PreviewKeyDown);
             // 
@@ -1629,7 +1629,7 @@
             // 
             this.btnMediaR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMediaR.ForeColor = System.Drawing.Color.Red;
-            this.btnMediaR.Location = new System.Drawing.Point(500, 204);
+            this.btnMediaR.Location = new System.Drawing.Point(463, 204);
             this.btnMediaR.Name = "btnMediaR";
             this.btnMediaR.Size = new System.Drawing.Size(38, 27);
             this.btnMediaR.TabIndex = 63;
@@ -1640,7 +1640,7 @@
             // btnMediaU
             // 
             this.btnMediaU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMediaU.Location = new System.Drawing.Point(456, 204);
+            this.btnMediaU.Location = new System.Drawing.Point(419, 204);
             this.btnMediaU.Name = "btnMediaU";
             this.btnMediaU.Size = new System.Drawing.Size(38, 27);
             this.btnMediaU.TabIndex = 62;
@@ -1651,7 +1651,7 @@
             // btnMediaI
             // 
             this.btnMediaI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMediaI.Location = new System.Drawing.Point(412, 204);
+            this.btnMediaI.Location = new System.Drawing.Point(375, 204);
             this.btnMediaI.Name = "btnMediaI";
             this.btnMediaI.Size = new System.Drawing.Size(38, 27);
             this.btnMediaI.TabIndex = 61;
@@ -1662,7 +1662,7 @@
             // btnMediaB
             // 
             this.btnMediaB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMediaB.Location = new System.Drawing.Point(368, 204);
+            this.btnMediaB.Location = new System.Drawing.Point(331, 204);
             this.btnMediaB.Name = "btnMediaB";
             this.btnMediaB.Size = new System.Drawing.Size(38, 27);
             this.btnMediaB.TabIndex = 60;
@@ -1674,7 +1674,7 @@
             // 
             this.btnBAmR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBAmR.ForeColor = System.Drawing.Color.Red;
-            this.btnBAmR.Location = new System.Drawing.Point(500, 174);
+            this.btnBAmR.Location = new System.Drawing.Point(463, 174);
             this.btnBAmR.Name = "btnBAmR";
             this.btnBAmR.Size = new System.Drawing.Size(38, 27);
             this.btnBAmR.TabIndex = 59;
@@ -1685,7 +1685,7 @@
             // btnBAmU
             // 
             this.btnBAmU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBAmU.Location = new System.Drawing.Point(456, 174);
+            this.btnBAmU.Location = new System.Drawing.Point(419, 174);
             this.btnBAmU.Name = "btnBAmU";
             this.btnBAmU.Size = new System.Drawing.Size(38, 27);
             this.btnBAmU.TabIndex = 58;
@@ -1696,7 +1696,7 @@
             // btnBAmI
             // 
             this.btnBAmI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBAmI.Location = new System.Drawing.Point(412, 174);
+            this.btnBAmI.Location = new System.Drawing.Point(375, 174);
             this.btnBAmI.Name = "btnBAmI";
             this.btnBAmI.Size = new System.Drawing.Size(38, 27);
             this.btnBAmI.TabIndex = 57;
@@ -1707,7 +1707,7 @@
             // btnBAmB
             // 
             this.btnBAmB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBAmB.Location = new System.Drawing.Point(368, 174);
+            this.btnBAmB.Location = new System.Drawing.Point(331, 174);
             this.btnBAmB.Name = "btnBAmB";
             this.btnBAmB.Size = new System.Drawing.Size(38, 27);
             this.btnBAmB.TabIndex = 56;
@@ -1720,7 +1720,7 @@
             this.txtMediaPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMediaPart.Location = new System.Drawing.Point(137, 207);
             this.txtMediaPart.Name = "txtMediaPart";
-            this.txtMediaPart.Size = new System.Drawing.Size(225, 23);
+            this.txtMediaPart.Size = new System.Drawing.Size(188, 23);
             this.txtMediaPart.TabIndex = 5;
             this.txtMediaPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtMediaPart_PreviewKeyDown);
             // 
@@ -1739,7 +1739,7 @@
             this.txtBrandAmbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBrandAmbs.Location = new System.Drawing.Point(137, 176);
             this.txtBrandAmbs.Name = "txtBrandAmbs";
-            this.txtBrandAmbs.Size = new System.Drawing.Size(225, 23);
+            this.txtBrandAmbs.Size = new System.Drawing.Size(188, 23);
             this.txtBrandAmbs.TabIndex = 4;
             this.txtBrandAmbs.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtBrandAmbs_PreviewKeyDown);
             // 
@@ -1757,7 +1757,7 @@
             // 
             this.btnIndustryR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIndustryR.ForeColor = System.Drawing.Color.Red;
-            this.btnIndustryR.Location = new System.Drawing.Point(500, 122);
+            this.btnIndustryR.Location = new System.Drawing.Point(463, 122);
             this.btnIndustryR.Name = "btnIndustryR";
             this.btnIndustryR.Size = new System.Drawing.Size(38, 27);
             this.btnIndustryR.TabIndex = 51;
@@ -1768,7 +1768,7 @@
             // btnIndustryU
             // 
             this.btnIndustryU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIndustryU.Location = new System.Drawing.Point(456, 122);
+            this.btnIndustryU.Location = new System.Drawing.Point(419, 122);
             this.btnIndustryU.Name = "btnIndustryU";
             this.btnIndustryU.Size = new System.Drawing.Size(38, 27);
             this.btnIndustryU.TabIndex = 50;
@@ -1779,7 +1779,7 @@
             // btnIndustryI
             // 
             this.btnIndustryI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIndustryI.Location = new System.Drawing.Point(412, 122);
+            this.btnIndustryI.Location = new System.Drawing.Point(375, 122);
             this.btnIndustryI.Name = "btnIndustryI";
             this.btnIndustryI.Size = new System.Drawing.Size(38, 27);
             this.btnIndustryI.TabIndex = 49;
@@ -1790,7 +1790,7 @@
             // btnIndustryB
             // 
             this.btnIndustryB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIndustryB.Location = new System.Drawing.Point(368, 122);
+            this.btnIndustryB.Location = new System.Drawing.Point(331, 122);
             this.btnIndustryB.Name = "btnIndustryB";
             this.btnIndustryB.Size = new System.Drawing.Size(38, 27);
             this.btnIndustryB.TabIndex = 48;
@@ -1802,7 +1802,7 @@
             // 
             this.btnEmpNoR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpNoR.ForeColor = System.Drawing.Color.Red;
-            this.btnEmpNoR.Location = new System.Drawing.Point(500, 71);
+            this.btnEmpNoR.Location = new System.Drawing.Point(463, 71);
             this.btnEmpNoR.Name = "btnEmpNoR";
             this.btnEmpNoR.Size = new System.Drawing.Size(38, 27);
             this.btnEmpNoR.TabIndex = 47;
@@ -1813,7 +1813,7 @@
             // btnEmpNoU
             // 
             this.btnEmpNoU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpNoU.Location = new System.Drawing.Point(456, 71);
+            this.btnEmpNoU.Location = new System.Drawing.Point(419, 71);
             this.btnEmpNoU.Name = "btnEmpNoU";
             this.btnEmpNoU.Size = new System.Drawing.Size(38, 27);
             this.btnEmpNoU.TabIndex = 46;
@@ -1824,7 +1824,7 @@
             // btnEmpNoI
             // 
             this.btnEmpNoI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpNoI.Location = new System.Drawing.Point(412, 71);
+            this.btnEmpNoI.Location = new System.Drawing.Point(375, 71);
             this.btnEmpNoI.Name = "btnEmpNoI";
             this.btnEmpNoI.Size = new System.Drawing.Size(38, 27);
             this.btnEmpNoI.TabIndex = 45;
@@ -1835,7 +1835,7 @@
             // btnEmpNoB
             // 
             this.btnEmpNoB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmpNoB.Location = new System.Drawing.Point(368, 71);
+            this.btnEmpNoB.Location = new System.Drawing.Point(331, 71);
             this.btnEmpNoB.Name = "btnEmpNoB";
             this.btnEmpNoB.Size = new System.Drawing.Size(38, 27);
             this.btnEmpNoB.TabIndex = 44;
@@ -1847,7 +1847,7 @@
             // 
             this.btnHeadR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHeadR.ForeColor = System.Drawing.Color.Red;
-            this.btnHeadR.Location = new System.Drawing.Point(500, 38);
+            this.btnHeadR.Location = new System.Drawing.Point(463, 38);
             this.btnHeadR.Name = "btnHeadR";
             this.btnHeadR.Size = new System.Drawing.Size(38, 27);
             this.btnHeadR.TabIndex = 43;
@@ -1858,7 +1858,7 @@
             // btnHeadU
             // 
             this.btnHeadU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeadU.Location = new System.Drawing.Point(456, 39);
+            this.btnHeadU.Location = new System.Drawing.Point(419, 39);
             this.btnHeadU.Name = "btnHeadU";
             this.btnHeadU.Size = new System.Drawing.Size(38, 27);
             this.btnHeadU.TabIndex = 42;
@@ -1869,7 +1869,7 @@
             // btnHeadI
             // 
             this.btnHeadI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeadI.Location = new System.Drawing.Point(412, 40);
+            this.btnHeadI.Location = new System.Drawing.Point(375, 40);
             this.btnHeadI.Name = "btnHeadI";
             this.btnHeadI.Size = new System.Drawing.Size(38, 27);
             this.btnHeadI.TabIndex = 41;
@@ -1880,7 +1880,7 @@
             // btnHeadB
             // 
             this.btnHeadB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeadB.Location = new System.Drawing.Point(368, 40);
+            this.btnHeadB.Location = new System.Drawing.Point(331, 40);
             this.btnHeadB.Name = "btnHeadB";
             this.btnHeadB.Size = new System.Drawing.Size(38, 27);
             this.btnHeadB.TabIndex = 40;
@@ -1893,7 +1893,7 @@
             this.richIndustry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richIndustry.Location = new System.Drawing.Point(137, 103);
             this.richIndustry.Name = "richIndustry";
-            this.richIndustry.Size = new System.Drawing.Size(226, 65);
+            this.richIndustry.Size = new System.Drawing.Size(188, 65);
             this.richIndustry.TabIndex = 3;
             this.richIndustry.Text = "";
             this.richIndustry.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richIndustry_PreviewKeyDown);
@@ -1903,7 +1903,7 @@
             this.txtNoofEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoofEmp.Location = new System.Drawing.Point(137, 72);
             this.txtNoofEmp.Name = "txtNoofEmp";
-            this.txtNoofEmp.Size = new System.Drawing.Size(226, 23);
+            this.txtNoofEmp.Size = new System.Drawing.Size(188, 23);
             this.txtNoofEmp.TabIndex = 2;
             this.txtNoofEmp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoofEmp_KeyPress);
             this.txtNoofEmp.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtNoofEmp_PreviewKeyDown);
@@ -1913,7 +1913,7 @@
             this.txtHeadQuarter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHeadQuarter.Location = new System.Drawing.Point(137, 41);
             this.txtHeadQuarter.Name = "txtHeadQuarter";
-            this.txtHeadQuarter.Size = new System.Drawing.Size(226, 23);
+            this.txtHeadQuarter.Size = new System.Drawing.Size(188, 23);
             this.txtHeadQuarter.TabIndex = 1;
             this.txtHeadQuarter.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtHeadQuarter_PreviewKeyDown);
             // 
@@ -1921,7 +1921,7 @@
             // 
             this.btnCountryR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCountryR.ForeColor = System.Drawing.Color.Red;
-            this.btnCountryR.Location = new System.Drawing.Point(500, 9);
+            this.btnCountryR.Location = new System.Drawing.Point(463, 9);
             this.btnCountryR.Name = "btnCountryR";
             this.btnCountryR.Size = new System.Drawing.Size(38, 27);
             this.btnCountryR.TabIndex = 36;
@@ -1932,7 +1932,7 @@
             // btnCountryU
             // 
             this.btnCountryU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCountryU.Location = new System.Drawing.Point(456, 9);
+            this.btnCountryU.Location = new System.Drawing.Point(419, 9);
             this.btnCountryU.Name = "btnCountryU";
             this.btnCountryU.Size = new System.Drawing.Size(38, 27);
             this.btnCountryU.TabIndex = 35;
@@ -1943,7 +1943,7 @@
             // btnCountryI
             // 
             this.btnCountryI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCountryI.Location = new System.Drawing.Point(412, 9);
+            this.btnCountryI.Location = new System.Drawing.Point(375, 9);
             this.btnCountryI.Name = "btnCountryI";
             this.btnCountryI.Size = new System.Drawing.Size(38, 27);
             this.btnCountryI.TabIndex = 34;
@@ -1954,7 +1954,7 @@
             // btnCountryB
             // 
             this.btnCountryB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCountryB.Location = new System.Drawing.Point(368, 9);
+            this.btnCountryB.Location = new System.Drawing.Point(331, 9);
             this.btnCountryB.Name = "btnCountryB";
             this.btnCountryB.Size = new System.Drawing.Size(38, 27);
             this.btnCountryB.TabIndex = 33;
@@ -1967,7 +1967,7 @@
             this.txtCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCountry.Location = new System.Drawing.Point(137, 10);
             this.txtCountry.Name = "txtCountry";
-            this.txtCountry.Size = new System.Drawing.Size(226, 23);
+            this.txtCountry.Size = new System.Drawing.Size(188, 23);
             this.txtCountry.TabIndex = 0;
             this.txtCountry.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCountry_PreviewKeyDown);
             // 
@@ -2077,9 +2077,9 @@
             this.panelGrp3.Controls.Add(this.label39);
             this.panelGrp3.Controls.Add(this.label40);
             this.panelGrp3.Enabled = false;
-            this.panelGrp3.Location = new System.Drawing.Point(792, 525);
+            this.panelGrp3.Location = new System.Drawing.Point(695, 495);
             this.panelGrp3.Name = "panelGrp3";
-            this.panelGrp3.Size = new System.Drawing.Size(563, 200);
+            this.panelGrp3.Size = new System.Drawing.Size(530, 192);
             this.panelGrp3.TabIndex = 0;
             // 
             // richSubClassification
@@ -2087,7 +2087,7 @@
             this.richSubClassification.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richSubClassification.Location = new System.Drawing.Point(135, 167);
             this.richSubClassification.Name = "richSubClassification";
-            this.richSubClassification.Size = new System.Drawing.Size(226, 64);
+            this.richSubClassification.Size = new System.Drawing.Size(188, 64);
             this.richSubClassification.TabIndex = 5;
             this.richSubClassification.Text = "";
             this.richSubClassification.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richSubClassification_PreviewKeyDown);
@@ -2097,7 +2097,7 @@
             this.txtYearlyRev.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearlyRev.Location = new System.Drawing.Point(136, 136);
             this.txtYearlyRev.Name = "txtYearlyRev";
-            this.txtYearlyRev.Size = new System.Drawing.Size(226, 23);
+            this.txtYearlyRev.Size = new System.Drawing.Size(188, 23);
             this.txtYearlyRev.TabIndex = 4;
             this.txtYearlyRev.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtYearlyRev_PreviewKeyDown);
             // 
@@ -2105,7 +2105,7 @@
             // 
             this.btnYearlyR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYearlyR.ForeColor = System.Drawing.Color.Red;
-            this.btnYearlyR.Location = new System.Drawing.Point(499, 134);
+            this.btnYearlyR.Location = new System.Drawing.Point(462, 135);
             this.btnYearlyR.Name = "btnYearlyR";
             this.btnYearlyR.Size = new System.Drawing.Size(38, 27);
             this.btnYearlyR.TabIndex = 96;
@@ -2116,7 +2116,7 @@
             // btnYearlyU
             // 
             this.btnYearlyU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearlyU.Location = new System.Drawing.Point(455, 134);
+            this.btnYearlyU.Location = new System.Drawing.Point(418, 135);
             this.btnYearlyU.Name = "btnYearlyU";
             this.btnYearlyU.Size = new System.Drawing.Size(38, 27);
             this.btnYearlyU.TabIndex = 95;
@@ -2127,7 +2127,7 @@
             // btnYearlyI
             // 
             this.btnYearlyI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearlyI.Location = new System.Drawing.Point(411, 134);
+            this.btnYearlyI.Location = new System.Drawing.Point(374, 135);
             this.btnYearlyI.Name = "btnYearlyI";
             this.btnYearlyI.Size = new System.Drawing.Size(38, 27);
             this.btnYearlyI.TabIndex = 94;
@@ -2138,7 +2138,7 @@
             // btnYearlyB
             // 
             this.btnYearlyB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearlyB.Location = new System.Drawing.Point(367, 134);
+            this.btnYearlyB.Location = new System.Drawing.Point(330, 135);
             this.btnYearlyB.Name = "btnYearlyB";
             this.btnYearlyB.Size = new System.Drawing.Size(38, 27);
             this.btnYearlyB.TabIndex = 93;
@@ -2161,7 +2161,7 @@
             this.txtRegDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRegDate.Location = new System.Drawing.Point(136, 104);
             this.txtRegDate.Name = "txtRegDate";
-            this.txtRegDate.Size = new System.Drawing.Size(226, 23);
+            this.txtRegDate.Size = new System.Drawing.Size(188, 23);
             this.txtRegDate.TabIndex = 3;
             this.txtRegDate.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtRegDate_PreviewKeyDown);
             // 
@@ -2169,7 +2169,7 @@
             // 
             this.btnYearExpnR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYearExpnR.ForeColor = System.Drawing.Color.Red;
-            this.btnYearExpnR.Location = new System.Drawing.Point(499, 331);
+            this.btnYearExpnR.Location = new System.Drawing.Point(462, 332);
             this.btnYearExpnR.Name = "btnYearExpnR";
             this.btnYearExpnR.Size = new System.Drawing.Size(38, 27);
             this.btnYearExpnR.TabIndex = 90;
@@ -2180,7 +2180,7 @@
             // btnYearExpnU
             // 
             this.btnYearExpnU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearExpnU.Location = new System.Drawing.Point(455, 331);
+            this.btnYearExpnU.Location = new System.Drawing.Point(418, 332);
             this.btnYearExpnU.Name = "btnYearExpnU";
             this.btnYearExpnU.Size = new System.Drawing.Size(38, 27);
             this.btnYearExpnU.TabIndex = 89;
@@ -2191,7 +2191,7 @@
             // btnYearExpnI
             // 
             this.btnYearExpnI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearExpnI.Location = new System.Drawing.Point(411, 331);
+            this.btnYearExpnI.Location = new System.Drawing.Point(374, 332);
             this.btnYearExpnI.Name = "btnYearExpnI";
             this.btnYearExpnI.Size = new System.Drawing.Size(38, 27);
             this.btnYearExpnI.TabIndex = 88;
@@ -2202,7 +2202,7 @@
             // btnYearExpnB
             // 
             this.btnYearExpnB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearExpnB.Location = new System.Drawing.Point(367, 331);
+            this.btnYearExpnB.Location = new System.Drawing.Point(330, 332);
             this.btnYearExpnB.Name = "btnYearExpnB";
             this.btnYearExpnB.Size = new System.Drawing.Size(38, 27);
             this.btnYearExpnB.TabIndex = 87;
@@ -2214,7 +2214,7 @@
             // 
             this.btnCurrencyR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCurrencyR.ForeColor = System.Drawing.Color.Red;
-            this.btnCurrencyR.Location = new System.Drawing.Point(499, 299);
+            this.btnCurrencyR.Location = new System.Drawing.Point(462, 300);
             this.btnCurrencyR.Name = "btnCurrencyR";
             this.btnCurrencyR.Size = new System.Drawing.Size(38, 27);
             this.btnCurrencyR.TabIndex = 86;
@@ -2225,7 +2225,7 @@
             // btnCurrencyU
             // 
             this.btnCurrencyU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurrencyU.Location = new System.Drawing.Point(455, 299);
+            this.btnCurrencyU.Location = new System.Drawing.Point(418, 300);
             this.btnCurrencyU.Name = "btnCurrencyU";
             this.btnCurrencyU.Size = new System.Drawing.Size(38, 27);
             this.btnCurrencyU.TabIndex = 85;
@@ -2236,7 +2236,7 @@
             // btnCurrencyI
             // 
             this.btnCurrencyI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurrencyI.Location = new System.Drawing.Point(411, 299);
+            this.btnCurrencyI.Location = new System.Drawing.Point(374, 300);
             this.btnCurrencyI.Name = "btnCurrencyI";
             this.btnCurrencyI.Size = new System.Drawing.Size(38, 27);
             this.btnCurrencyI.TabIndex = 84;
@@ -2247,7 +2247,7 @@
             // btnCurrencyB
             // 
             this.btnCurrencyB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCurrencyB.Location = new System.Drawing.Point(367, 299);
+            this.btnCurrencyB.Location = new System.Drawing.Point(330, 300);
             this.btnCurrencyB.Name = "btnCurrencyB";
             this.btnCurrencyB.Size = new System.Drawing.Size(38, 27);
             this.btnCurrencyB.TabIndex = 83;
@@ -2259,7 +2259,7 @@
             // 
             this.btnAccAuditR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccAuditR.ForeColor = System.Drawing.Color.Red;
-            this.btnAccAuditR.Location = new System.Drawing.Point(499, 267);
+            this.btnAccAuditR.Location = new System.Drawing.Point(462, 268);
             this.btnAccAuditR.Name = "btnAccAuditR";
             this.btnAccAuditR.Size = new System.Drawing.Size(38, 27);
             this.btnAccAuditR.TabIndex = 82;
@@ -2270,7 +2270,7 @@
             // btnAccAuditU
             // 
             this.btnAccAuditU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccAuditU.Location = new System.Drawing.Point(455, 267);
+            this.btnAccAuditU.Location = new System.Drawing.Point(418, 268);
             this.btnAccAuditU.Name = "btnAccAuditU";
             this.btnAccAuditU.Size = new System.Drawing.Size(38, 27);
             this.btnAccAuditU.TabIndex = 81;
@@ -2281,7 +2281,7 @@
             // btnAccAuditI
             // 
             this.btnAccAuditI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccAuditI.Location = new System.Drawing.Point(411, 267);
+            this.btnAccAuditI.Location = new System.Drawing.Point(374, 268);
             this.btnAccAuditI.Name = "btnAccAuditI";
             this.btnAccAuditI.Size = new System.Drawing.Size(38, 27);
             this.btnAccAuditI.TabIndex = 80;
@@ -2292,7 +2292,7 @@
             // btnAccAuditB
             // 
             this.btnAccAuditB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccAuditB.Location = new System.Drawing.Point(367, 267);
+            this.btnAccAuditB.Location = new System.Drawing.Point(330, 268);
             this.btnAccAuditB.Name = "btnAccAuditB";
             this.btnAccAuditB.Size = new System.Drawing.Size(38, 27);
             this.btnAccAuditB.TabIndex = 79;
@@ -2304,7 +2304,7 @@
             // 
             this.btnLandMarkR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLandMarkR.ForeColor = System.Drawing.Color.Red;
-            this.btnLandMarkR.Location = new System.Drawing.Point(499, 236);
+            this.btnLandMarkR.Location = new System.Drawing.Point(462, 237);
             this.btnLandMarkR.Name = "btnLandMarkR";
             this.btnLandMarkR.Size = new System.Drawing.Size(38, 27);
             this.btnLandMarkR.TabIndex = 78;
@@ -2315,7 +2315,7 @@
             // btnLandMarkU
             // 
             this.btnLandMarkU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLandMarkU.Location = new System.Drawing.Point(455, 236);
+            this.btnLandMarkU.Location = new System.Drawing.Point(418, 237);
             this.btnLandMarkU.Name = "btnLandMarkU";
             this.btnLandMarkU.Size = new System.Drawing.Size(38, 27);
             this.btnLandMarkU.TabIndex = 77;
@@ -2326,7 +2326,7 @@
             // btnLandMarkI
             // 
             this.btnLandMarkI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLandMarkI.Location = new System.Drawing.Point(411, 236);
+            this.btnLandMarkI.Location = new System.Drawing.Point(374, 237);
             this.btnLandMarkI.Name = "btnLandMarkI";
             this.btnLandMarkI.Size = new System.Drawing.Size(38, 27);
             this.btnLandMarkI.TabIndex = 76;
@@ -2337,7 +2337,7 @@
             // btnLandMarkB
             // 
             this.btnLandMarkB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLandMarkB.Location = new System.Drawing.Point(367, 236);
+            this.btnLandMarkB.Location = new System.Drawing.Point(330, 237);
             this.btnLandMarkB.Name = "btnLandMarkB";
             this.btnLandMarkB.Size = new System.Drawing.Size(38, 27);
             this.btnLandMarkB.TabIndex = 75;
@@ -2359,7 +2359,7 @@
             this.txtYearlyExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearlyExpense.Location = new System.Drawing.Point(136, 333);
             this.txtYearlyExpense.Name = "txtYearlyExpense";
-            this.txtYearlyExpense.Size = new System.Drawing.Size(225, 23);
+            this.txtYearlyExpense.Size = new System.Drawing.Size(188, 23);
             this.txtYearlyExpense.TabIndex = 9;
             this.txtYearlyExpense.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtYearlyExpense_PreviewKeyDown);
             // 
@@ -2388,7 +2388,7 @@
             this.txtCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurrency.Location = new System.Drawing.Point(136, 301);
             this.txtCurrency.Name = "txtCurrency";
-            this.txtCurrency.Size = new System.Drawing.Size(225, 23);
+            this.txtCurrency.Size = new System.Drawing.Size(188, 23);
             this.txtCurrency.TabIndex = 8;
             this.txtCurrency.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCurrency_PreviewKeyDown);
             // 
@@ -2397,7 +2397,7 @@
             this.txtAccAudit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccAudit.Location = new System.Drawing.Point(136, 269);
             this.txtAccAudit.Name = "txtAccAudit";
-            this.txtAccAudit.Size = new System.Drawing.Size(225, 23);
+            this.txtAccAudit.Size = new System.Drawing.Size(188, 23);
             this.txtAccAudit.TabIndex = 7;
             this.txtAccAudit.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtAccAudit_PreviewKeyDown);
             // 
@@ -2406,7 +2406,7 @@
             this.txtLandMark.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLandMark.Location = new System.Drawing.Point(136, 238);
             this.txtLandMark.Name = "txtLandMark";
-            this.txtLandMark.Size = new System.Drawing.Size(225, 23);
+            this.txtLandMark.Size = new System.Drawing.Size(188, 23);
             this.txtLandMark.TabIndex = 6;
             this.txtLandMark.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtLandMark_PreviewKeyDown);
             // 
@@ -2434,7 +2434,7 @@
             // 
             this.btnSubClasR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubClasR.ForeColor = System.Drawing.Color.Red;
-            this.btnSubClasR.Location = new System.Drawing.Point(499, 185);
+            this.btnSubClasR.Location = new System.Drawing.Point(462, 186);
             this.btnSubClasR.Name = "btnSubClasR";
             this.btnSubClasR.Size = new System.Drawing.Size(38, 27);
             this.btnSubClasR.TabIndex = 59;
@@ -2445,7 +2445,7 @@
             // btnSubClasU
             // 
             this.btnSubClasU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubClasU.Location = new System.Drawing.Point(455, 185);
+            this.btnSubClasU.Location = new System.Drawing.Point(418, 186);
             this.btnSubClasU.Name = "btnSubClasU";
             this.btnSubClasU.Size = new System.Drawing.Size(38, 27);
             this.btnSubClasU.TabIndex = 58;
@@ -2456,7 +2456,7 @@
             // btnSubClasI
             // 
             this.btnSubClasI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubClasI.Location = new System.Drawing.Point(411, 185);
+            this.btnSubClasI.Location = new System.Drawing.Point(374, 186);
             this.btnSubClasI.Name = "btnSubClasI";
             this.btnSubClasI.Size = new System.Drawing.Size(38, 27);
             this.btnSubClasI.TabIndex = 57;
@@ -2467,7 +2467,7 @@
             // btnSubClasB
             // 
             this.btnSubClasB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubClasB.Location = new System.Drawing.Point(367, 185);
+            this.btnSubClasB.Location = new System.Drawing.Point(330, 186);
             this.btnSubClasB.Name = "btnSubClasB";
             this.btnSubClasB.Size = new System.Drawing.Size(38, 27);
             this.btnSubClasB.TabIndex = 56;
@@ -2489,7 +2489,7 @@
             // 
             this.btnRegDtR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegDtR.ForeColor = System.Drawing.Color.Red;
-            this.btnRegDtR.Location = new System.Drawing.Point(499, 102);
+            this.btnRegDtR.Location = new System.Drawing.Point(462, 103);
             this.btnRegDtR.Name = "btnRegDtR";
             this.btnRegDtR.Size = new System.Drawing.Size(38, 27);
             this.btnRegDtR.TabIndex = 51;
@@ -2500,7 +2500,7 @@
             // btnRegDtU
             // 
             this.btnRegDtU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegDtU.Location = new System.Drawing.Point(455, 102);
+            this.btnRegDtU.Location = new System.Drawing.Point(418, 103);
             this.btnRegDtU.Name = "btnRegDtU";
             this.btnRegDtU.Size = new System.Drawing.Size(38, 27);
             this.btnRegDtU.TabIndex = 50;
@@ -2511,7 +2511,7 @@
             // btnRegDtI
             // 
             this.btnRegDtI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegDtI.Location = new System.Drawing.Point(411, 102);
+            this.btnRegDtI.Location = new System.Drawing.Point(374, 103);
             this.btnRegDtI.Name = "btnRegDtI";
             this.btnRegDtI.Size = new System.Drawing.Size(38, 27);
             this.btnRegDtI.TabIndex = 49;
@@ -2522,7 +2522,7 @@
             // btnRegDtB
             // 
             this.btnRegDtB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegDtB.Location = new System.Drawing.Point(367, 102);
+            this.btnRegDtB.Location = new System.Drawing.Point(330, 103);
             this.btnRegDtB.Name = "btnRegDtB";
             this.btnRegDtB.Size = new System.Drawing.Size(38, 27);
             this.btnRegDtB.TabIndex = 48;
@@ -2534,7 +2534,7 @@
             // 
             this.btnManageR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageR.ForeColor = System.Drawing.Color.Red;
-            this.btnManageR.Location = new System.Drawing.Point(499, 71);
+            this.btnManageR.Location = new System.Drawing.Point(462, 72);
             this.btnManageR.Name = "btnManageR";
             this.btnManageR.Size = new System.Drawing.Size(38, 27);
             this.btnManageR.TabIndex = 47;
@@ -2545,7 +2545,7 @@
             // btnManageU
             // 
             this.btnManageU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageU.Location = new System.Drawing.Point(455, 71);
+            this.btnManageU.Location = new System.Drawing.Point(418, 72);
             this.btnManageU.Name = "btnManageU";
             this.btnManageU.Size = new System.Drawing.Size(38, 27);
             this.btnManageU.TabIndex = 46;
@@ -2556,7 +2556,7 @@
             // btnManageI
             // 
             this.btnManageI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageI.Location = new System.Drawing.Point(411, 71);
+            this.btnManageI.Location = new System.Drawing.Point(374, 72);
             this.btnManageI.Name = "btnManageI";
             this.btnManageI.Size = new System.Drawing.Size(38, 27);
             this.btnManageI.TabIndex = 45;
@@ -2567,7 +2567,7 @@
             // btnManageB
             // 
             this.btnManageB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageB.Location = new System.Drawing.Point(367, 71);
+            this.btnManageB.Location = new System.Drawing.Point(330, 72);
             this.btnManageB.Name = "btnManageB";
             this.btnManageB.Size = new System.Drawing.Size(38, 27);
             this.btnManageB.TabIndex = 44;
@@ -2579,7 +2579,7 @@
             // 
             this.btnServicesR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnServicesR.ForeColor = System.Drawing.Color.Red;
-            this.btnServicesR.Location = new System.Drawing.Point(499, 38);
+            this.btnServicesR.Location = new System.Drawing.Point(462, 39);
             this.btnServicesR.Name = "btnServicesR";
             this.btnServicesR.Size = new System.Drawing.Size(38, 27);
             this.btnServicesR.TabIndex = 43;
@@ -2590,7 +2590,7 @@
             // btnServicesU
             // 
             this.btnServicesU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicesU.Location = new System.Drawing.Point(455, 39);
+            this.btnServicesU.Location = new System.Drawing.Point(418, 40);
             this.btnServicesU.Name = "btnServicesU";
             this.btnServicesU.Size = new System.Drawing.Size(38, 27);
             this.btnServicesU.TabIndex = 42;
@@ -2601,7 +2601,7 @@
             // btnServicesI
             // 
             this.btnServicesI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicesI.Location = new System.Drawing.Point(411, 40);
+            this.btnServicesI.Location = new System.Drawing.Point(374, 41);
             this.btnServicesI.Name = "btnServicesI";
             this.btnServicesI.Size = new System.Drawing.Size(38, 27);
             this.btnServicesI.TabIndex = 41;
@@ -2612,7 +2612,7 @@
             // btnServicesB
             // 
             this.btnServicesB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServicesB.Location = new System.Drawing.Point(367, 40);
+            this.btnServicesB.Location = new System.Drawing.Point(330, 41);
             this.btnServicesB.Name = "btnServicesB";
             this.btnServicesB.Size = new System.Drawing.Size(38, 27);
             this.btnServicesB.TabIndex = 40;
@@ -2625,7 +2625,7 @@
             this.txtManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtManager.Location = new System.Drawing.Point(136, 72);
             this.txtManager.Name = "txtManager";
-            this.txtManager.Size = new System.Drawing.Size(226, 23);
+            this.txtManager.Size = new System.Drawing.Size(188, 23);
             this.txtManager.TabIndex = 2;
             this.txtManager.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtManager_PreviewKeyDown);
             // 
@@ -2634,7 +2634,7 @@
             this.txtServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtServices.Location = new System.Drawing.Point(136, 41);
             this.txtServices.Name = "txtServices";
-            this.txtServices.Size = new System.Drawing.Size(226, 23);
+            this.txtServices.Size = new System.Drawing.Size(188, 23);
             this.txtServices.TabIndex = 1;
             this.txtServices.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtServices_PreviewKeyDown);
             // 
@@ -2642,7 +2642,7 @@
             // 
             this.btnProductR.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProductR.ForeColor = System.Drawing.Color.Red;
-            this.btnProductR.Location = new System.Drawing.Point(499, 8);
+            this.btnProductR.Location = new System.Drawing.Point(462, 9);
             this.btnProductR.Name = "btnProductR";
             this.btnProductR.Size = new System.Drawing.Size(38, 27);
             this.btnProductR.TabIndex = 36;
@@ -2653,7 +2653,7 @@
             // btnProductU
             // 
             this.btnProductU.Font = new System.Drawing.Font("Comic Sans MS", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductU.Location = new System.Drawing.Point(455, 8);
+            this.btnProductU.Location = new System.Drawing.Point(418, 9);
             this.btnProductU.Name = "btnProductU";
             this.btnProductU.Size = new System.Drawing.Size(38, 27);
             this.btnProductU.TabIndex = 35;
@@ -2664,7 +2664,7 @@
             // btnProductI
             // 
             this.btnProductI.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductI.Location = new System.Drawing.Point(411, 8);
+            this.btnProductI.Location = new System.Drawing.Point(374, 9);
             this.btnProductI.Name = "btnProductI";
             this.btnProductI.Size = new System.Drawing.Size(38, 27);
             this.btnProductI.TabIndex = 34;
@@ -2675,7 +2675,7 @@
             // btnProductB
             // 
             this.btnProductB.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductB.Location = new System.Drawing.Point(367, 8);
+            this.btnProductB.Location = new System.Drawing.Point(330, 9);
             this.btnProductB.Name = "btnProductB";
             this.btnProductB.Size = new System.Drawing.Size(38, 27);
             this.btnProductB.TabIndex = 33;
@@ -2688,7 +2688,7 @@
             this.txtProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProduct.Location = new System.Drawing.Point(136, 9);
             this.txtProduct.Name = "txtProduct";
-            this.txtProduct.Size = new System.Drawing.Size(226, 23);
+            this.txtProduct.Size = new System.Drawing.Size(188, 23);
             this.txtProduct.TabIndex = 0;
             this.txtProduct.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtProduct_PreviewKeyDown);
             // 
@@ -2742,7 +2742,7 @@
             this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.picture;
             this.pictureBox1.Location = new System.Drawing.Point(12, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(755, 548);
+            this.pictureBox1.Size = new System.Drawing.Size(668, 534);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -2753,9 +2753,9 @@
             this.progressBg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.progressBg.Controls.Add(this.lblPercentage);
             this.progressBg.Controls.Add(this.panelProgressBar);
-            this.progressBg.Location = new System.Drawing.Point(221, 722);
+            this.progressBg.Location = new System.Drawing.Point(187, 693);
             this.progressBg.Name = "progressBg";
-            this.progressBg.Size = new System.Drawing.Size(300, 22);
+            this.progressBg.Size = new System.Drawing.Size(277, 22);
             this.progressBg.TabIndex = 5;
             // 
             // lblPercentage
@@ -2763,7 +2763,7 @@
             this.lblPercentage.AutoSize = true;
             this.lblPercentage.BackColor = System.Drawing.Color.Transparent;
             this.lblPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentage.Location = new System.Drawing.Point(141, 4);
+            this.lblPercentage.Location = new System.Drawing.Point(142, 4);
             this.lblPercentage.Name = "lblPercentage";
             this.lblPercentage.Size = new System.Drawing.Size(23, 13);
             this.lblPercentage.TabIndex = 6;
@@ -2785,7 +2785,7 @@
             // lblFormSl
             // 
             this.lblFormSl.AutoSize = true;
-            this.lblFormSl.Location = new System.Drawing.Point(302, 634);
+            this.lblFormSl.Location = new System.Drawing.Point(120, 608);
             this.lblFormSl.Name = "lblFormSl";
             this.lblFormSl.Size = new System.Drawing.Size(63, 23);
             this.lblFormSl.TabIndex = 27;
@@ -2796,7 +2796,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1365, 749);
+            this.ClientSize = new System.Drawing.Size(1235, 735);
             this.Controls.Add(this.lblFormSl);
             this.Controls.Add(this.progressBg);
             this.Controls.Add(this.panelGrp3);
@@ -2829,7 +2829,6 @@
             this.Name = "dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.dashboard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dashboard_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dashboard_MouseMove);

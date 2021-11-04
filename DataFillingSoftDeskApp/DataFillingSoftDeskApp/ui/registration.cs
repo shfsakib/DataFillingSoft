@@ -52,7 +52,7 @@ namespace DataFillingSoftDeskApp.ui
             //txtLastName.Text = function.IsExist($"SELECT LastName FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
             //txtEmail.Text = function.IsExist($"SELECT MobileNo FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
             //txtContactNo.Text = function.IsExist($"SELECT Email FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
-            txtDate.Text = apiDataModel.created_at;
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txtFirstName.Text = apiDataModel.fname;
             txtLastName.Text = apiDataModel.lname;
             txtEmail.Text = apiDataModel.email;
@@ -171,8 +171,7 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     gender = "Male";
                 }
-                bool ans = function.Execute(
-                    $"INSERT INTO Users(FirstName,LastName,Email,MobileNo,Address,Gender,Age,FormNo,UserName,DesktopPassword,MacAddress,AuthenticationKey,RegistrationDate,UserStatus) VALUES('{txtFirstName.Text}','{txtLastName.Text}','{txtEmail.Text}','{txtContactNo.Text}','{richAddress.Text}','{gender}','{txtAge.Text}','{txtNoForms.Text}','{txtUserId.Text}','{txtPass.Text}','{function.MacAddress()}','{DataTransferProperty.AuthKey}','{txtDate.Text}','A')");
+                bool ans = function.Execute($"INSERT INTO Users(FirstName,LastName,Email,MobileNo,Address,Gender,Age,FormNo,UserName,DesktopPassword,MacAddress,AuthenticationKey,RegistrationDate,UserStatus) VALUES('{txtFirstName.Text}','{txtLastName.Text}','{txtEmail.Text}','{txtContactNo.Text}','{richAddress.Text}','{gender}','{txtAge.Text}','{txtNoForms.Text}','{txtUserId.Text}','{txtPass.Text}','{function.MacAddress()}','{DataTransferProperty.AuthKey}','{DateTime.Now}','A')");
 
                 //bool ans = function.Execute(
                 //    $"UPDATE Users SET Address='{richAddress.Text}',Gender='{gender}',Age='{txtAge.Text}',FormNo='{txtNoForms.Text}',UserName='{txtUserId.Text}',DesktopPassword='{txtPass.Text}',MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");

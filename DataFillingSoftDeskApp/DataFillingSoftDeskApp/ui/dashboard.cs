@@ -151,7 +151,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             panelGrp1.Enabled = btnGroup2.Enabled = btnGroup3.Enabled = true;
             panelGrp2.Enabled = panelGrp3.Enabled = btnGroup1.Enabled = false;
-
+            txtFormNo.Focus();
         }
 
         private void btnGroup2_Click(object sender, EventArgs e)

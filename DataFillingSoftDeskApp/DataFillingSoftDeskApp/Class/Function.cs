@@ -35,6 +35,18 @@ namespace DataFillingSoftDeskApp.Class
             }
         }
 
+        public string Connection2 = new SqlConnectionStringBuilder
+        {
+            DataSource = ".\\local",
+            InitialCatalog = "DataFillingDb",
+            UserID = "sa",
+            Password = "123456789",
+            MultipleActiveResultSets = true,
+            ConnectTimeout = 0,
+            Pooling = true,
+            MinPoolSize = 0,
+            MaxPoolSize = 4096
+        }.ToString();
         public string Connection = new SqlConnectionStringBuilder
         {
             DataSource = ".\\local",
@@ -47,7 +59,6 @@ namespace DataFillingSoftDeskApp.Class
             MinPoolSize = 0,
             MaxPoolSize = 4096
         }.ToString();
-
         public string Connection1 = @"Data Source=.\local;Initial Catalog=KidsLearningDb;Integrated Security=True";
 
         public List<string> ListData(string sql)

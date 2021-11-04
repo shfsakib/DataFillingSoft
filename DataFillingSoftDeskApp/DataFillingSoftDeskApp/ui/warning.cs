@@ -4,10 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataFillingSoftDeskApp.Class;
+using Newtonsoft.Json;
 
 namespace DataFillingSoftDeskApp.ui
 {
@@ -51,9 +54,9 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.AuthKey.ToString()=="")
+            if (Properties.Settings.Default.AuthKey.ToString() == "")
             {
-                DialogResult dialogResult = MessageBox.Show("You are not registered yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                DialogResult dialogResult = MessageBox.Show("You are not registered yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (dialogResult == DialogResult.OK)
                 {
                     this.Hide();
@@ -62,27 +65,40 @@ namespace DataFillingSoftDeskApp.ui
                 }
                 return;
             }
-            //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            bool ans = function.Execute(
-                "DELETE FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            if (ans)
-            {
-                function.Execute($"DELETE FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-                DataTransferProperty.AuthKey = "";
-                Properties.Settings.Default.AuthKey = "";
-                Properties.Settings.Default.Save();
-                DialogResult dialogResult = MessageBox.Show("Your project is reset successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (dialogResult == DialogResult.OK)
-                {
-                    this.Hide();
-                    log_in logIn = new log_in();
-                    logIn.Show();
-                }
-            }
-            else
-            {
-                function.MessageBox("Failed to reset project, You are not registered to system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            HttpClient client = new HttpClient();
+            // It can be the static constructor or a one-time initializer
+            client.BaseAddress = new Uri("http://api.etnyzfood.com/api/");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            // Assuming http://localhost:4354/api/ as BaseAddress 
 
+            var response = client.GetStringAsync("remove/authKey/" + DataTransferProperty.AuthKey).Result;
+            //var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
+            //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            if (response == "1")
+            {
+
+                bool ans = function.Execute(
+                    $@"DELETE FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+                if (ans)
+                {
+                    function.Execute($"DELETE FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+                    DataTransferProperty.AuthKey = "";
+                    Properties.Settings.Default.AuthKey = "";
+                    Properties.Settings.Default.Save();
+                    DialogResult dialogResult = MessageBox.Show("Your project is reset successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        this.Hide();
+                        log_in logIn = new log_in();
+                        logIn.Show();
+                    }
+                }
+                else
+                {
+                    function.MessageBox("Failed to reset project, You are not registered to system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }
