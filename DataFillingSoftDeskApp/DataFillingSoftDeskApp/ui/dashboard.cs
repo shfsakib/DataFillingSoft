@@ -238,7 +238,7 @@ namespace DataFillingSoftDeskApp.ui
             else
             {
                 textBox.Text = dataText + textBox.Text;
-            textBox.Focus();
+                textBox.Focus();
             }
         }
         private void btnFormNoB_Click(object sender, EventArgs e)
@@ -1153,6 +1153,276 @@ Currency='{txtCurrency.Text}',YearlyExpense='{txtYearlyExpense.Text}' WHERE Form
                 submission submission = new submission();
                 submission.Show();
 
+            }
+        }
+
+        private void txtFormNo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtCompanyCode_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtCompanyName_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void richAddress_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtZip_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtFax_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtWebsite_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtEmail_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtContactNo_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtState_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtCountry_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtHeadQuarter_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtNoofEmp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void richIndustry_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtBrandAmbs_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtMediaPart_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtSocialMedia_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtFrenPart_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtInvestor_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtAdvtPart_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtProduct_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtServices_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtManager_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtRegDate_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtYearlyRev_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void richSubClassification_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtLandMark_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtAccAudit_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtCurrency_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void txtYearlyExpense_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.Control)
+            {
+                MessageBox.Show("Control key is blocked", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
         }
     }

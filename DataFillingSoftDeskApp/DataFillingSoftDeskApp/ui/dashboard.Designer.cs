@@ -835,6 +835,7 @@
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(225, 23);
             this.txtState.TabIndex = 9;
+            this.txtState.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtState_PreviewKeyDown);
             // 
             // label18
             // 
@@ -863,6 +864,7 @@
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(225, 23);
             this.txtContactNo.TabIndex = 8;
+            this.txtContactNo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtContactNo_PreviewKeyDown);
             // 
             // txtEmail
             // 
@@ -871,6 +873,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(225, 23);
             this.txtEmail.TabIndex = 7;
+            this.txtEmail.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtEmail_PreviewKeyDown);
             // 
             // txtWebsite
             // 
@@ -879,6 +882,7 @@
             this.txtWebsite.Name = "txtWebsite";
             this.txtWebsite.Size = new System.Drawing.Size(225, 23);
             this.txtWebsite.TabIndex = 6;
+            this.txtWebsite.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtWebsite_PreviewKeyDown);
             // 
             // label14
             // 
@@ -997,6 +1001,7 @@
             this.txtFax.Name = "txtFax";
             this.txtFax.Size = new System.Drawing.Size(225, 23);
             this.txtFax.TabIndex = 5;
+            this.txtFax.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFax_PreviewKeyDown);
             // 
             // label12
             // 
@@ -1015,6 +1020,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(225, 23);
             this.txtZip.TabIndex = 4;
+            this.txtZip.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtZip_PreviewKeyDown);
             // 
             // label11
             // 
@@ -1169,6 +1175,7 @@
             this.richAddress.Size = new System.Drawing.Size(226, 65);
             this.richAddress.TabIndex = 3;
             this.richAddress.Text = "";
+            this.richAddress.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richAddress_PreviewKeyDown);
             // 
             // txtCompanyName
             // 
@@ -1177,6 +1184,7 @@
             this.txtCompanyName.Name = "txtCompanyName";
             this.txtCompanyName.Size = new System.Drawing.Size(226, 23);
             this.txtCompanyName.TabIndex = 2;
+            this.txtCompanyName.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCompanyName_PreviewKeyDown);
             // 
             // txtCompanyCode
             // 
@@ -1185,6 +1193,7 @@
             this.txtCompanyCode.Name = "txtCompanyCode";
             this.txtCompanyCode.Size = new System.Drawing.Size(226, 23);
             this.txtCompanyCode.TabIndex = 1;
+            this.txtCompanyCode.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCompanyCode_PreviewKeyDown);
             // 
             // btnFormNoR
             // 
@@ -1238,6 +1247,7 @@
             this.txtFormNo.Name = "txtFormNo";
             this.txtFormNo.Size = new System.Drawing.Size(226, 23);
             this.txtFormNo.TabIndex = 0;
+            this.txtFormNo.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFormNo_PreviewKeyDown);
             // 
             // label10
             // 
@@ -1546,6 +1556,7 @@
             this.txtAdvtPart.Name = "txtAdvtPart";
             this.txtAdvtPart.Size = new System.Drawing.Size(225, 23);
             this.txtAdvtPart.TabIndex = 9;
+            this.txtAdvtPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtAdvtPart_PreviewKeyDown);
             // 
             // label20
             // 
@@ -1574,6 +1585,7 @@
             this.txtInvestor.Name = "txtInvestor";
             this.txtInvestor.Size = new System.Drawing.Size(225, 23);
             this.txtInvestor.TabIndex = 8;
+            this.txtInvestor.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtInvestor_PreviewKeyDown);
             // 
             // txtFrenPart
             // 
@@ -1582,6 +1594,7 @@
             this.txtFrenPart.Name = "txtFrenPart";
             this.txtFrenPart.Size = new System.Drawing.Size(225, 23);
             this.txtFrenPart.TabIndex = 7;
+            this.txtFrenPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtFrenPart_PreviewKeyDown);
             // 
             // txtSocialMedia
             // 
@@ -1590,6 +1603,7 @@
             this.txtSocialMedia.Name = "txtSocialMedia";
             this.txtSocialMedia.Size = new System.Drawing.Size(225, 23);
             this.txtSocialMedia.TabIndex = 6;
+            this.txtSocialMedia.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtSocialMedia_PreviewKeyDown);
             // 
             // label22
             // 
@@ -1708,6 +1722,7 @@
             this.txtMediaPart.Name = "txtMediaPart";
             this.txtMediaPart.Size = new System.Drawing.Size(225, 23);
             this.txtMediaPart.TabIndex = 5;
+            this.txtMediaPart.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtMediaPart_PreviewKeyDown);
             // 
             // label24
             // 
@@ -1726,6 +1741,7 @@
             this.txtBrandAmbs.Name = "txtBrandAmbs";
             this.txtBrandAmbs.Size = new System.Drawing.Size(225, 23);
             this.txtBrandAmbs.TabIndex = 4;
+            this.txtBrandAmbs.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtBrandAmbs_PreviewKeyDown);
             // 
             // label25
             // 
@@ -1880,6 +1896,7 @@
             this.richIndustry.Size = new System.Drawing.Size(226, 65);
             this.richIndustry.TabIndex = 3;
             this.richIndustry.Text = "";
+            this.richIndustry.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richIndustry_PreviewKeyDown);
             // 
             // txtNoofEmp
             // 
@@ -1889,6 +1906,7 @@
             this.txtNoofEmp.Size = new System.Drawing.Size(226, 23);
             this.txtNoofEmp.TabIndex = 2;
             this.txtNoofEmp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoofEmp_KeyPress);
+            this.txtNoofEmp.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtNoofEmp_PreviewKeyDown);
             // 
             // txtHeadQuarter
             // 
@@ -1897,6 +1915,7 @@
             this.txtHeadQuarter.Name = "txtHeadQuarter";
             this.txtHeadQuarter.Size = new System.Drawing.Size(226, 23);
             this.txtHeadQuarter.TabIndex = 1;
+            this.txtHeadQuarter.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtHeadQuarter_PreviewKeyDown);
             // 
             // btnCountryR
             // 
@@ -1950,6 +1969,7 @@
             this.txtCountry.Name = "txtCountry";
             this.txtCountry.Size = new System.Drawing.Size(226, 23);
             this.txtCountry.TabIndex = 0;
+            this.txtCountry.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCountry_PreviewKeyDown);
             // 
             // label26
             // 
@@ -2070,6 +2090,7 @@
             this.richSubClassification.Size = new System.Drawing.Size(226, 64);
             this.richSubClassification.TabIndex = 5;
             this.richSubClassification.Text = "";
+            this.richSubClassification.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.richSubClassification_PreviewKeyDown);
             // 
             // txtYearlyRev
             // 
@@ -2078,6 +2099,7 @@
             this.txtYearlyRev.Name = "txtYearlyRev";
             this.txtYearlyRev.Size = new System.Drawing.Size(226, 23);
             this.txtYearlyRev.TabIndex = 4;
+            this.txtYearlyRev.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtYearlyRev_PreviewKeyDown);
             // 
             // btnYearlyR
             // 
@@ -2141,6 +2163,7 @@
             this.txtRegDate.Name = "txtRegDate";
             this.txtRegDate.Size = new System.Drawing.Size(226, 23);
             this.txtRegDate.TabIndex = 3;
+            this.txtRegDate.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtRegDate_PreviewKeyDown);
             // 
             // btnYearExpnR
             // 
@@ -2338,6 +2361,7 @@
             this.txtYearlyExpense.Name = "txtYearlyExpense";
             this.txtYearlyExpense.Size = new System.Drawing.Size(225, 23);
             this.txtYearlyExpense.TabIndex = 9;
+            this.txtYearlyExpense.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtYearlyExpense_PreviewKeyDown);
             // 
             // label31
             // 
@@ -2366,6 +2390,7 @@
             this.txtCurrency.Name = "txtCurrency";
             this.txtCurrency.Size = new System.Drawing.Size(225, 23);
             this.txtCurrency.TabIndex = 8;
+            this.txtCurrency.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtCurrency_PreviewKeyDown);
             // 
             // txtAccAudit
             // 
@@ -2374,6 +2399,7 @@
             this.txtAccAudit.Name = "txtAccAudit";
             this.txtAccAudit.Size = new System.Drawing.Size(225, 23);
             this.txtAccAudit.TabIndex = 7;
+            this.txtAccAudit.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtAccAudit_PreviewKeyDown);
             // 
             // txtLandMark
             // 
@@ -2382,6 +2408,7 @@
             this.txtLandMark.Name = "txtLandMark";
             this.txtLandMark.Size = new System.Drawing.Size(225, 23);
             this.txtLandMark.TabIndex = 6;
+            this.txtLandMark.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtLandMark_PreviewKeyDown);
             // 
             // label33
             // 
@@ -2600,6 +2627,7 @@
             this.txtManager.Name = "txtManager";
             this.txtManager.Size = new System.Drawing.Size(226, 23);
             this.txtManager.TabIndex = 2;
+            this.txtManager.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtManager_PreviewKeyDown);
             // 
             // txtServices
             // 
@@ -2608,6 +2636,7 @@
             this.txtServices.Name = "txtServices";
             this.txtServices.Size = new System.Drawing.Size(226, 23);
             this.txtServices.TabIndex = 1;
+            this.txtServices.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtServices_PreviewKeyDown);
             // 
             // btnProductR
             // 
@@ -2661,6 +2690,7 @@
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(226, 23);
             this.txtProduct.TabIndex = 0;
+            this.txtProduct.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.txtProduct_PreviewKeyDown);
             // 
             // label37
             // 

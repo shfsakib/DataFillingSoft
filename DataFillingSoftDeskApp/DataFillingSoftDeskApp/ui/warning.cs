@@ -62,7 +62,9 @@ namespace DataFillingSoftDeskApp.ui
                 }
                 return;
             }
-            bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            bool ans = function.Execute(
+                "DELETE FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
             if (ans)
             {
                 function.Execute($"DELETE FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");

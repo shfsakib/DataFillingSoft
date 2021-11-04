@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataFillingSoftDeskApp.Class;
+using Newtonsoft.Json;
 
 namespace DataFillingSoftDeskApp.ui
 {
@@ -15,6 +19,7 @@ namespace DataFillingSoftDeskApp.ui
     {
         private Point mouse_auth_offset;
         private Function function;
+        private ApiDataModel apiDataModel;
         public authentication()
         {
             InitializeComponent();
@@ -25,6 +30,7 @@ namespace DataFillingSoftDeskApp.ui
                 btnClose.FlatAppearance.MouseOverBackColor = btnClose.BackColor;
             };
             function = Function.GetInstance();
+            apiDataModel = ApiDataModel.GetInstance();
         }
 
         private void authentication_Load(object sender, EventArgs e)
@@ -92,19 +98,34 @@ namespace DataFillingSoftDeskApp.ui
                     // MessageBoxIcon.Warning);
                     return;
                 }
-                string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND (MacAddress='' OR MacAddress IS NUll)");
-                if (isExist != "")
+
+                HttpClient client = new HttpClient();
+                // It can be the static constructor or a one-time initializer
+                client.BaseAddress = new Uri("http://api.etnyzfood.com/api/");
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+                // Assuming http://localhost:4354/api/ as BaseAddress 
+
+                var response = client.GetStringAsync("fetch/two/" + txtAuthKey.Text).Result;
+                var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
+                
+                apiDataModel = api;
+                //string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND (MacAddress='' OR MacAddress IS NUll)");
+                //if (isExist != "")
+                //{
+                if (api != null)
                 {
                     //bool ans = function.Execute(
                     //    $"UPDATE USERS SET MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{txtAuthKey.Text}'");
                     //if (ans)
                     //{
-                        registration registration = new registration();
-                        DataTransferProperty.AuthKey = txtAuthKey.Text;
-                        Properties.Settings.Default.AuthKey = txtAuthKey.Text;
-                        Properties.Settings.Default.Save();
-                        this.Hide();
-                        registration.Show();
+                    registration registration = new registration();
+                    DataTransferProperty.AuthKey = txtAuthKey.Text;
+                    Properties.Settings.Default.AuthKey = txtAuthKey.Text;
+                    Properties.Settings.Default.Save();
+                    this.Hide();
+                    registration.Show();
                     //}
                     //else
                     //{
