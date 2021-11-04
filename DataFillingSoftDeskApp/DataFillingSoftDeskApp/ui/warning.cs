@@ -51,6 +51,17 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.AuthKey.ToString()=="")
+            {
+                DialogResult dialogResult = MessageBox.Show("You are not registered yet", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                if (dialogResult == DialogResult.OK)
+                {
+                    this.Hide();
+                    log_in logIn = new log_in();
+                    logIn.Show();
+                }
+                return;
+            }
             bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
             if (ans)
             {
