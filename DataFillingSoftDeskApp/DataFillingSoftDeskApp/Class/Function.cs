@@ -35,7 +35,7 @@ namespace DataFillingSoftDeskApp.Class
             }
         }
 
-        public string Connection2 = new SqlConnectionStringBuilder
+        public string Connection1 = new SqlConnectionStringBuilder
         {
             DataSource = ".\\local",
             InitialCatalog = "DataFillingDb",
@@ -47,7 +47,7 @@ namespace DataFillingSoftDeskApp.Class
             MinPoolSize = 0,
             MaxPoolSize = 4096
         }.ToString();
-        public string Connection = new SqlConnectionStringBuilder
+        public string Connection2 = new SqlConnectionStringBuilder
         {
             DataSource = ".\\local",
             InitialCatalog = "DataFillingDb",
@@ -59,7 +59,9 @@ namespace DataFillingSoftDeskApp.Class
             MinPoolSize = 0,
             MaxPoolSize = 4096
         }.ToString();
-        public string Connection1 = @"Data Source=.\local;Initial Catalog=KidsLearningDb;Integrated Security=True";
+        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetDirectoryName(Application.ExecutablePath).Replace("\\bin\\Debug", "") + @"\DataFilling.mdf;Integrated Security=True";
+        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataFilling.mdf;Integrated Security=True";
+        public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetDirectoryName(Application.ExecutablePath) + @"\DataFilling.mdf;Integrated Security=True";
 
         public List<string> ListData(string sql)
         {
@@ -247,7 +249,7 @@ namespace DataFillingSoftDeskApp.Class
             SqlConnection con = new SqlConnection(Connection);
             try
             {
-                 
+
                 if (con.State != ConnectionState.Open) con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);

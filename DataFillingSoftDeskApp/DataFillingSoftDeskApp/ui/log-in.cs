@@ -84,6 +84,12 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (!function.IsConnected())
+            {
+                function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             string pass =
                 function.IsExist(
                     $"SELECT DesktopPassword FROM Users WHERE UserName='{txtUserName.Text}' AND DesktopPassword='{txtPassword.Text}' AND UserStatus='A' AND MacAddress='{function.MacAddress()}' COLLATE Latin1_General_CS_AI");

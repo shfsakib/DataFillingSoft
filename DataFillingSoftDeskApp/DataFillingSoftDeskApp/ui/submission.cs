@@ -587,8 +587,14 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
         {
             if (String.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Are you sure want to cancel submission?", "Warning",
+                MessageBox.Show("Password is required", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!function.IsConnected())
+            {
+                function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             else
             {
@@ -596,13 +602,13 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                 lblwait.Visible = true;
                 ExportToExcel(TableData(), Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName + ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                SaveZip();
+                SaveZip();  
                 try
                 {
                     MailMessage message = new MailMessage();
                     SmtpClient smtp = new SmtpClient();
                     message.From = new MailAddress(txtEmail.Text);
-                    message.To.Add(new MailAddress("shfkte@gmail.com"));
+                    message.To.Add(new MailAddress("softreview3@gmail.com"));
                     message.Subject = txtSubject.Text;
                     message.IsBodyHtml = true; //to make message body as html  
                     message.Body = txtMessage.Text;
@@ -635,7 +641,9 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                     mysmtp.Host = "smtp.gmail.com"; //for gmail host  
                     mysmtp.EnableSsl = true;
                     mysmtp.UseDefaultCredentials = false;
+                    //mysmtp.Credentials = new NetworkCredential("softreview3@gmail.com", "public@123");
                     mysmtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
+
                     mysmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     mysmtp.Send(mymessage);
                     btnSend.Enabled = true;
