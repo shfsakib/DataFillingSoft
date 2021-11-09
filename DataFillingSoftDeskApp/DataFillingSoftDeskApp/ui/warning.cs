@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -87,26 +88,33 @@ namespace DataFillingSoftDeskApp.ui
                     //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
                     if (response == "1")
                     {
-
-                        bool ans = function.Execute(
-                            $@"DELETE FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-                        if (ans)
+                        if (File.Exists(Path.GetFullPath("users.txt")))
                         {
-                            function.Execute($"DELETE FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-                            DataTransferProperty.AuthKey = "";
-                            Properties.Settings.Default.AuthKey = "";
-                            Properties.Settings.Default.Save();
-                            DialogResult dialogResult = MessageBox.Show("Your project is reset successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            if (dialogResult == DialogResult.OK)
-                            {
-                                this.Hide();
-                                log_in logIn = new log_in();
-                                logIn.Show();
-                            }
+                            File.Delete(Path.GetFullPath("users.txt"));
                         }
-                        else
+
+                        if (File.Exists(Path.GetFullPath("form-data.txt")))
                         {
-                            function.MessageBox("Failed to reset project, You are not registered to system", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            File.Delete(Path.GetFullPath("form-data.txt"));
+                        }
+                        DataTransferProperty.AuthKey = "";
+                        Properties.Settings.Default.AuthKey = "";
+                        Properties.Settings.Default.userid = "";
+                        Properties.Settings.Default.password = "";
+                        Properties.Settings.Default.email = "";
+                        Properties.Settings.Default.filetaken = "";
+                        Properties.Settings.Default.firstName = "";
+                        Properties.Settings.Default.lastName = "";
+                        Properties.Settings.Default.filedone = "0";
+                        Properties.Settings.Default.formserial = "0";
+                        Properties.Settings.Default.registrationdate = DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt");
+                        Properties.Settings.Default.Save();
+                        DialogResult dialogResult = MessageBox.Show("Your project is reset successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            this.Hide();
+                            log_in logIn = new log_in();
+                            logIn.Show();
                         }
                     }
                 }

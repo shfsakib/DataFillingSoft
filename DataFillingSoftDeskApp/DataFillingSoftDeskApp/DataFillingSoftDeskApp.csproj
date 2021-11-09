@@ -185,7 +185,6 @@
     <EmbeddedResource Include="ui\warning.resx">
       <DependentUpon>warning.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataFillingSoftDeskApp_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,13 +257,6 @@
     <Folder Include="File\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\DataFilling.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\DataFilling_log.ldf">
-      <DependentUpon>DataFilling.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="data_processing.ico" />
   </ItemGroup>
   <ItemGroup>

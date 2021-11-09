@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,16 +85,7 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (!function.IsConnected())
-            {
-                function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            string pass =
-                function.IsExist(
-                    $"SELECT DesktopPassword FROM Users WHERE UserName='{txtUserName.Text}' AND DesktopPassword='{txtPassword.Text}' AND UserStatus='A' AND MacAddress='{function.MacAddress()}' COLLATE Latin1_General_CS_AI");
-            if (pass == txtPassword.Text.Trim() && pass!="")
+            if (Properties.Settings.Default.password.ToString() == txtPassword.Text.Trim() && Properties.Settings.Default.password.ToString() != "")
             {
                 DataTransferProperty.UserId = txtUserName.Text;
                 DataTransferProperty.AuthKey = Properties.Settings.Default.AuthKey;
@@ -111,6 +103,11 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            if (!function.IsConnected())
+            {
+                function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             DialogResult dialogResult = MessageBox.Show(
                 "Resetting project will delete all form filled by you and also registration details\r\n\r\nBefore resetting project please make a copy of Installation folder\r\n\r\nAre you sure want to reset project?",
                 "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

@@ -23,8 +23,6 @@ E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\ob
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe.config
-E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\Database\DataFilling.mdf
-E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\Database\DataFilling_log.ldf
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe.manifest
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.application
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DataFillingSoftDeskApp.exe

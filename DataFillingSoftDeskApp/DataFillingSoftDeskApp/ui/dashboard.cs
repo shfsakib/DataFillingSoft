@@ -22,6 +22,7 @@ namespace DataFillingSoftDeskApp.ui
         private string imageString = "";
         int nextClick = 0;
         private int prevClick = 0;
+        string serial = "";
         public dashboard()
         {
             InitializeComponent();
@@ -48,10 +49,14 @@ namespace DataFillingSoftDeskApp.ui
 
         private void LoadData()
         {
-            txtFileTaken.Text =
-                function.IsExist(
-                    $"SELECT FormNo FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            txtFileDone.Text = function.IsExist($@"SELECT COUNT(FORMNo) FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            txtFileTaken.Text = Properties.Settings.Default.filetaken;
+            if (File.Exists(Path.GetFullPath("users.txt")))
+            {
+                string[] allLine = File.ReadAllLines("form-data.txt");
+                txtFileDone.Text = allLine.Length.ToString();
+            }
+            else
+                txtFileDone.Text = "0";
 
             float taken = Convert.ToInt32(txtFileTaken.Text);
             float done = Convert.ToInt32(txtFileDone.Text);
@@ -64,21 +69,17 @@ namespace DataFillingSoftDeskApp.ui
             else if (percent < 100)
             {
                 panelProgressBar.Width = Convert.ToInt32(percent) * 3;
-                lblPercentage.Text = percent.ToString("0.00") + "%";
+                lblPercentage.Text = percent.ToString() + "%";
             }
             else if (percent == 100)
             {
-                panelProgressBar.Width = 280;
+                panelProgressBar.Width = 268;
                 lblPercentage.Text = "100%";
             }
 
-            txtClientName.Text =
-                function.IsExist(
-                    $"SELECT FirstName FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            string date = function.IsExist(
-                $"SELECT RegistrationDate FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            string userId = function.IsExist(
-                $"SELECT UserName FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
+            txtClientName.Text = Properties.Settings.Default.firstName;
+            string date = Properties.Settings.Default.registrationdate;
+            string userId = Properties.Settings.Default.userid;
             txtUserIdRegDate.Text = userId + " : " + date;
             if (taken == done)
             {
@@ -87,10 +88,8 @@ namespace DataFillingSoftDeskApp.ui
             }
 
             lblDate.Text = DateTime.Now.ToString();
-            string regDate =
-                function.IsExist(
-                    $@"SELECT RegistrationDate FROM Users WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-            lblExpireDate.Text = (Convert.ToDateTime(regDate).AddDays(21)).ToString();
+            string regDate = date;
+            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(21)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
                 btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
@@ -994,85 +993,176 @@ namespace DataFillingSoftDeskApp.ui
             //}
             //else
             //{
-            if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
+            try
             {
-                if (imageString == "")
+                if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
                 {
-                    function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (imageString == "")
+                    {
+                        function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        return;
 
-                }
-                bool ans = function.Execute(
-                              $@"INSERT INTO FormData(FormNo,CompanyCode,CompanyName,CompanyAddress,ZipCode,Fax,Website,Email,ContactNo,State,Country,Headquarter,NoOfEmployees,Industry,BrandAmbassador,MediaPartner,SocialMedia,FrenchiesPartner,Investor,AdvertisingPartner,Product,Services,Manager,RegistrationDate,YearlyRevenue,Subclassification,Landmark,AccoutAudit,Currency,YearlyExpense,FileName,AuthenticationKey,EntryTime) 
-VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{richAddress.Text}','{txtZip.Text}','{txtFax.Text}','{txtWebsite.Text}','{txtEmail.Text}','{txtContactNo.Text}','{txtState.Text}','{txtCountry.Text}','{txtHeadQuarter.Text}','{txtNoofEmp.Text}','{richIndustry.Text}','{txtBrandAmbs.Text}','{txtMediaPart.Text}','{txtSocialMedia.Text}','{txtFrenPart.Text}','{txtInvestor.Text}','{txtAdvtPart.Text}','{txtProduct.Text}','{txtServices.Text}','{txtManager.Text}','{txtRegDate.Text}','{txtYearlyRev.Text}','{richSubClassification.Text}','{txtLandMark.Text}','{txtAccAudit.Text}','{txtCurrency.Text}','{txtYearlyExpense.Text}','{fileName}','{Properties.Settings.Default.AuthKey}','{function.Date()}')");
-                if (ans)
-                {
-                    Clear();
-                    LoadData();
-                    lblFormSl.Text = "";
-                    function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                bool ans = function.Execute($@"UPDATE FormData SET FormNo='{txtFormNo.Text}',CompanyCode='{txtCompanyCode.Text}',CompanyName='{txtCompanyName.Text}',
-CompanyAddress='{richAddress.Text}',ZipCode='{txtZip.Text}',Fax='{txtFax.Text}',Website='{txtWebsite.Text}',Email='{txtEmail.Text}',ContactNo='{txtContactNo.Text}',State='{txtState.Text}',
-Country='{txtCountry.Text}',Headquarter='{txtHeadQuarter.Text}',NoOfEmployees='{txtNoofEmp.Text}',Industry='{richIndustry.Text}',BrandAmbassador='{txtBrandAmbs.Text}',MediaPartner='{txtMediaPart.Text}',
-SocialMedia='{txtSocialMedia.Text}',FrenchiesPartner='{txtFrenPart.Text}',Investor='{txtInvestor.Text}',AdvertisingPartner='{txtAdvtPart.Text}',Product='{txtProduct.Text}',Services='{txtServices.Text}',
-Manager='{txtManager.Text}',RegistrationDate='{txtRegDate.Text}',YearlyRevenue='{txtYearlyRev.Text}',Subclassification='{richSubClassification.Text}',Landmark='{txtLandMark.Text}',AccoutAudit='{txtAccAudit.Text}',
-Currency='{txtCurrency.Text}',YearlyExpense='{txtYearlyExpense.Text}' WHERE FormSerial='{lblFormSl.Text}'");
-                if (ans)
-                {
-                    Clear();
-                    LoadData();
-                    lblFormSl.Text = "";
-                    function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    string oldData = "";
+                    if (File.Exists(Path.GetFullPath("form-data.txt")))
+                    {
+                        StreamReader streamReader = new StreamReader("form-data.txt");
+                        oldData = streamReader.ReadToEnd();
+                        streamReader.Close();
+                    }
+                    bool ans = false;
+
+                    if (oldData != "")
+                    {
+                        StreamWriter streamWriter = new StreamWriter("form-data.txt");
+                        streamWriter.WriteLine(oldData + (Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
+                                               "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
+                                               "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
+                                               "\t/?" +
+                                               txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
+                                               "\t/?" +
+                                               txtMediaPart.Text + "\t/?" + txtSocialMedia.Text + "\t/?" + txtFrenPart.Text +
+                                               "\t/?" + txtInvestor.Text + "\t/?" + txtAdvtPart.Text + "\t/?" +
+                                               txtProduct.Text +
+                                               "\t/?" + txtServices.Text + "\t/?" + txtManager.Text + "\t/?" +
+                                               txtRegDate.Text +
+                                               "\t/?" + txtYearlyRev.Text + "\t/?" + richSubClassification.Text + "\t/?" +
+                                               txtLandMark.Text + "\t/?" + txtAccAudit.Text + "\t/?" + txtCurrency.Text +
+                                               "\t/?" +
+                                               txtYearlyExpense.Text);
+                        streamWriter.Close();
+
+                    }
+                    else
+                    {
+                        StreamWriter streamWriter = new StreamWriter("form-data.txt");
+                        streamWriter.WriteLine((Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
+                                               "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
+                                               "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
+                                               "\t/?" +
+                                               txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
+                                               "\t/?" +
+                                               txtMediaPart.Text + "\t/?" + txtSocialMedia.Text + "\t/?" + txtFrenPart.Text +
+                                               "\t/?" + txtInvestor.Text + "\t/?" + txtAdvtPart.Text + "\t/?" +
+                                               txtProduct.Text +
+                                               "\t/?" + txtServices.Text + "\t/?" + txtManager.Text + "\t/?" +
+                                               txtRegDate.Text +
+                                               "\t/?" + txtYearlyRev.Text + "\t/?" + richSubClassification.Text + "\t/?" +
+                                               txtLandMark.Text + "\t/?" + txtAccAudit.Text + "\t/?" + txtCurrency.Text +
+                                               "\t/?" +
+                                               txtYearlyExpense.Text);
+                        streamWriter.Close();
+                    }
+
+                    ans = true;
+                    if (ans)
+                    {
+                        Clear();
+                        Properties.Settings.Default.filedone =
+                            (Convert.ToInt32(Properties.Settings.Default.filedone) + 1).ToString();
+                        Properties.Settings.Default.formserial =
+                            (Convert.ToInt32(Properties.Settings.Default.formserial) + 1).ToString();
+                        Properties.Settings.Default.Save();
+                        LoadData();
+                        lblFormSl.Text = "";
+                        function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to access database. Please run this application as administrator.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    bool ans = false;
+                    string[] formData = File.ReadAllLines("form-data.txt");
+                    if (formData.Length > 0)
+                    {
+
+                        formData[Convert.ToInt32(lblFormSl.Text) - 1] =
+                            (serial + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" +
+                             txtCompanyName.Text +
+                             "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
+                             "\t/?" +
+                             txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                             txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
+                             "\t/?" +
+                             txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
+                             "\t/?" +
+                             txtMediaPart.Text + "\t/?" + txtSocialMedia.Text + "\t/?" + txtFrenPart.Text +
+                             "\t/?" + txtInvestor.Text + "\t/?" + txtAdvtPart.Text + "\t/?" +
+                             txtProduct.Text +
+                             "\t/?" + txtServices.Text + "\t/?" + txtManager.Text + "\t/?" +
+                             txtRegDate.Text +
+                             "\t/?" + txtYearlyRev.Text + "\t/?" + richSubClassification.Text + "\t/?" +
+                             txtLandMark.Text + "\t/?" + txtAccAudit.Text + "\t/?" + txtCurrency.Text +
+                             "\t/?" +
+                             txtYearlyExpense.Text);
+                        File.WriteAllLines(Path.GetFullPath("form-data.txt"), formData);
+                        ans = true;
+                        if (ans)
+                        {
+                            Clear();
+                            LoadData();
+                            lblFormSl.Text = "";
+                            function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to access database. Please run this application as administrator.",
+                                "Warning",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
                 }
+
+                //}
             }
-
-            //}
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
-        private void FirstForm()
-        {
-            lblFormSl.Text = function.IsExist(
-                $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
-            GetFieldData(lblFormSl.Text);
-        }
-        private void LastForm()
-        {
-            lblFormSl.Text = function.IsExist(
-                $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial DESC");
-            GetFieldData(lblFormSl.Text);
-        }
+        //private void FirstForm()
+        //{
+        //    lblFormSl.Text = function.IsExist(
+        //        $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+        //    GetFieldData(lblFormSl.Text);
+        //}
+        //private void LastForm()
+        //{
+        //    lblFormSl.Text = "1";
+        //    GetFieldData(lblFormSl.Text);
+        //}
         private void btnNextForm_Click(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
             if (nextClick == 0)
             {
-                FirstForm();
+                lblFormSl.Text = "1";
+                GetFieldData();
                 nextClick = 1;
             }
             else
             {
-                string nextId = function.IsExist(
-                    $"SELECT TOP 1 FormSerial FROM FormData WHERE FormSerial>'{lblFormSl.Text}' AND AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+                string nextId = (Convert.ToInt32(lblFormSl.Text) + 1).ToString();
                 if (nextId != "")
                 {
                     lblFormSl.Text = nextId;
-                    GetFieldData(lblFormSl.Text);
+                    GetFieldData();
                 }
-                else
-                {
-                    LastForm();
-                }
-
             }
 
         }
@@ -1080,55 +1170,121 @@ Currency='{txtCurrency.Text}',YearlyExpense='{txtYearlyExpense.Text}' WHERE Form
         private void btnPrevForm_Click(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
-            string prevId = function.IsExist(
-                $"SELECT TOP 1 FormSerial FROM FormData WHERE FormSerial<'{lblFormSl.Text}' AND AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial DESC");
-            if (prevId != "")
+            if (lblFormSl.Text != "")
             {
-                lblFormSl.Text = prevId;
-                GetFieldData(lblFormSl.Text);
-            }
-            else
-            {
-                FirstForm();
+                string prevId = (Convert.ToInt32(lblFormSl.Text) - 1).ToString();
+                if (prevId != "")
+                {
+                    lblFormSl.Text = prevId;
+                    GetFieldData();
+                }
             }
 
         }
 
-        private void GetFieldData(string serial)
+        private void GetFieldData()
         {
-            txtFormNo.Text = function.IsExist(
-                $"SELECT TOP 1 FormNo FROM FormData WHERE FormSerial='{serial}'");
-            txtCompanyCode.Text = function.IsExist($"SELECT TOP 1 CompanyCode FROM FormData WHERE FormSerial='{serial}'");
-            txtCompanyName.Text = function.IsExist($"SELECT TOP 1 CompanyName FROM FormData WHERE FormSerial='{serial}'");
-            richAddress.Text = function.IsExist($"SELECT TOP 1 CompanyAddress FROM FormData WHERE FormSerial='{serial}'");
-            txtZip.Text = function.IsExist($"SELECT TOP 1 ZipCode FROM FormData WHERE FormSerial='{serial}'");
-            txtFax.Text = function.IsExist($"SELECT TOP 1 Fax FROM FormData WHERE FormSerial='{serial}'");
-            txtWebsite.Text = function.IsExist($"SELECT TOP 1 Website FROM FormData WHERE FormSerial='{serial}'");
-            txtEmail.Text = function.IsExist($"SELECT TOP 1 Email FROM FormData WHERE FormSerial='{serial}'");
-            txtContactNo.Text = function.IsExist($"SELECT TOP 1 ContactNo FROM FormData WHERE FormSerial='{serial}'");
-            txtState.Text = function.IsExist($"SELECT TOP 1 State FROM FormData WHERE FormSerial='{serial}'");
-            txtCountry.Text = function.IsExist($"SELECT TOP 1 Country FROM FormData WHERE FormSerial='{serial}'");
-            txtHeadQuarter.Text = function.IsExist($"SELECT TOP 1 Headquarter FROM FormData WHERE FormSerial='{serial}'");
-            txtNoofEmp.Text = function.IsExist($"SELECT TOP 1 NoOfEmployees FROM FormData WHERE FormSerial='{serial}'");
-            richIndustry.Text = function.IsExist($"SELECT TOP 1 Industry FROM FormData WHERE FormSerial='{serial}'");
-            txtBrandAmbs.Text = function.IsExist($"SELECT TOP 1 BrandAmbassador FROM FormData WHERE FormSerial='{serial}'");
-            txtMediaPart.Text = function.IsExist($"SELECT TOP 1 MediaPartner FROM FormData WHERE FormSerial='{serial}'");
-            txtSocialMedia.Text = function.IsExist($"SELECT TOP 1 SocialMedia FROM FormData WHERE FormSerial='{serial}'");
-            txtFrenPart.Text = function.IsExist($"SELECT TOP 1 FrenchiesPartner FROM FormData WHERE FormSerial='{serial}'");
-            txtInvestor.Text = function.IsExist($"SELECT TOP 1 Investor FROM FormData WHERE FormSerial='{serial}'");
-            txtAdvtPart.Text = function.IsExist($"SELECT TOP 1 AdvertisingPartner FROM FormData WHERE FormSerial='{serial}'");
-            txtProduct.Text = function.IsExist($"SELECT TOP 1 Product FROM FormData WHERE FormSerial='{serial}'");
-            txtServices.Text = function.IsExist($"SELECT TOP 1 Services FROM FormData WHERE FormSerial='{serial}'");
-            txtManager.Text = function.IsExist($"SELECT TOP 1 Manager FROM FormData WHERE FormSerial='{serial}'");
-            txtRegDate.Text = function.IsExist($"SELECT TOP 1 RegistrationDate FROM FormData WHERE FormSerial='{serial}'");
-            txtYearlyRev.Text = function.IsExist($"SELECT TOP 1 YearlyRevenue FROM FormData WHERE FormSerial='{serial}'");
-            richSubClassification.Text = function.IsExist($"SELECT TOP 1 Subclassification FROM FormData WHERE FormSerial='{serial}'");
-            txtLandMark.Text = function.IsExist($"SELECT TOP 1 Landmark FROM FormData WHERE FormSerial='{serial}'");
-            txtAccAudit.Text = function.IsExist($"SELECT TOP 1 AccoutAudit FROM FormData WHERE FormSerial='{serial}'");
-            txtCurrency.Text = function.IsExist($"SELECT TOP 1 Currency FROM FormData WHERE FormSerial='{serial}'");
-            txtYearlyExpense.Text = function.IsExist($"SELECT TOP 1 YearlyExpense FROM FormData WHERE FormSerial='{serial}'");
+            if (!File.Exists(Path.GetFullPath("form-data.txt")))
+            {
+                MessageBox.Show("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string[] allLine = File.ReadAllLines("form-data.txt");
+            string[] values = new string[] { };
+            if (allLine.Length > 0)
+            {
 
+                if (Convert.ToInt32(lblFormSl.Text) - 1 != allLine.Length && Convert.ToInt32(lblFormSl.Text) <= allLine.Length && Convert.ToInt32(lblFormSl.Text) > 0)
+                {
+                    for (int i = 0; i < Convert.ToInt32(lblFormSl.Text); i++)
+                    {
+                        if (i == Convert.ToInt32(lblFormSl.Text) - 1)
+                        {
+                            values = allLine[i].ToString().Split('/');
+                        }
+                    }
+                }
+                else if (Convert.ToInt32(lblFormSl.Text) <= 0)
+                {
+                    for (int i = 0; i < Convert.ToInt32(1); i++)
+                    {
+                        if (i == Convert.ToInt32(lblFormSl.Text))
+                        {
+                            values = allLine[i].ToString().Split('/');
+                        }
+                    }
+                    lblFormSl.Text = "1";
+                }
+                else if (lblFormSl.Text == "1")
+                {
+                    for (int i = 0; i < Convert.ToInt32(lblFormSl.Text); i++)
+                    {
+                        if (i == Convert.ToInt32(lblFormSl.Text) - 1)
+                        {
+                            values = allLine[i].ToString().Split('/');
+                        }
+                    }
+                    lblFormSl.Text = "1";
+                }
+                else if (Convert.ToInt32(lblFormSl.Text) > allLine.Length)
+                {
+                    for (int i = 0; i < allLine.Length; i++)
+                    {
+                        if (i == allLine.Length - 1)
+                        {
+                            values = allLine[i].ToString().Split('/');
+                        }
+                    }
 
+                    lblFormSl.Text = allLine.Length.ToString();
+                }
+                else
+                {
+                    for (int i = 0; i < allLine.Length; i++)
+                    {
+                        if (i == allLine.Length - 1)
+                        {
+                            values = allLine[i].ToString().Split('/');
+                        }
+                    }
+
+                }
+            }
+            if (values.Length > 0)
+            {
+                serial = values[0].ToString().Trim();
+                fileName = values[1].ToString().Trim();
+                txtFormNo.Text = values[2].ToString().Trim();
+                txtCompanyCode.Text = values[3].ToString().Trim();
+                txtCompanyName.Text = values[4].ToString().Trim();
+                richAddress.Text = values[5].ToString().Trim();
+                txtZip.Text = values[6].ToString().Trim();
+                txtFax.Text = values[7].ToString().Trim();
+                txtWebsite.Text = values[8].ToString().Trim();
+                txtEmail.Text = values[9].ToString().Trim();
+                txtContactNo.Text = values[10].ToString().Trim();
+                txtState.Text = values[11].ToString().Trim();
+                txtCountry.Text = values[12].ToString().Trim();
+                txtHeadQuarter.Text = values[13].ToString().Trim();
+                txtNoofEmp.Text = values[14].ToString().Trim();
+                richIndustry.Text = values[15].ToString().Trim();
+                txtBrandAmbs.Text = values[16].ToString().Trim();
+                txtMediaPart.Text = values[17].ToString().Trim();
+                txtSocialMedia.Text = values[18].ToString().Trim();
+                txtFrenPart.Text = values[19].ToString().Trim();
+                txtInvestor.Text = values[20].ToString().Trim();
+                txtAdvtPart.Text = values[21].ToString().Trim();
+                txtProduct.Text = values[22].ToString().Trim();
+                txtServices.Text = values[23].ToString().Trim();
+                txtManager.Text = values[24].ToString().Trim();
+                txtRegDate.Text = values[25].ToString().Trim();
+                txtYearlyRev.Text = values[26].ToString().Trim();
+                richSubClassification.Text = values[27].ToString().Trim();
+                txtLandMark.Text = values[28].ToString().Trim();
+                txtAccAudit.Text = values[29].ToString().Trim();
+                txtCurrency.Text = values[30].ToString().Trim();
+                txtYearlyExpense.Text = values[31].ToString().Trim();
+            }
         }
 
         private void txtNoofEmp_KeyPress(object sender, KeyPressEventArgs e)

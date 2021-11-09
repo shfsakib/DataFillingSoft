@@ -116,5 +116,41 @@ namespace DataFillingSoftDeskApp.Properties {
                 this["email"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string firstName {
+            get {
+                return ((string)(this["firstName"]));
+            }
+            set {
+                this["firstName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string lastName {
+            get {
+                return ((string)(this["lastName"]));
+            }
+            set {
+                this["lastName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string formserial {
+            get {
+                return ((string)(this["formserial"]));
+            }
+            set {
+                this["formserial"] = value;
+            }
+        }
     }
 }

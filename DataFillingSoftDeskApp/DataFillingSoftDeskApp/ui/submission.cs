@@ -21,6 +21,7 @@ namespace DataFillingSoftDeskApp.ui
     {
         private Function function;
         private string userName = "";
+        DataTable table = new DataTable();
         public submission()
         {
             InitializeComponent();
@@ -40,19 +41,71 @@ namespace DataFillingSoftDeskApp.ui
         }
         private void LoadData()
         {
-            userName = function.IsExist(
-                $@"SELECT UserName FROM Users WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}'");
-            txtEmail.Text =
-                function.IsExist(
-                    $@"SELECT Email FROM Users WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}'");
+            userName = Properties.Settings.Default.userid;
+            txtEmail.Text = Properties.Settings.Default.email;
             txtAttachName.Text = userName + ".zip";
-
         }
         private DataTable TableData()
         {
-            return function.LoadTable($@"SELECT        FormSerial, FileName, FormNo, CompanyCode, CompanyName, CompanyAddress, ZipCode, Fax, Website, Email, ContactNo, State, Country, Headquarter, NoOfEmployees, Industry, BrandAmbassador, MediaPartner, 
-                         SocialMedia, FrenchiesPartner, Investor, AdvertisingPartner, Product, Services, Manager, RegistrationDate, YearlyRevenue, Subclassification, Landmark, AccoutAudit, Currency, YearlyExpense
-FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
+            table.Columns.Add("DATA_ID", typeof(int));
+            table.Columns.Add("FileName", typeof(string));
+            table.Columns.Add("FormNo", typeof(string));
+            table.Columns.Add("CompanyCode", typeof(string));
+            table.Columns.Add("CompanyName", typeof(string));
+            table.Columns.Add("CompanyAddress", typeof(string));
+            table.Columns.Add("ZipCode", typeof(string));
+            table.Columns.Add("Fax", typeof(string));
+            table.Columns.Add("Website", typeof(string));
+            table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("ContactNo", typeof(string));
+            table.Columns.Add("State", typeof(string));
+            table.Columns.Add("Country", typeof(string));
+            table.Columns.Add("Headquarter", typeof(string));
+            table.Columns.Add("NoOfEmployees", typeof(string));
+            table.Columns.Add("Industry", typeof(string));
+            table.Columns.Add("BrandAmbassador", typeof(string));
+            table.Columns.Add("MediaPartner", typeof(string));
+            table.Columns.Add("SocialMedia", typeof(string));
+            table.Columns.Add("FrenchiesPartner", typeof(string));
+            table.Columns.Add("Investor", typeof(string));
+            table.Columns.Add("AdvertisingPartner", typeof(string));
+            table.Columns.Add("Product", typeof(string));
+            table.Columns.Add("Services", typeof(string));
+            table.Columns.Add("Manager", typeof(string));
+            table.Columns.Add("RegistrationDate", typeof(string));
+            table.Columns.Add("YearlyRevenue", typeof(string));
+            table.Columns.Add("Subclassification", typeof(string));
+            table.Columns.Add("Landmark", typeof(string));
+            table.Columns.Add("AccoutAudit", typeof(string));
+            table.Columns.Add("Currency", typeof(string));
+            table.Columns.Add("YearlyExpense", typeof(string));
+            table.Columns.Add("USER_ID", typeof(string));
+
+            if (!File.Exists(Path.GetFullPath("form-data.txt")))
+            {
+                MessageBox.Show("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            string[] allLine = File.ReadAllLines("form-data.txt");
+            string[] values;
+            for (int i = 0; i < allLine.Length; i++)
+            {
+                values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
+                string[] row = new string[values.Length + 1];
+                for (int j = 0; j < values.Length + 1; j++)
+                {
+                    if (j == values.Length)
+                    {
+                        row[j] = Properties.Settings.Default.userid;
+                    }
+                    else
+                        row[j] = values[j].Trim();
+                }
+
+                table.Rows.Add(row);
+            }
+
+            return table;
 
         }
         private bool ExportToExcel(DataTable dataTable, string filePath)
@@ -558,7 +611,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                 using (ZipFile zip = new ZipFile())
                 {
 
-                    zip.Password = "123";
+                    zip.Password = "1234";
                     string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
                     zip.AddDirectory(fileName);
                     zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");

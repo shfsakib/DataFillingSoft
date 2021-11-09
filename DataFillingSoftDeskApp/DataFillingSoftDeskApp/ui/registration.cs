@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -45,13 +46,7 @@ namespace DataFillingSoftDeskApp.ui
             var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
 
             apiDataModel = api;
-            //txtDate.Text = DataTransferProperty.AuthKey;
-            //DateTime date = Convert.ToDateTime(function.IsExist($"SELECT RegistrationDate FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'"));
-            //txtDate.Text = date.ToString("yyyy-MM-dd");
-            //txtFirstName.Text = function.IsExist($"SELECT FirstName FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
-            //txtLastName.Text = function.IsExist($"SELECT LastName FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
-            //txtEmail.Text = function.IsExist($"SELECT MobileNo FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
-            //txtContactNo.Text = function.IsExist($"SELECT Email FROM USERS WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
+           
             txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
             txtFirstName.Text = apiDataModel.fname;
             txtLastName.Text = apiDataModel.lname;
@@ -120,18 +115,7 @@ namespace DataFillingSoftDeskApp.ui
             mouse_offset = new Point(-e.X, -e.Y);
 
         }
-
-        //private bool IsUserExist()
-        //{
-        //    bool result = false;
-        //    string x = function.IsExist($@"SELECT UserName FROM Users WHERE UserName='{txtUserId.Text}'");
-        //    if (x != "")
-        //    {
-        //        result = true;
-        //    }
-
-        //    return result;
-        //}
+         
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (richAddress.Text == "")
@@ -166,7 +150,6 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     gender = "Male";
                 }
-
                 try
                 {
 
@@ -178,16 +161,28 @@ namespace DataFillingSoftDeskApp.ui
                         new MediaTypeWithQualityHeaderValue("application/json"));
                     // Assuming http://localhost:4354/api/ as BaseAddress 
 
+                    //var response = client.GetStringAsync("onMacP""ost/" + DataTransferProperty.AuthKey + "/" + function.MacAddress()).Result;
                     var response = client.GetStringAsync("onMacPost/" + DataTransferProperty.AuthKey + "/" + function.MacAddress()).Result;
 
-                    bool ans = function.Execute($"INSERT INTO Users(FirstName,LastName,Email,MobileNo,Address,Gender,Age,FormNo,UserName,DesktopPassword,MacAddress,AuthenticationKey,RegistrationDate,UserStatus) VALUES('{txtFirstName.Text}','{txtLastName.Text}','{txtEmail.Text}','{txtContactNo.Text}','{richAddress.Text}','{gender}','{txtAge.Text}','{txtNoForms.Text}','{txtUserId.Text}','{txtPass.Text}','{function.MacAddress()}','{DataTransferProperty.AuthKey}','{DateTime.Now}','A')");
-
-                    //bool ans = function.Execute(
-                    //    $"UPDATE Users SET Address='{richAddress.Text}',Gender='{gender}',Age='{txtAge.Text}',FormNo='{txtNoForms.Text}',UserName='{txtUserId.Text}',DesktopPassword='{txtPass.Text}',MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
+                    bool ans = false;
+                    StreamWriter streamWriter = new StreamWriter(@"users.txt"); streamWriter.WriteLine(txtFirstName.Text + "\t/" + txtLastName.Text + "\t/" + txtEmail.Text + "\t/" + txtContactNo.Text + "\t/" + richAddress.Text + "\t/" + gender + "\t/" + txtAge.Text + "\t/" + txtNoForms.Text + "\t/" + txtUserId.Text + "\t/" + txtPass.Text + "\t/" + function.MacAddress() + "\t/" + DataTransferProperty.AuthKey + "\t/" + DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt") + "\t/" + "A");
+                    ans = true;
+                    streamWriter.Close();
+                   
                     if (ans)
                     {
                         if (response == "1")
                         {
+                            Properties.Settings.Default.userid = txtUserId.Text;
+                            Properties.Settings.Default.password = txtPass.Text;
+                            Properties.Settings.Default.email = txtEmail.Text;
+                            Properties.Settings.Default.filetaken = txtNoForms.Text;
+                            Properties.Settings.Default.firstName = txtFirstName.Text;
+                            Properties.Settings.Default.lastName = txtLastName.Text;
+                            Properties.Settings.Default.filedone = "0";
+                            Properties.Settings.Default.formserial = "0";
+                            Properties.Settings.Default.registrationdate = DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt");
+                            Properties.Settings.Default.Save();
                             DialogResult dialogResult = MessageBox.Show($"Message \r\nRegistration Successfull\r\nRemember This For Login Details\r\n\r\nUser Id: {txtUserId.Text}\r\nPassword: {txtPass.Text}\r\n\r\nThis Form Will Automatically Close and Login Window Will Open", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (dialogResult == DialogResult.OK)
                             {
@@ -211,7 +206,7 @@ namespace DataFillingSoftDeskApp.ui
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Warning",
+                    MessageBox.Show("Please check your internet connection", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
