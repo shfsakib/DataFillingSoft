@@ -654,7 +654,7 @@ namespace DataFillingSoftDeskApp.ui
             else if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                 
                 return;
             }
             else

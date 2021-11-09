@@ -58,7 +58,7 @@ namespace DataFillingSoftDeskApp.ui
             if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                // MessageBox.Show("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
             else if (Properties.Settings.Default.AuthKey.ToString() == "")
             {
@@ -84,9 +84,7 @@ namespace DataFillingSoftDeskApp.ui
                     // Assuming http://localhost:4354/api/ as BaseAddress 
 
                     var response = client.GetStringAsync("remove/authKey/" + Properties.Settings.Default.AuthKey).Result;
-                    //var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
-                    //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
-                    if (response == "1")
+                        if (response == "1")
                     {
                         if (File.Exists(Path.GetFullPath("users.txt")))
                         {

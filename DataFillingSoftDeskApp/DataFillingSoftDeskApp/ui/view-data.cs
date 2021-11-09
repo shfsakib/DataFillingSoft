@@ -177,8 +177,7 @@ namespace DataFillingSoftDeskApp.ui
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             ExportToExcel(table, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder\FormData.xlsx");
-            //Thread.Sleep(TimeSpan.FromSeconds(5));
-            //SaveZip();
+            
         }
 
 

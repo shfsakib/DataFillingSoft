@@ -169,18 +169,6 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnLoadFiles_Click(object sender, EventArgs e)
         {
-            //// open file dialog   
-            //OpenFileDialog open = new OpenFileDialog();
-            //// image filters  
-            //open.Filter = "Image Files(*.jpg; *.jpeg; *.bmp)|*.jpg; *.jpeg;  *.bmp";
-            //if (open.ShowDialog() == DialogResult.OK)
-            //{
-            //    // display image in picture box  
-            //    pictureBox1.Image = new Bitmap(open.FileName);
-            //    // image file path  
-            //    fileName = open.FileName;
-
-            //}
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
                 openFileDialog1.Filter = "Image Files (JPG,PNG,GIF)|*.JPG;*.PNG;*.GIF";
@@ -984,15 +972,7 @@ namespace DataFillingSoftDeskApp.ui
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
-
-            //if (txtFormNo.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "")
-            //{
-            //    function.MessageBox("Form no, company name & company address is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            //else
-            //{
+        { 
             try
             {
                 if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
@@ -1126,7 +1106,6 @@ namespace DataFillingSoftDeskApp.ui
                     }
                 }
 
-                //}
             }
             catch (Exception ex)
             {
@@ -1135,17 +1114,7 @@ namespace DataFillingSoftDeskApp.ui
             }
         }
 
-        //private void FirstForm()
-        //{
-        //    lblFormSl.Text = function.IsExist(
-        //        $"SELECT TOP 1 FormSerial FROM FormData WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}' ORDER BY FormSerial ASC");
-        //    GetFieldData(lblFormSl.Text);
-        //}
-        //private void LastForm()
-        //{
-        //    lblFormSl.Text = "1";
-        //    GetFieldData(lblFormSl.Text);
-        //}
+        
         private void btnNextForm_Click(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
