@@ -23,7 +23,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             InitializeComponent();
             function = Function.GetInstance();
-            apiDataModel=ApiDataModel.GetInstance();
+            apiDataModel = ApiDataModel.GetInstance();
 
         }
         private void registration_Load(object sender, EventArgs e)
@@ -35,13 +35,13 @@ namespace DataFillingSoftDeskApp.ui
         {
             HttpClient client = new HttpClient();
             // It can be the static constructor or a one-time initializer
-            client.BaseAddress = new Uri("http://api.etnyzfood.com/api/");
+            client.BaseAddress = new Uri("http://api.plumitnetwork.com/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
             // Assuming http://localhost:4354/api/ as BaseAddress 
 
-            var response = client.GetStringAsync("fetch/two/" + DataTransferProperty.AuthKey).Result;
+            var response = client.GetStringAsync("fetch/three/" + DataTransferProperty.AuthKey).Result;
             var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
 
             apiDataModel = api;
@@ -121,17 +121,17 @@ namespace DataFillingSoftDeskApp.ui
 
         }
 
-        private bool IsUserExist()
-        {
-            bool result = false;
-            string x = function.IsExist($@"SELECT UserName FROM Users WHERE UserName='{txtUserId.Text}'");
-            if (x != "")
-            {
-                result = true;
-            }
+        //private bool IsUserExist()
+        //{
+        //    bool result = false;
+        //    string x = function.IsExist($@"SELECT UserName FROM Users WHERE UserName='{txtUserId.Text}'");
+        //    if (x != "")
+        //    {
+        //        result = true;
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (richAddress.Text == "")
@@ -159,11 +159,6 @@ namespace DataFillingSoftDeskApp.ui
                 function.MessageBox("Password mismatch", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (IsUserExist())
-            {
-                function.MessageBox("User id already exist please use another user id", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
                 string gender = "Female";
@@ -171,19 +166,53 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     gender = "Male";
                 }
-                bool ans = function.Execute($"INSERT INTO Users(FirstName,LastName,Email,MobileNo,Address,Gender,Age,FormNo,UserName,DesktopPassword,MacAddress,AuthenticationKey,RegistrationDate,UserStatus) VALUES('{txtFirstName.Text}','{txtLastName.Text}','{txtEmail.Text}','{txtContactNo.Text}','{richAddress.Text}','{gender}','{txtAge.Text}','{txtNoForms.Text}','{txtUserId.Text}','{txtPass.Text}','{function.MacAddress()}','{DataTransferProperty.AuthKey}','{DateTime.Now}','A')");
 
-                //bool ans = function.Execute(
-                //    $"UPDATE Users SET Address='{richAddress.Text}',Gender='{gender}',Age='{txtAge.Text}',FormNo='{txtNoForms.Text}',UserName='{txtUserId.Text}',DesktopPassword='{txtPass.Text}',MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
-                if (ans)
+                try
                 {
-                    DialogResult dialogResult = MessageBox.Show($"Message \r\nRegistration Successfull\r\nRemember This For Login Details\r\n\r\nUser Id: {txtUserId.Text}\r\nPassword: {txtPass.Text}\r\n\r\nThis Form Will Automatically Close and Login Window Will Open", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (dialogResult == DialogResult.OK)
+
+                    HttpClient client = new HttpClient();
+                    // It can be the static constructor or a one-time initializer
+                    client.BaseAddress = new Uri("http://api.plumitnetwork.com/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new MediaTypeWithQualityHeaderValue("application/json"));
+                    // Assuming http://localhost:4354/api/ as BaseAddress 
+
+                    var response = client.GetStringAsync("onMacPost/" + DataTransferProperty.AuthKey + "/" + function.MacAddress()).Result;
+
+                    bool ans = function.Execute($"INSERT INTO Users(FirstName,LastName,Email,MobileNo,Address,Gender,Age,FormNo,UserName,DesktopPassword,MacAddress,AuthenticationKey,RegistrationDate,UserStatus) VALUES('{txtFirstName.Text}','{txtLastName.Text}','{txtEmail.Text}','{txtContactNo.Text}','{richAddress.Text}','{gender}','{txtAge.Text}','{txtNoForms.Text}','{txtUserId.Text}','{txtPass.Text}','{function.MacAddress()}','{DataTransferProperty.AuthKey}','{DateTime.Now}','A')");
+
+                    //bool ans = function.Execute(
+                    //    $"UPDATE Users SET Address='{richAddress.Text}',Gender='{gender}',Age='{txtAge.Text}',FormNo='{txtNoForms.Text}',UserName='{txtUserId.Text}',DesktopPassword='{txtPass.Text}',MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{DataTransferProperty.AuthKey}'");
+                    if (ans)
                     {
-                        log_in login = new log_in();
-                        this.Hide();
-                        login.Show();
+                        if (response == "1")
+                        {
+                            DialogResult dialogResult = MessageBox.Show($"Message \r\nRegistration Successfull\r\nRemember This For Login Details\r\n\r\nUser Id: {txtUserId.Text}\r\nPassword: {txtPass.Text}\r\n\r\nThis Form Will Automatically Close and Login Window Will Open", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (dialogResult == DialogResult.OK)
+                            {
+                                log_in login = new log_in();
+                                this.Hide();
+                                login.Show();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please check your internet connection and try again.", "Warning",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("Failed to access database. Please run this application as administrator.", "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

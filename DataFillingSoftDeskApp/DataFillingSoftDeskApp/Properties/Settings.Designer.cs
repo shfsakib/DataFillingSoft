@@ -44,5 +44,77 @@ namespace DataFillingSoftDeskApp.Properties {
                 return ((string)(this["DataFillingDbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string userid {
+            get {
+                return ((string)(this["userid"]));
+            }
+            set {
+                this["userid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string password {
+            get {
+                return ((string)(this["password"]));
+            }
+            set {
+                this["password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string filetaken {
+            get {
+                return ((string)(this["filetaken"]));
+            }
+            set {
+                this["filetaken"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string filedone {
+            get {
+                return ((string)(this["filedone"]));
+            }
+            set {
+                this["filedone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string registrationdate {
+            get {
+                return ((string)(this["registrationdate"]));
+            }
+            set {
+                this["registrationdate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string email {
+            get {
+                return ((string)(this["email"]));
+            }
+            set {
+                this["email"] = value;
+            }
+        }
     }
 }

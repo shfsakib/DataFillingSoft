@@ -26,7 +26,7 @@
     <ProductName>DataFillingSoft</ProductName>
     <PublisherName>Plum Information And Technology Network Services</PublisherName>
     <SuiteName>Plum Information And Technology Network Services</SuiteName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -65,7 +65,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DotNetZip, Version=1.15.0.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
@@ -258,12 +258,12 @@
     <Folder Include="File\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataFilling.mdf">
+    <Content Include="Database\DataFilling.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataFilling_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="Database\DataFilling_log.ldf">
       <DependentUpon>DataFilling.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data_processing.ico" />
   </ItemGroup>
@@ -278,20 +278,30 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.15.0">
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
       <Visible>False</Visible>
-      <ProductName>SQL Server 2019 Express LocalDB</ProductName>
+      <ProductName>SQL Server 2012 Express LocalDB</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PublishFile Include="DataFilling.mdf">
+    <PublishFile Include="Database\DataFilling.mdf">
       <Visible>False</Visible>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
+      <PublishState>DataFile</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Database\DataFilling_log.ldf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>DataFile</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>

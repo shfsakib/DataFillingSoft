@@ -76,13 +76,13 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     HttpClient client = new HttpClient();
                     // It can be the static constructor or a one-time initializer
-                    client.BaseAddress = new Uri("http://api.etnyzfood.com/api/");
+                    client.BaseAddress = new Uri("http://api.plumitnetwork.com/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));
                     // Assuming http://localhost:4354/api/ as BaseAddress 
 
-                    var response = client.GetStringAsync("remove/authKey/" + DataTransferProperty.AuthKey).Result;
+                    var response = client.GetStringAsync("remove/authKey/" + Properties.Settings.Default.AuthKey).Result;
                     //var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
                     //bool ans = function.Execute($"UPDATE Users SET Address='',Gender='',Age='',FormNo='',UserName='',DesktopPassword='',MacAddress='',AuthenticationKey='' WHERE AuthenticationKey='{Properties.Settings.Default.AuthKey}'");
                     if (response == "1")

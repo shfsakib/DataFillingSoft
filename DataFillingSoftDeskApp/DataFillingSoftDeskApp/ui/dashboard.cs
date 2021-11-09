@@ -68,7 +68,7 @@ namespace DataFillingSoftDeskApp.ui
             }
             else if (percent == 100)
             {
-                panelProgressBar.Width = 290;
+                panelProgressBar.Width = 280;
                 lblPercentage.Text = "100%";
             }
 
@@ -987,50 +987,55 @@ namespace DataFillingSoftDeskApp.ui
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (txtFormNo.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "")
+            //if (txtFormNo.Text == "" || txtCompanyName.Text == "" || richAddress.Text == "")
+            //{
+            //    function.MessageBox("Form no, company name & company address is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //else
+            //{
+            if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
             {
-                function.MessageBox("Form no, company name & company address is required", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (imageString == "")
+                {
+                    function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+
+                }
+                bool ans = function.Execute(
+                              $@"INSERT INTO FormData(FormNo,CompanyCode,CompanyName,CompanyAddress,ZipCode,Fax,Website,Email,ContactNo,State,Country,Headquarter,NoOfEmployees,Industry,BrandAmbassador,MediaPartner,SocialMedia,FrenchiesPartner,Investor,AdvertisingPartner,Product,Services,Manager,RegistrationDate,YearlyRevenue,Subclassification,Landmark,AccoutAudit,Currency,YearlyExpense,FileName,AuthenticationKey,EntryTime) 
+VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{richAddress.Text}','{txtZip.Text}','{txtFax.Text}','{txtWebsite.Text}','{txtEmail.Text}','{txtContactNo.Text}','{txtState.Text}','{txtCountry.Text}','{txtHeadQuarter.Text}','{txtNoofEmp.Text}','{richIndustry.Text}','{txtBrandAmbs.Text}','{txtMediaPart.Text}','{txtSocialMedia.Text}','{txtFrenPart.Text}','{txtInvestor.Text}','{txtAdvtPart.Text}','{txtProduct.Text}','{txtServices.Text}','{txtManager.Text}','{txtRegDate.Text}','{txtYearlyRev.Text}','{richSubClassification.Text}','{txtLandMark.Text}','{txtAccAudit.Text}','{txtCurrency.Text}','{txtYearlyExpense.Text}','{fileName}','{Properties.Settings.Default.AuthKey}','{function.Date()}')");
+                if (ans)
+                {
+                    Clear();
+                    LoadData();
+                    lblFormSl.Text = "";
+                    function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
-                {
-                    if (imageString == "")
-                    {
-                        function.MessageBox("Please load demo image first", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-
-                    }
-                    bool ans = function.Execute(
-                                  $@"INSERT INTO FormData(FormNo,CompanyCode,CompanyName,CompanyAddress,ZipCode,Fax,Website,Email,ContactNo,State,Country,Headquarter,NoOfEmployees,Industry,BrandAmbassador,MediaPartner,SocialMedia,FrenchiesPartner,Investor,AdvertisingPartner,Product,Services,Manager,RegistrationDate,YearlyRevenue,Subclassification,Landmark,AccoutAudit,Currency,YearlyExpense,FileName,AuthenticationKey,EntryTime) 
-VALUES('{txtFormNo.Text}','{txtCompanyCode.Text}','{txtCompanyName.Text}','{richAddress.Text}','{txtZip.Text}','{txtFax.Text}','{txtWebsite.Text}','{txtEmail.Text}','{txtContactNo.Text}','{txtState.Text}','{txtCountry.Text}','{txtHeadQuarter.Text}','{txtNoofEmp.Text}','{richIndustry.Text}','{txtBrandAmbs.Text}','{txtMediaPart.Text}','{txtSocialMedia.Text}','{txtFrenPart.Text}','{txtInvestor.Text}','{txtAdvtPart.Text}','{txtProduct.Text}','{txtServices.Text}','{txtManager.Text}','{txtRegDate.Text}','{txtYearlyRev.Text}','{richSubClassification.Text}','{txtLandMark.Text}','{txtAccAudit.Text}','{txtCurrency.Text}','{txtYearlyExpense.Text}','{fileName}','{Properties.Settings.Default.AuthKey}','{function.Date()}')");
-                    if (ans)
-                    {
-                        Clear();
-                        LoadData();
-                        lblFormSl.Text = "";
-                        function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    bool ans = function.Execute($@"UPDATE FormData SET FormNo='{txtFormNo.Text}',CompanyCode='{txtCompanyCode.Text}',CompanyName='{txtCompanyName.Text}',
+                bool ans = function.Execute($@"UPDATE FormData SET FormNo='{txtFormNo.Text}',CompanyCode='{txtCompanyCode.Text}',CompanyName='{txtCompanyName.Text}',
 CompanyAddress='{richAddress.Text}',ZipCode='{txtZip.Text}',Fax='{txtFax.Text}',Website='{txtWebsite.Text}',Email='{txtEmail.Text}',ContactNo='{txtContactNo.Text}',State='{txtState.Text}',
 Country='{txtCountry.Text}',Headquarter='{txtHeadQuarter.Text}',NoOfEmployees='{txtNoofEmp.Text}',Industry='{richIndustry.Text}',BrandAmbassador='{txtBrandAmbs.Text}',MediaPartner='{txtMediaPart.Text}',
 SocialMedia='{txtSocialMedia.Text}',FrenchiesPartner='{txtFrenPart.Text}',Investor='{txtInvestor.Text}',AdvertisingPartner='{txtAdvtPart.Text}',Product='{txtProduct.Text}',Services='{txtServices.Text}',
 Manager='{txtManager.Text}',RegistrationDate='{txtRegDate.Text}',YearlyRevenue='{txtYearlyRev.Text}',Subclassification='{richSubClassification.Text}',Landmark='{txtLandMark.Text}',AccoutAudit='{txtAccAudit.Text}',
 Currency='{txtCurrency.Text}',YearlyExpense='{txtYearlyExpense.Text}' WHERE FormSerial='{lblFormSl.Text}'");
-                    if (ans)
-                    {
-                        Clear();
-                        LoadData();
-                        lblFormSl.Text = "";
-                        function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                if (ans)
+                {
+                    Clear();
+                    LoadData();
+                    lblFormSl.Text = "";
+                    function.MessageBox("Saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
+                else
+                {
+                    MessageBox.Show("Failed to access database. Please run this application as administrator.", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
+
+            //}
 
         }
 

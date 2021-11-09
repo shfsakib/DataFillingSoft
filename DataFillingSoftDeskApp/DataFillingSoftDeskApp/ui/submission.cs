@@ -89,7 +89,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         if ((j + 1) == 3)
                         {
                             string formNo = dataTable.Rows[i][j].ToString();
-                            if (formNo != "")
+                            if (formNo != "" && formNo.Length >= 3)
                             {
                                 string startForm = formNo.Substring(0, 3);
                                 string endForm = formNo.Substring((formNo.Length - 3), 3);
@@ -126,7 +126,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 5)
                         {
                             string companyName = dataTable.Rows[i][j].ToString();
-                            if (companyName != "")
+                            if (companyName != "" && companyName.Length >= 3)
                             {
                                 string startcompanyName = companyName.Substring(0, 3);
                                 string endcompanyName =
@@ -163,7 +163,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 9)
                         {
                             string website = dataTable.Rows[i][j].ToString();
-                            if (website != "")
+                            if (website != "" && website.Length >= 6)
                             {
                                 string startwebsite = website.Substring(0, 6);
                                 string endData = website.Substring(website.Length - 6, 6);
@@ -200,7 +200,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 23)
                         {
                             string product = dataTable.Rows[i][j].ToString();
-                            if (product != "")
+                            if (product != "" && product.Length >= 6)
                             {
                                 string startproduct = product.Substring(0, 6);
                                 string endData = product.Substring(product.Length - 6, 6);
@@ -237,7 +237,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 25)
                         {
                             string manager = dataTable.Rows[i][j].ToString();
-                            if (manager != "")
+                            if (manager != "" && manager.Length >= 3)
                             {
                                 string startmanager = manager.Substring(0, 3);
                                 string endmanager = manager.Substring(manager.Length - 3, 3);
@@ -273,7 +273,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 14)
                         {
                             string headQ = dataTable.Rows[i][j].ToString();
-                            if (headQ != "")
+                            if (headQ != "" && headQ.Length >= 6)
                             {
                                 string startheadQ = headQ.Substring(0, 6);
                                 string endheadQ = headQ.Substring(headQ.Length - 6, 6);
@@ -309,7 +309,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 13)
                         {
                             string country = dataTable.Rows[i][j].ToString();
-                            if (country != "")
+                            if (country != "" && country.Length >= 6)
                             {
                                 string startcountry = country.Substring(0, 6);
                                 string endcountry = country.Substring(country.Length - 6, 6);
@@ -345,7 +345,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 16)
                         {
                             string industry = dataTable.Rows[i][j].ToString();
-                            if (industry != "")
+                            if (industry != "" && industry.Length >= 6)
                             {
                                 string startindustry = industry.Substring(0, 6);
                                 string endindustry = industry.Substring(industry.Length - 6, 6);
@@ -381,7 +381,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 28)
                         {
                             string subClass = dataTable.Rows[i][j].ToString();
-                            if (subClass != "")
+                            if (subClass != "" && subClass.Length >= 6)
                             {
                                 string startsubClass = subClass.Substring(0, 6);
                                 string endsubClass = subClass.Substring(subClass.Length - 6, 6);
@@ -417,7 +417,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 17)
                         {
                             string brandAmb = dataTable.Rows[i][j].ToString();
-                            if (brandAmb != "")
+                            if (brandAmb != "" && brandAmb.Length >= 3)
                             {
                                 string startbrandAmb = brandAmb.Substring(0, 3);
                                 string endbrandAmb = brandAmb.Substring(brandAmb.Length - 3, 3);
@@ -453,7 +453,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         else if ((j + 1) == 6)
                         {
                             string comAddress = dataTable.Rows[i][j].ToString();
-                            if (comAddress != "")
+                            if (comAddress != "" && comAddress.Length >= 3)
                             {
                                 if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
                                 {
@@ -524,14 +524,16 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                         }
 
                         Directory.CreateDirectory(
-                            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
+                                                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
                         worksheet.SaveAs(filePath, Type.Missing);
                         excelApp.Quit();
                         return true;
                     }
                     catch (Exception ex)
                     {
+                        function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
+
                     }
                 }
 
@@ -539,6 +541,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
             }
             catch (Exception ex)
             {
+                function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -585,7 +588,12 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtPassword.Text))
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                MessageBox.Show("Email is required", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (String.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Password is required", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -602,7 +610,7 @@ FROM            FormData WHERE AuthenticationKey = '{Properties.Settings.Default
                 lblwait.Visible = true;
                 ExportToExcel(TableData(), Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName + ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                SaveZip();  
+                SaveZip();
                 try
                 {
                     MailMessage message = new MailMessage();

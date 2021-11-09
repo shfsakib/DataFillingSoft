@@ -59,9 +59,22 @@ namespace DataFillingSoftDeskApp.Class
             MinPoolSize = 0,
             MaxPoolSize = 4096
         }.ToString();
-        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetDirectoryName(Application.ExecutablePath).Replace("\\bin\\Debug", "") + @"\DataFilling.mdf;Integrated Security=True";
-        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\DataFilling.mdf;Integrated Security=True";
-        public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetDirectoryName(Application.ExecutablePath) + @"\DataFilling.mdf;Integrated Security=True";
+        //public string Connection = new SqlConnectionStringBuilder
+        //{
+        //    DataSource = "(LocalDB)\\MSSQLLocalDB",
+        //    InitialCatalog = "DataFilling",
+        //    MultipleActiveResultSets = true,
+        //    IntegratedSecurity = true,
+        //    ConnectTimeout = 0,
+        //    Pooling = true,
+        //    MinPoolSize = 0,
+        //    MaxPoolSize = 4096
+        //}.ToString();
+
+        public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetFullPath("DataFilling.mdf") + @";Integrated Security=True;Connect Timeout = 30";
+
+        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.GetDirectoryName(Application.ExecutablePath) + @"\DataFilling.mdf;Integrated Security=True";
+        //public string Connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\DataFillingSoft\DataFilling.mdf;Integrated Security=True";
 
         public List<string> ListData(string sql)
         {

@@ -256,7 +256,6 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(151, 62);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(375, 26);

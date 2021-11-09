@@ -75,9 +75,9 @@
             this.lblDevelop.ForeColor = System.Drawing.Color.White;
             this.lblDevelop.Location = new System.Drawing.Point(139, 494);
             this.lblDevelop.Name = "lblDevelop";
-            this.lblDevelop.Size = new System.Drawing.Size(145, 13);
+            this.lblDevelop.Size = new System.Drawing.Size(143, 13);
             this.lblDevelop.TabIndex = 2;
-            this.lblDevelop.Text = "Developed By Sakib Hossain";
+            this.lblDevelop.Text = "Developed By Plumitnetwork";
             this.lblDevelop.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblName

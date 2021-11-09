@@ -26,6 +26,7 @@ namespace DataFillingSoftDeskApp.Class
         public string lname { get; set; }
         public string email { get; set; }
         public string mobile { get; set; }
+        public string mac_address { get; set; }
         public string password { get; set; }
         public string is_active { get; set; }
         public string is_registered { get; set; }
