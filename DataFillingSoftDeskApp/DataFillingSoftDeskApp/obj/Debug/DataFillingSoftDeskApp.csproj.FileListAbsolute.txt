@@ -35,3 +35,4 @@ E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\ob
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.application
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.exe
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache

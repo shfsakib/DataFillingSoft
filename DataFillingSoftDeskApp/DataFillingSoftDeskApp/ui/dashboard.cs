@@ -972,7 +972,7 @@ namespace DataFillingSoftDeskApp.ui
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        { 
+        {
             try
             {
                 if (lblFormSl.Text == "" || lblFormSl.Text == null || string.IsNullOrEmpty(lblFormSl.Text))
@@ -1114,7 +1114,7 @@ namespace DataFillingSoftDeskApp.ui
             }
         }
 
-        
+
         private void btnNextForm_Click(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
@@ -1258,11 +1258,7 @@ namespace DataFillingSoftDeskApp.ui
 
         private void txtNoofEmp_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+
         }
 
         private void btnViewData_Click(object sender, EventArgs e)
