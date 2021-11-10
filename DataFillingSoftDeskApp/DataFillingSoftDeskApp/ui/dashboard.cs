@@ -23,6 +23,7 @@ namespace DataFillingSoftDeskApp.ui
         int nextClick = 0;
         private int prevClick = 0;
         string serial = "";
+        ContextMenu emptyMenu = new ContextMenu();
         public dashboard()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace DataFillingSoftDeskApp.ui
         private void LoadData()
         {
             txtFileTaken.Text = Properties.Settings.Default.filetaken;
-            if (File.Exists(Path.GetFullPath("users.txt")))
+            if (File.Exists(Path.GetFullPath("form-data.txt")))
             {
                 string[] allLine = File.ReadAllLines("form-data.txt");
                 txtFileDone.Text = allLine.Length.ToString();
@@ -96,6 +97,34 @@ namespace DataFillingSoftDeskApp.ui
                     btnGroup1.Enabled = btnGroup2.Enabled =
                         btnGroup3.Enabled = btnSave.Enabled = btnViewData.Enabled = panelGrp1.Enabled = false;
             }
+
+            txtFormNo.ContextMenu = emptyMenu;
+            txtCompanyCode.ContextMenu = emptyMenu;
+            txtCompanyName.ContextMenu = emptyMenu;
+            txtZip.ContextMenu = emptyMenu;
+            txtFax.ContextMenu = emptyMenu; 
+            txtWebsite.ContextMenu = emptyMenu;
+            txtEmail.ContextMenu = emptyMenu;
+            txtContactNo.ContextMenu = emptyMenu;
+            txtState.ContextMenu = emptyMenu;
+            txtCountry.ContextMenu = emptyMenu;
+            txtHeadQuarter.ContextMenu = emptyMenu;
+            txtNoofEmp.ContextMenu = emptyMenu;
+            txtBrandAmbs.ContextMenu = emptyMenu;
+            txtMediaPart.ContextMenu = emptyMenu;
+            txtSocialMedia.ContextMenu = emptyMenu;
+            txtFrenPart.ContextMenu = emptyMenu;
+            txtInvestor.ContextMenu = emptyMenu;
+            txtAdvtPart.ContextMenu = emptyMenu;
+            txtProduct.ContextMenu = emptyMenu;
+            txtServices.ContextMenu = emptyMenu;
+            txtManager.ContextMenu = emptyMenu;
+            txtRegDate.ContextMenu = emptyMenu;
+            txtYearlyRev.ContextMenu = emptyMenu;
+            txtLandMark.ContextMenu = emptyMenu;
+            txtAccAudit.ContextMenu = emptyMenu;
+            txtYearlyExpense.ContextMenu = emptyMenu;
+            txtCurrency.ContextMenu = emptyMenu;
         }
 
         private void dashboard_MouseMove(object sender, MouseEventArgs e)

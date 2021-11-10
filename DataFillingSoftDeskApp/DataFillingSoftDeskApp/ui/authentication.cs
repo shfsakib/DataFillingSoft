@@ -110,10 +110,7 @@ namespace DataFillingSoftDeskApp.ui
 
                 var response = client.GetStringAsync("fetch/three/" + txtAuthKey.Text).Result;
                 var api = JsonConvert.DeserializeObject<ApiDataModel>(response);
-                apiDataModel = api;
-                //string isExist = function.IsExist($"SELECT AuthenticationKey FROM USERS WHERE AuthenticationKey='{txtAuthKey.Text}' AND (MacAddress='' OR MacAddress IS NUll)");
-                //if (isExist != "")
-                //{
+                apiDataModel = api; 
                 if (api != null)
                 {
                     if (api.mac_address == null)
@@ -142,25 +139,11 @@ namespace DataFillingSoftDeskApp.ui
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    //bool ans = function.Execute(
-                    //    $"UPDATE USERS SET MacAddress='{function.MacAddress()}' WHERE AuthenticationKey='{txtAuthKey.Text}'");
-                    //if (ans)
-                    //{
-
-                    //}
-                    //else
-                    //{
-                    //    function.MessageBox("Failed to get mac address, please update you network drive", "Error",
-                    //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-
                 }
                 else
                 {
                     function.MessageBox("Your authentication key is invalid or already registered", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //MessageBox.Show("Your authentication key is invalid or already registered", "Error",
-                    //    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

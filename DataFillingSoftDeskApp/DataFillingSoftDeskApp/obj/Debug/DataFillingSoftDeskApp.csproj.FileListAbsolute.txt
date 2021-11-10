@@ -21,6 +21,7 @@ E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bi
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\DotNetZip.xml
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\Newtonsoft.Json.xml
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\bin\Debug\System.Net.Http.Formatting.xml
+E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.preloader.resources
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.Properties.Resources.resources
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.ui.authentication.resources
@@ -35,4 +36,3 @@ E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\ob
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.application
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.exe
 E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.pdb
-E:\Projects\Git\DataFillingSoft\DataFillingSoftDeskApp\DataFillingSoftDeskApp\obj\Debug\DataFillingSoftDeskApp.csprojResolveAssemblyReference.cache
