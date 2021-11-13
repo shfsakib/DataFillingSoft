@@ -61,7 +61,7 @@ namespace DataFillingSoftDeskApp.ui
 
             float taken = Convert.ToInt32(txtFileTaken.Text);
             float done = Convert.ToInt32(txtFileDone.Text);
-            float percent = (done / taken) * 100;
+            int percent = Convert.ToInt32((done / taken) * 100);
             if (percent == 0)
             {
                 panelProgressBar.Width = 0;
@@ -102,7 +102,7 @@ namespace DataFillingSoftDeskApp.ui
             txtCompanyCode.ContextMenu = emptyMenu;
             txtCompanyName.ContextMenu = emptyMenu;
             txtZip.ContextMenu = emptyMenu;
-            txtFax.ContextMenu = emptyMenu; 
+            txtFax.ContextMenu = emptyMenu;
             txtWebsite.ContextMenu = emptyMenu;
             txtEmail.ContextMenu = emptyMenu;
             txtContactNo.ContextMenu = emptyMenu;

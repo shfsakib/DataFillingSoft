@@ -47,7 +47,7 @@ namespace DataFillingSoftDeskApp.ui
         }
         private DataTable TableData()
         {
-            table.Columns.Add("DATA_ID", typeof(int));
+            table.Columns.Add("Data_Id", typeof(string));
             table.Columns.Add("FileName", typeof(string));
             table.Columns.Add("FormNo", typeof(string));
             table.Columns.Add("CompanyCode", typeof(string));
@@ -97,6 +97,10 @@ namespace DataFillingSoftDeskApp.ui
                     if (j == values.Length)
                     {
                         row[j] = Properties.Settings.Default.userid;
+                    }
+                    else if (j == 0)
+                    {
+                        row[j] = (j + 1).ToString();
                     }
                     else
                         row[j] = values[j].Trim();
@@ -654,7 +658,7 @@ namespace DataFillingSoftDeskApp.ui
             else if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                 
+
                 return;
             }
             else
@@ -723,8 +727,14 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     btnSend.Enabled = true;
                     lblwait.Visible = false;
-                    MessageBox.Show("Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.", "Warning",
+                    DialogResult dialogResult = MessageBox.Show("Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.", "Warning",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        this.Hide();
+                        dashboard dashboard = new dashboard();
+                        dashboard.Show();
+                    }
                 }
             }
         }

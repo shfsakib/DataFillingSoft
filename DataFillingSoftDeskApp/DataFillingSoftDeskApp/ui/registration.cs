@@ -165,7 +165,8 @@ namespace DataFillingSoftDeskApp.ui
                     var response = client.GetStringAsync("onMacPost/" + DataTransferProperty.AuthKey + "/" + function.MacAddress()).Result;
 
                     bool ans = false;
-                    StreamWriter streamWriter = new StreamWriter(@"users.txt"); streamWriter.WriteLine(txtFirstName.Text + "\t/" + txtLastName.Text + "\t/" + txtEmail.Text + "\t/" + txtContactNo.Text + "\t/" + richAddress.Text + "\t/" + gender + "\t/" + txtAge.Text + "\t/" + txtNoForms.Text + "\t/" + txtUserId.Text + "\t/" + txtPass.Text + "\t/" + function.MacAddress() + "\t/" + DataTransferProperty.AuthKey + "\t/" + DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt") + "\t/" + "A");
+                    StreamWriter streamWriter = new StreamWriter(@"users.txt");
+                    streamWriter.WriteLine(txtFirstName.Text + "\t/" + txtLastName.Text + "\t/" + txtEmail.Text + "\t/" + txtContactNo.Text + "\t/" + richAddress.Text + "\t/" + gender + "\t/" + txtAge.Text + "\t/" + txtNoForms.Text + "\t/" + txtUserId.Text + "\t/" + txtPass.Text + "\t/" + function.MacAddress() + "\t/" + DataTransferProperty.AuthKey + "\t/" + DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt") + "\t/" + "A");
                     ans = true;
                     streamWriter.Close();
                    

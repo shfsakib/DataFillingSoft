@@ -1611,9 +1611,9 @@
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(9, 274);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(125, 17);
+            this.label22.Size = new System.Drawing.Size(121, 17);
             this.label22.TabIndex = 65;
-            this.label22.Text = "Frenchies Partner:";
+            this.label22.Text = "Franchise Partner";
             // 
             // label23
             // 
@@ -2371,7 +2371,7 @@
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(110, 17);
             this.label31.TabIndex = 72;
-            this.label31.Text = "Yearly Expence:";
+            this.label31.Text = "Yearly Expense:";
             // 
             // label32
             // 
@@ -2773,9 +2773,9 @@
             // 
             this.panelProgressBar.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.progressbar_01;
             this.panelProgressBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelProgressBar.Location = new System.Drawing.Point(5, 5);
+            this.panelProgressBar.Location = new System.Drawing.Point(5, 3);
             this.panelProgressBar.Name = "panelProgressBar";
-            this.panelProgressBar.Size = new System.Drawing.Size(0, 12);
+            this.panelProgressBar.Size = new System.Drawing.Size(0, 10);
             this.panelProgressBar.TabIndex = 5;
             // 
             // openFileDialog1

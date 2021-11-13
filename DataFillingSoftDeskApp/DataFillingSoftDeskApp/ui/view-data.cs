@@ -38,7 +38,7 @@ namespace DataFillingSoftDeskApp.ui
 
         private void LoadData()
         {
-            table.Columns.Add("DATA_ID", typeof(int));
+            table.Columns.Add("Data_Id", typeof(string));
             table.Columns.Add("FileName", typeof(string));
             table.Columns.Add("FormNo", typeof(string));
             table.Columns.Add("CompanyCode", typeof(string));
@@ -80,13 +80,17 @@ namespace DataFillingSoftDeskApp.ui
             string[] values;
             for (int i = 0; i < allLine.Length; i++)
             {
-                values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                 string[] row = new string[values.Length + 1];
                 for (int j = 0; j < values.Length + 1; j++)
                 {
                     if (j == values.Length)
                     {
                         row[j] = Properties.Settings.Default.userid;
+                    }
+                    else if (j == 0)
+                    {
+                        row[j] = (i + 1).ToString();
                     }
                     else
                         row[j] = values[j].Trim();
@@ -176,8 +180,15 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            ExportToExcel(table, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder\FormData.xlsx");
-            
+            if (dataGridView1.Rows.Count > 0)
+            {
+                ExportToExcel(table, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder\FormData.xlsx");
+            }
+            else
+            {
+                function.MessageBox("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
 
