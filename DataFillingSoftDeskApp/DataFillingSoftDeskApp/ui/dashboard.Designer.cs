@@ -316,9 +316,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(408, 24);
+            this.label1.Size = new System.Drawing.Size(324, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Universal Education and Research Service";
+            this.label1.Text = "Transonic Data Technology Corp.";
             // 
             // btnLoadFiles
             // 
