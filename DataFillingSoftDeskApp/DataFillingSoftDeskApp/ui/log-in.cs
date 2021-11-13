@@ -29,7 +29,7 @@ namespace DataFillingSoftDeskApp.ui
         }
         private void log_in_Load(object sender, EventArgs e)
         {
-            lblName.Text = String.Format("Universal Education{0} And Research", "\r\n");
+            lblName.Text = String.Format("Transonic Data{0} Technology Corp.", "\r\n");
             panelUserName.SendToBack();
             panelPass.SendToBack();
         }

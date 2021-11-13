@@ -86,7 +86,7 @@
             this.lblName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(12, 172);
+            this.lblName.Location = new System.Drawing.Point(26, 172);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(221, 31);
             this.lblName.TabIndex = 1;
