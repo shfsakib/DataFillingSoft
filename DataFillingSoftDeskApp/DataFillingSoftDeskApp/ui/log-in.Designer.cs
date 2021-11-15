@@ -95,7 +95,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop;
+            this.pictureBox1.Image = global::DataFillingSoftDeskApp.Properties.Resources.laptop1;
             this.pictureBox1.Location = new System.Drawing.Point(99, 62);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 90);

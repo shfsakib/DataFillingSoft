@@ -1198,7 +1198,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text) - 1)
                         {
-                            values = allLine[i].ToString().Split('/');
+                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
                         }
                     }
                 }
@@ -1208,7 +1208,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text))
                         {
-                            values = allLine[i].ToString().Split('/');
+                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
                         }
                     }
                     lblFormSl.Text = "1";
@@ -1219,7 +1219,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text) - 1)
                         {
-                            values = allLine[i].ToString().Split('/');
+                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
                         }
                     }
                     lblFormSl.Text = "1";
@@ -1230,7 +1230,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == allLine.Length - 1)
                         {
-                            values = allLine[i].ToString().Split('/');
+                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
                         }
                     }
 
@@ -1242,7 +1242,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == allLine.Length - 1)
                         {
-                            values = allLine[i].ToString().Split('/');
+                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
                         }
                     }
 

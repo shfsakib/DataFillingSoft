@@ -41,8 +41,8 @@ namespace DataFillingSoftDeskApp.ui
         }
         private void LoadData()
         {
-            userName = Properties.Settings.Default.userid;
-            txtEmail.Text = Properties.Settings.Default.email;
+            userName = Properties.Settings.Default.userid.Trim();
+            txtEmail.Text = Properties.Settings.Default.email.Trim();
             txtAttachName.Text = userName + ".zip";
         }
         private DataTable TableData()
