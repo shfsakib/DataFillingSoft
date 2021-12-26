@@ -88,9 +88,9 @@ namespace DataFillingSoftDeskApp.ui
                 btnSubmit.Enabled = true;
             }
 
-            lblDate.Text = DateTime.Now.ToString();
+            lblDate.Text =DateTime.Now.ToString();
             string regDate = date;
-            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(21)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
+            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(120)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
                 btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =

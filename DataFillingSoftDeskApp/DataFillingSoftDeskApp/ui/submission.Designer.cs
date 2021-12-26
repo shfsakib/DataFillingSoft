@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,7 +49,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnMinimize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempGrid)).BeginInit();
@@ -66,6 +66,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(583, 39);
             this.panel1.TabIndex = 6;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.minus_sign;
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.Color.Coral;
+            this.btnMinimize.Location = new System.Drawing.Point(531, 7);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(15, 25);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnClose
             // 
@@ -89,9 +106,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(2, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 24);
+            this.label1.Size = new System.Drawing.Size(189, 24);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Submission";
+            this.label1.Text = "Project Submission";
             // 
             // groupBox1
             // 
@@ -117,7 +134,6 @@
             this.groupBox1.Size = new System.Drawing.Size(559, 518);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Program for sending mail";
             // 
             // lblwait
             // 
@@ -191,7 +207,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(375, 168);
             this.txtMessage.TabIndex = 9;
-            this.txtMessage.Text = "I have completed my project successfully";
+            this.txtMessage.Text = "I have completed my project successfully.";
             // 
             // label6
             // 
@@ -207,6 +223,7 @@
             // 
             this.txtSubject.Location = new System.Drawing.Point(151, 170);
             this.txtSubject.Name = "txtSubject";
+            this.txtSubject.ReadOnly = true;
             this.txtSubject.Size = new System.Drawing.Size(375, 26);
             this.txtSubject.TabIndex = 7;
             this.txtSubject.Text = "Project Submission";
@@ -243,6 +260,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(151, 98);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(375, 26);
             this.txtPassword.TabIndex = 3;
             // 
@@ -272,23 +290,6 @@
             this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "From Gmail ID :";
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimize.BackgroundImage = global::DataFillingSoftDeskApp.Properties.Resources.minus_sign;
-            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.Color.Coral;
-            this.btnMinimize.Location = new System.Drawing.Point(531, 7);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(15, 25);
-            this.btnMinimize.TabIndex = 6;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // submission
             // 

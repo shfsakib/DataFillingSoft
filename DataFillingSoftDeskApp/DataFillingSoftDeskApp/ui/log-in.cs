@@ -26,12 +26,15 @@ namespace DataFillingSoftDeskApp.ui
                 btnloginClose.FlatAppearance.MouseOverBackColor = btnloginClose.BackColor;
             };
             function = Function.GetInstance();
+            txtUserName.Focus();
         }
         private void log_in_Load(object sender, EventArgs e)
         {
-            lblName.Text = String.Format("Transonic Data{0} Technology Corp.", "\r\n");
             panelUserName.SendToBack();
             panelPass.SendToBack();
+            txtUserName.Focus();
+            lblName.Text = String.Format("Transonic Data{0} Technology Corp.{0}USA", "\r\n");
+
         }
         private void button1_Click(object sender, EventArgs e)
         {
