@@ -49,8 +49,9 @@ namespace DataFillingSoftDeskApp.ui
         }
 
         private void LoadData()
-        {
-            txtFileTaken.Text = Properties.Settings.Default.filetaken;
+        { 
+            //txtFileTaken.Text = Properties.Settings.Default.filetaken;
+            txtFileTaken.Text = "1";
             if (File.Exists(Path.GetFullPath("form-data.txt")))
             {
                 string[] allLine = File.ReadAllLines("form-data.txt");
@@ -88,7 +89,7 @@ namespace DataFillingSoftDeskApp.ui
                 btnSubmit.Enabled = true;
             }
 
-            lblDate.Text =DateTime.Now.ToString();
+            lblDate.Text = DateTime.Now.ToString();
             string regDate = date;
             lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(120)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
@@ -125,6 +126,7 @@ namespace DataFillingSoftDeskApp.ui
             txtAccAudit.ContextMenu = emptyMenu;
             txtYearlyExpense.ContextMenu = emptyMenu;
             txtCurrency.ContextMenu = emptyMenu;
+ 
         }
 
         private void dashboard_MouseMove(object sender, MouseEventArgs e)
@@ -979,7 +981,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             LoadData();
             Clear();
-
+            pictureBox1.Image = Properties.Resources.picture;
         }
 
         private void Clear()
@@ -993,7 +995,7 @@ namespace DataFillingSoftDeskApp.ui
                     txtLandMark.Text = txtAccAudit.Text = txtCurrency.Text = txtYearlyExpense.Text = null;
             lblFormSl.Text = "";
             nextClick = 0;
-            pictureBox1.Image = Properties.Resources.picture;
+            // pictureBox1.Image = Properties.Resources.picture;
             panelGrp1.Enabled = true;
             panelGrp2.Enabled = panelGrp3.Enabled = false;
             btnGroup1.Enabled = false;
@@ -1029,7 +1031,7 @@ namespace DataFillingSoftDeskApp.ui
                         streamWriter.WriteLine(oldData + (Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
                                                "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                                                "\t/?" +
-                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
                                                txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                                                "\t/?" +
                                                txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
@@ -1052,7 +1054,7 @@ namespace DataFillingSoftDeskApp.ui
                         streamWriter.WriteLine((Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
                                                "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                                                "\t/?" +
-                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
                                                txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                                                "\t/?" +
                                                txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
@@ -1097,7 +1099,7 @@ namespace DataFillingSoftDeskApp.ui
                              txtCompanyName.Text +
                              "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                              "\t/?" +
-                             txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
+                             txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
                              txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                              "\t/?" +
                              txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
@@ -1198,7 +1200,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text) - 1)
                         {
-                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                            values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                         }
                     }
                 }
@@ -1208,7 +1210,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text))
                         {
-                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                            values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                         }
                     }
                     lblFormSl.Text = "1";
@@ -1219,7 +1221,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == Convert.ToInt32(lblFormSl.Text) - 1)
                         {
-                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                            values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                         }
                     }
                     lblFormSl.Text = "1";
@@ -1230,7 +1232,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == allLine.Length - 1)
                         {
-                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                            values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                         }
                     }
 
@@ -1242,7 +1244,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         if (i == allLine.Length - 1)
                         {
-                            values = allLine[i].ToString().Split(new string[] {"/?"},StringSplitOptions.None);
+                            values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
                         }
                     }
 

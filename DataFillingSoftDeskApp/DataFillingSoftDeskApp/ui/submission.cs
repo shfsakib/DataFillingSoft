@@ -143,6 +143,7 @@ namespace DataFillingSoftDeskApp.ui
                             "User:\r\nkindly refer rule no 11 for spacing after dot (.) and comma (,) in address column.";
                         string ruleSpell = "User:\r\nSpelling Mistake";
                         string ruleMissing = "User:\r\nMissing Data.\r\nKindly refer the form.";
+                        //form no
                         if ((j + 1) == 3)
                         {
                             string formNo = dataTable.Rows[i][j].ToString();
@@ -507,9 +508,16 @@ namespace DataFillingSoftDeskApp.ui
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
                             }
                         }
+                        //company address
                         else if ((j + 1) == 6)
                         {
                             string comAddress = dataTable.Rows[i][j].ToString();
+                            
+                            string lastText = comAddress.Substring(comAddress.Length - 1, 1);
+                            if (lastText.Contains(",") || lastText.Contains("."))
+                            {
+                                comAddress = comAddress.Substring(0, comAddress.Length - 1);
+                            }
                             if (comAddress != "" && comAddress.Length >= 3)
                             {
                                 if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
@@ -549,7 +557,11 @@ namespace DataFillingSoftDeskApp.ui
                                 data.Contains("data not available") || data.Contains("Data") || data.Contains("Not") || data.Contains("Available") ||
                                 data.Contains("Data Not"))
                             {
-                                if (data != "Data Not Available")
+                                if (data.ToUpper() == "DATA NOT MENTIONED" || data.ToUpper()=="DATA CITY" || data.ToUpper()=="DATA ANYTHING" )
+                                {
+                                    
+                                }
+                                else if (data != "Data Not Available")
                                 {
                                     worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
                                     worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
@@ -665,75 +677,82 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
-                ExportToExcel(TableData(), Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName + ".xlsx");
+                bool ans = ExportToExcel(TableData(),
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
+                    ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
-                SaveZip();
-                try
+                if (ans)
                 {
-                    MailMessage message = new MailMessage();
-                    SmtpClient smtp = new SmtpClient();
-                    message.From = new MailAddress(txtEmail.Text);
-                    message.To.Add(new MailAddress("softreview3@gmail.com"));
-                    message.Subject = txtSubject.Text;
-                    message.IsBodyHtml = true; //to make message body as html  
-                    message.Body = txtMessage.Text;
-                    //attachment
-                    System.Net.Mail.Attachment attachment;
-                    string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
-                                      userName + ".zip";
-                    attachment = new System.Net.Mail.Attachment(filePath);
-                    message.Attachments.Add(attachment);
-                    smtp.Port = 587;
-                    smtp.Host = "smtp.gmail.com"; //for gmail host  
-                    smtp.EnableSsl = true;
-                    smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
-                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    smtp.Send(message);
-                    //mail to my email
-                    MailMessage mymessage = new MailMessage();
-                    SmtpClient mysmtp = new SmtpClient();
-                    mymessage.From = new MailAddress(txtEmail.Text);
-                    mymessage.To.Add(new MailAddress(txtEmail.Text));
-                    mymessage.Subject = txtSubject.Text;
-                    mymessage.IsBodyHtml = true; //to make mymessage body as html  
-                    mymessage.Body = txtMessage.Text;
-                    //attachment
-                    System.Net.Mail.Attachment myattachment;
-                    myattachment = new System.Net.Mail.Attachment(filePath);
-                    mymessage.Attachments.Add(myattachment);
-                    mysmtp.Port = 587;
-                    mysmtp.Host = "smtp.gmail.com"; //for gmail host  
-                    mysmtp.EnableSsl = true;
-                    mysmtp.UseDefaultCredentials = false;
-                    //mysmtp.Credentials = new NetworkCredential("softreview3@gmail.com", "public@123");
-                    mysmtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
-
-                    mysmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                    mysmtp.Send(mymessage);
-                    btnSend.Enabled = true;
-                    lblwait.Visible = false;
-
-                    DialogResult dialogResult = MessageBox.Show("Mail sent successfully", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    if (dialogResult == DialogResult.OK)
+                    SaveZip();
+                    try
                     {
-                        this.Hide();
-                        log_in login = new log_in();
-                        login.Show();
+                        MailMessage message = new MailMessage();
+                        SmtpClient smtp = new SmtpClient();
+                        message.From = new MailAddress(txtEmail.Text);
+                        message.To.Add(new MailAddress("softreview3@gmail.com"));
+                        message.Subject = txtSubject.Text;
+                        message.IsBodyHtml = true; //to make message body as html  
+                        message.Body = txtMessage.Text;
+                        //attachment
+                        System.Net.Mail.Attachment attachment;
+                        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
+                                          userName + ".zip";
+                        attachment = new System.Net.Mail.Attachment(filePath);
+                        message.Attachments.Add(attachment);
+                        smtp.Port = 587;
+                        smtp.Host = "smtp.gmail.com"; //for gmail host  
+                        smtp.EnableSsl = true;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtp.Send(message);
+                        //mail to my email
+                        MailMessage mymessage = new MailMessage();
+                        SmtpClient mysmtp = new SmtpClient();
+                        mymessage.From = new MailAddress(txtEmail.Text);
+                        mymessage.To.Add(new MailAddress(txtEmail.Text));
+                        mymessage.Subject = txtSubject.Text;
+                        mymessage.IsBodyHtml = true; //to make mymessage body as html  
+                        mymessage.Body = txtMessage.Text;
+                        //attachment
+                        System.Net.Mail.Attachment myattachment;
+                        myattachment = new System.Net.Mail.Attachment(filePath);
+                        mymessage.Attachments.Add(myattachment);
+                        mysmtp.Port = 587;
+                        mysmtp.Host = "smtp.gmail.com"; //for gmail host  
+                        mysmtp.EnableSsl = true;
+                        mysmtp.UseDefaultCredentials = false;
+                        //mysmtp.Credentials = new NetworkCredential("softreview3@gmail.com", "public@123");
+                        mysmtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
+
+                        mysmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        mysmtp.Send(mymessage);
+                        btnSend.Enabled = true;
+                        lblwait.Visible = false;
+
+                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            this.Hide();
+                            log_in login = new log_in();
+                            login.Show();
+                        }
                     }
-                }
-                catch (Exception ex)
-                {
-                    btnSend.Enabled = true;
-                    lblwait.Visible = false;
-                    DialogResult dialogResult = MessageBox.Show("Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.", "Warning",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    if (dialogResult == DialogResult.OK)
+                    catch (Exception ex)
                     {
-                        this.Hide();
-                        dashboard dashboard = new dashboard();
-                        dashboard.Show();
+                        btnSend.Enabled = true;
+                        lblwait.Visible = false;
+                        DialogResult dialogResult = MessageBox.Show(
+                            "Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.",
+                            "Warning",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            this.Hide();
+                            dashboard dashboard = new dashboard();
+                            dashboard.Show();
+                        }
                     }
                 }
             }

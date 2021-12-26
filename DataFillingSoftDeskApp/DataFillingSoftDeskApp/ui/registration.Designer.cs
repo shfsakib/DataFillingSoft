@@ -382,8 +382,10 @@
             // 
             this.txtNoForms.Location = new System.Drawing.Point(136, 35);
             this.txtNoForms.Name = "txtNoForms";
+            this.txtNoForms.ReadOnly = true;
             this.txtNoForms.Size = new System.Drawing.Size(100, 26);
             this.txtNoForms.TabIndex = 0;
+            this.txtNoForms.Text = "21";
             this.txtNoForms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoForms_KeyPress);
             // 
             // label9
