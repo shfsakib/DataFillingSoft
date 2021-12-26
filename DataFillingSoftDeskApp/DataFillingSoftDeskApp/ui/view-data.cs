@@ -144,14 +144,14 @@ namespace DataFillingSoftDeskApp.ui
                     try
                     {
                         if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormFolder\FormData.xlsx"))
+                                        @"\ExportViewData\FormData.xlsx"))
                         {
                             File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                  @"\FormFolder\FormData.xlsx");
+                                  @"\ExportViewData\FormData.xlsx");
                         }
 
                         Directory.CreateDirectory(
-                                            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder");
+                                            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportViewData");
                         worksheet.SaveAs(filePath, Type.Missing);
                         excelApp.Quit();
                         DialogResult dialogResult = MessageBox.Show("Exported to project folder successfully to Documents FormData folder", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -182,7 +182,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                ExportToExcel(table, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormFolder\FormData.xlsx");
+                ExportToExcel(table, Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportViewData\FormData.xlsx");
             }
             else
             {

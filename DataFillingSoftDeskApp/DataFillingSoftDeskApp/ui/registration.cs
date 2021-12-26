@@ -36,7 +36,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             HttpClient client = new HttpClient();
             // It can be the static constructor or a one-time initializer
-            client.BaseAddress = new Uri("http://api.plumitnetwork.com/");
+            client.BaseAddress = new Uri("http://api.transonictec.com/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
@@ -51,7 +51,7 @@ namespace DataFillingSoftDeskApp.ui
             txtFirstName.Text = apiDataModel.fname;
             txtLastName.Text = apiDataModel.lname;
             txtEmail.Text = apiDataModel.email;
-            txtContactNo.Text = apiDataModel.mobile;
+            txtContactNo.Text = apiDataModel.phone;
             richAddress.Focus();
         }
 
@@ -155,7 +155,7 @@ namespace DataFillingSoftDeskApp.ui
 
                     HttpClient client = new HttpClient();
                     // It can be the static constructor or a one-time initializer
-                    client.BaseAddress = new Uri("http://api.plumitnetwork.com/");
+                    client.BaseAddress = new Uri("http://api.transonictec.com/");
                     client.DefaultRequestHeaders.Accept.Clear();
                     client.DefaultRequestHeaders.Accept.Add(
                         new MediaTypeWithQualityHeaderValue("application/json"));

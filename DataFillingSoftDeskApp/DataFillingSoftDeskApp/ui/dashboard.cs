@@ -49,9 +49,8 @@ namespace DataFillingSoftDeskApp.ui
         }
 
         private void LoadData()
-        { 
-            //txtFileTaken.Text = Properties.Settings.Default.filetaken;
-            txtFileTaken.Text = "1";
+        {
+            txtFileTaken.Text = Properties.Settings.Default.filetaken;
             if (File.Exists(Path.GetFullPath("form-data.txt")))
             {
                 string[] allLine = File.ReadAllLines("form-data.txt");
@@ -126,7 +125,7 @@ namespace DataFillingSoftDeskApp.ui
             txtAccAudit.ContextMenu = emptyMenu;
             txtYearlyExpense.ContextMenu = emptyMenu;
             txtCurrency.ContextMenu = emptyMenu;
- 
+
         }
 
         private void dashboard_MouseMove(object sender, MouseEventArgs e)
@@ -1031,7 +1030,7 @@ namespace DataFillingSoftDeskApp.ui
                         streamWriter.WriteLine(oldData + (Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
                                                "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                                                "\t/?" +
-                                               txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
                                                txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                                                "\t/?" +
                                                txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
@@ -1054,7 +1053,7 @@ namespace DataFillingSoftDeskApp.ui
                         streamWriter.WriteLine((Convert.ToInt32(Properties.Settings.Default.formserial) + 1) + "\t/?" + fileName + "\t/?" + txtFormNo.Text + "\t/?" + txtCompanyCode.Text + "\t/?" + txtCompanyName.Text +
                                                "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                                                "\t/?" +
-                                               txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
+                                               txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
                                                txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                                                "\t/?" +
                                                txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +
@@ -1099,7 +1098,7 @@ namespace DataFillingSoftDeskApp.ui
                              txtCompanyName.Text +
                              "\t/?" + richAddress.Text + "\t/?" + txtZip.Text + "\t/?" + txtFax.Text +
                              "\t/?" +
-                             txtWebsite.Text + "\t/?" + txtEmail.Text.ToLower() + "\t/?" + txtContactNo.Text + "\t/?" +
+                             txtWebsite.Text + "\t/?" + txtEmail.Text + "\t/?" + txtContactNo.Text + "\t/?" +
                              txtState.Text + "\t/?" + txtCountry.Text + "\t/?" + txtHeadQuarter.Text +
                              "\t/?" +
                              txtNoofEmp.Text + "\t/?" + richIndustry.Text + "\t/?" + txtBrandAmbs.Text +

@@ -22,6 +22,7 @@ namespace DataFillingSoftDeskApp.ui
         private Function function;
         private string userName = "";
         DataTable table = new DataTable();
+        DataTable noValidTable = new DataTable();
         public submission()
         {
             InitializeComponent();
@@ -44,6 +45,70 @@ namespace DataFillingSoftDeskApp.ui
             userName = Properties.Settings.Default.userid.Trim();
             txtEmail.Text = Properties.Settings.Default.email.Trim();
             txtAttachName.Text = userName + ".zip";
+        }
+        private DataTable LoadDataTable()
+        {
+            noValidTable.Columns.Add("Data_Id", typeof(string));
+            noValidTable.Columns.Add("FileName", typeof(string));
+            noValidTable.Columns.Add("FormNo", typeof(string));
+            noValidTable.Columns.Add("CompanyCode", typeof(string));
+            noValidTable.Columns.Add("CompanyName", typeof(string));
+            noValidTable.Columns.Add("CompanyAddress", typeof(string));
+            noValidTable.Columns.Add("ZipCode", typeof(string));
+            noValidTable.Columns.Add("Fax", typeof(string));
+            noValidTable.Columns.Add("Website", typeof(string));
+            noValidTable.Columns.Add("Email", typeof(string));
+            noValidTable.Columns.Add("ContactNo", typeof(string));
+            noValidTable.Columns.Add("State", typeof(string));
+            noValidTable.Columns.Add("Country", typeof(string));
+            noValidTable.Columns.Add("Headquarter", typeof(string));
+            noValidTable.Columns.Add("NoOfEmployees", typeof(string));
+            noValidTable.Columns.Add("Industry", typeof(string));
+            noValidTable.Columns.Add("BrandAmbassador", typeof(string));
+            noValidTable.Columns.Add("MediaPartner", typeof(string));
+            noValidTable.Columns.Add("SocialMedia", typeof(string));
+            noValidTable.Columns.Add("FrenchiesPartner", typeof(string));
+            noValidTable.Columns.Add("Investor", typeof(string));
+            noValidTable.Columns.Add("AdvertisingPartner", typeof(string));
+            noValidTable.Columns.Add("Product", typeof(string));
+            noValidTable.Columns.Add("Services", typeof(string));
+            noValidTable.Columns.Add("Manager", typeof(string));
+            noValidTable.Columns.Add("RegistrationDate", typeof(string));
+            noValidTable.Columns.Add("YearlyRevenue", typeof(string));
+            noValidTable.Columns.Add("Subclassification", typeof(string));
+            noValidTable.Columns.Add("Landmark", typeof(string));
+            noValidTable.Columns.Add("AccoutAudit", typeof(string));
+            noValidTable.Columns.Add("Currency", typeof(string));
+            noValidTable.Columns.Add("YearlyExpense", typeof(string));
+            noValidTable.Columns.Add("USER_ID", typeof(string));
+            if (!File.Exists(Path.GetFullPath("form-data.txt")))
+            {
+                MessageBox.Show("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return null;
+            }
+            string[] allLine = File.ReadAllLines("form-data.txt");
+            string[] values;
+            for (int i = 0; i < allLine.Length; i++)
+            {
+                values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
+                string[] row = new string[values.Length + 1];
+                for (int j = 0; j < values.Length + 1; j++)
+                {
+                    if (j == values.Length)
+                    {
+                        row[j] = Properties.Settings.Default.userid;
+                    }
+                    else if (j == 0)
+                    {
+                        row[j] = (i + 1).ToString();
+                    }
+                    else
+                        row[j] = values[j].Trim();
+                }
+
+                noValidTable.Rows.Add(row);
+            }
+            return noValidTable;
         }
         private DataTable TableData()
         {
@@ -142,6 +207,8 @@ namespace DataFillingSoftDeskApp.ui
                         string rule11 =
                             "User:\r\nkindly refer rule no 11 for spacing after dot (.) and comma (,) in address column.";
                         string ruleSpell = "User:\r\nSpelling Mistake";
+                        string emailError = "User:\r\nEamil column must be lower case";
+                        string contactError = "User:\r\nSpecial character, space and characters are not allowed";
                         string ruleMissing = "User:\r\nMissing Data.\r\nKindly refer the form.";
                         //form no
                         if ((j + 1) == 3)
@@ -158,10 +225,7 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule7.Length).Font.Bold = false;
                                 }
-                                else if (formNo.Contains("data") || formNo.Contains("not") || formNo.Contains("available") ||
-                                         formNo.Contains("data not") ||
-                                         formNo.Contains("data not available") || formNo.Contains("Data") || formNo.Contains("Not") || formNo.Contains("Available") ||
-                                         formNo.Contains("Data Not"))
+                                else if (StringValidationCheck(formNo))
                                 {
                                     if (formNo != "<B>Data Not Available<B>")
                                     {
@@ -181,6 +245,7 @@ namespace DataFillingSoftDeskApp.ui
                             }
 
                         }
+                        //company name
                         else if ((j + 1) == 5)
                         {
                             string companyName = dataTable.Rows[i][j].ToString();
@@ -196,10 +261,7 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule7.Length).Font.Bold = false;
                                 }
-                                else if (companyName.Contains("data") || companyName.Contains("not") || companyName.Contains("available") ||
-                                         companyName.Contains("data not") ||
-                                         companyName.Contains("data not available") || companyName.Contains("Data") || companyName.Contains("Not") || companyName.Contains("Available") ||
-                                         companyName.Contains("Data Not"))
+                                else if (StringValidationCheck(companyName))
                                 {
                                     if (companyName != "<R>Data Not Available<R>")
                                     {
@@ -218,6 +280,45 @@ namespace DataFillingSoftDeskApp.ui
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
                             }
                         }
+                        //company address
+                        else if ((j + 1) == 6)
+                        {
+                            string comAddress = dataTable.Rows[i][j].ToString();
+
+                            if (comAddress != "")
+                            {
+                                string lastText = comAddress.Substring(comAddress.Length - 1, 1);
+                                if (lastText.Contains(",") || lastText.Contains("."))
+                                {
+                                    
+                                }
+                                else if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, rule11.Length).Font.Bold = false;
+                                }
+                                else if (StringValidationCheck(comAddress))
+                                {
+                                    if (comAddress != "Data Not Available")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        //website
                         else if ((j + 1) == 9)
                         {
                             string website = dataTable.Rows[i][j].ToString();
@@ -233,12 +334,205 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule18.Length).Font.Bold = false;
                                 }
-                                else if (website.Contains("data") || website.Contains("not") || website.Contains("available") ||
-                                         website.Contains("data not") ||
-                                         website.Contains("data not available") || website.Contains("Data") || website.Contains("Not") || website.Contains("Available") ||
-                                         website.Contains("Data Not"))
+                                else if (StringValidationCheck(website))
                                 {
                                     if (website != "<I><U>Data Not Available")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        //email
+                        else if ((j + 1) == 10)
+                        {
+                            string email = dataTable.Rows[i][j].ToString();
+                            if (email != "")
+                            {
+                                if (email.Any(char.IsUpper))
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(emailError);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, emailError.Length).Font.Bold = false;
+                                }
+                                if (StringValidationCheck(email))
+                                {
+                                    if (email != "Data Not Available")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        //contact number
+                        else if ((j + 1) == 11)
+                        {
+                            string contact = dataTable.Rows[i][j].ToString();
+                            if (contact != "")
+                            {
+                                if (!System.Text.RegularExpressions.Regex.IsMatch(contact, "^[0-9]*$"))
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(contactError);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, contactError.Length).Font.Bold = false;
+                                }
+                                if (StringValidationCheck(contact))
+                                {
+                                    if (contact != "Data Not Available")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        else if ((j + 1) == 13)
+                        {
+                            string country = dataTable.Rows[i][j].ToString();
+                            if (country != "" && country.Length >= 6)
+                            {
+                                string startcountry = country.Substring(0, 6);
+                                string endcountry = country.Substring(country.Length - 6, 6);
+                                if (startcountry != "<R><I>" || endcountry != "<I><R>")
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, rule7.Length).Font.Bold = false;
+                                }
+                                else if (StringValidationCheck(country))
+                                {
+                                    if (country != "<R><I>Data Not Available<I><R>")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        else if ((j + 1) == 14)
+                        {
+                            string headQ = dataTable.Rows[i][j].ToString();
+                            if (headQ != "" && headQ.Length >= 6)
+                            {
+                                string startheadQ = headQ.Substring(0, 6);
+                                string endheadQ = headQ.Substring(headQ.Length - 6, 6);
+                                if (startheadQ != "<I><U>" || endheadQ != "<U><I>")
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, rule7.Length).Font.Bold = false;
+                                }
+                                else if (StringValidationCheck(headQ))
+                                {
+                                    if (headQ != "<I><U>Data Not Available<U><I>")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        else if ((j + 1) == 16)
+                        {
+                            string industry = dataTable.Rows[i][j].ToString();
+                            if (industry != "" && industry.Length >= 6)
+                            {
+                                string startindustry = industry.Substring(0, 6);
+                                string endindustry = industry.Substring(industry.Length - 6, 6);
+                                if (startindustry != "<B><U>" || endindustry != "<U><B>")
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, rule7.Length).Font.Bold = false;
+                                }
+                                else if (StringValidationCheck(industry))
+                                {
+                                    if (industry != "<B><U>Data Not Available<U><B>")
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                        }
+                        else if ((j + 1) == 17)
+                        {
+                            string brandAmb = dataTable.Rows[i][j].ToString();
+                            if (brandAmb != "" && brandAmb.Length >= 3)
+                            {
+                                string startbrandAmb = brandAmb.Substring(0, 3);
+                                string endbrandAmb = brandAmb.Substring(brandAmb.Length - 3, 3);
+                                if (startbrandAmb != "<B>" || endbrandAmb != "<B>")
+                                {
+                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
+                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                        .Characters(5, rule7.Length).Font.Bold = false;
+                                }
+                                else if (StringValidationCheck(brandAmb))
+                                {
+                                    if (brandAmb != "<B>Data Not Available<B>")
                                     {
                                         worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
                                         worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
@@ -270,10 +564,7 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule7.Length).Font.Bold = false;
                                 }
-                                else if (product.Contains("data") || product.Contains("not") || product.Contains("available") ||
-                                         product.Contains("data not") ||
-                                         product.Contains("data not available") || product.Contains("Data") || product.Contains("Not") || product.Contains("Available") ||
-                                         product.Contains("Data Not"))
+                                else if (StringValidationCheck(product))
                                 {
                                     if (product != "<R><B>Data Not Available")
                                     {
@@ -306,10 +597,7 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule7.Length).Font.Bold = false;
                                 }
-                                else if (manager.Contains("data") || manager.Contains("not") || manager.Contains("available") ||
-                                         manager.Contains("data not") ||
-                                         manager.Contains("data not available") || manager.Contains("Data") || manager.Contains("Not") || manager.Contains("Available") ||
-                                         manager.Contains("Data Not"))
+                                else if (StringValidationCheck(manager))
                                 {
                                     if (manager != "<B>Data Not Available<B>")
                                     {
@@ -328,114 +616,7 @@ namespace DataFillingSoftDeskApp.ui
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
                             }
                         }
-                        else if ((j + 1) == 14)
-                        {
-                            string headQ = dataTable.Rows[i][j].ToString();
-                            if (headQ != "" && headQ.Length >= 6)
-                            {
-                                string startheadQ = headQ.Substring(0, 6);
-                                string endheadQ = headQ.Substring(headQ.Length - 6, 6);
-                                if (startheadQ != "<I><U>" || endheadQ != "<U><I>")
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule7.Length).Font.Bold = false;
-                                }
-                                else if (headQ.Contains("data") || headQ.Contains("not") || headQ.Contains("available") ||
-                                         headQ.Contains("data not") ||
-                                         headQ.Contains("data not available") || headQ.Contains("Data") || headQ.Contains("Not") || headQ.Contains("Available") ||
-                                         headQ.Contains("Data Not"))
-                                {
-                                    if (headQ != "<I><U>Data Not Available<U><I>")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
-                        else if ((j + 1) == 13)
-                        {
-                            string country = dataTable.Rows[i][j].ToString();
-                            if (country != "" && country.Length >= 6)
-                            {
-                                string startcountry = country.Substring(0, 6);
-                                string endcountry = country.Substring(country.Length - 6, 6);
-                                if (startcountry != "<R><I>" || endcountry != "<I><R>")
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule7.Length).Font.Bold = false;
-                                }
-                                else if (country.Contains("data") || country.Contains("not") || country.Contains("available") ||
-                                         country.Contains("data not") ||
-                                         country.Contains("data not available") || country.Contains("Data") || country.Contains("Not") || country.Contains("Available") ||
-                                         country.Contains("Data Not"))
-                                {
-                                    if (country != "<R><I>Data Not Available<I><R>")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
-                        else if ((j + 1) == 16)
-                        {
-                            string industry = dataTable.Rows[i][j].ToString();
-                            if (industry != "" && industry.Length >= 6)
-                            {
-                                string startindustry = industry.Substring(0, 6);
-                                string endindustry = industry.Substring(industry.Length - 6, 6);
-                                if (startindustry != "<B><U>" || endindustry != "<U><B>")
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule7.Length).Font.Bold = false;
-                                }
-                                else if (industry.Contains("data") || industry.Contains("not") || industry.Contains("available") ||
-                                         industry.Contains("data not") ||
-                                         industry.Contains("data not available") || industry.Contains("Data") || industry.Contains("Not") || industry.Contains("Available") ||
-                                         industry.Contains("Data Not"))
-                                {
-                                    if (industry != "<B><U>Data Not Available<U><B>")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
+
                         else if ((j + 1) == 28)
                         {
                             string subClass = dataTable.Rows[i][j].ToString();
@@ -450,89 +631,9 @@ namespace DataFillingSoftDeskApp.ui
                                     worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                         .Characters(5, rule7.Length).Font.Bold = false;
                                 }
-                                else if (subClass.Contains("data") || subClass.Contains("not") || subClass.Contains("available") ||
-                                         subClass.Contains("data not") ||
-                                         subClass.Contains("data not available") || subClass.Contains("Data") || subClass.Contains("Not") || subClass.Contains("Available") ||
-                                         subClass.Contains("Data Not"))
+                                else if (StringValidationCheck(subClass))
                                 {
                                     if (subClass != "<I><U>Data Not Available<U><I>")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
-                        else if ((j + 1) == 17)
-                        {
-                            string brandAmb = dataTable.Rows[i][j].ToString();
-                            if (brandAmb != "" && brandAmb.Length >= 3)
-                            {
-                                string startbrandAmb = brandAmb.Substring(0, 3);
-                                string endbrandAmb = brandAmb.Substring(brandAmb.Length - 3, 3);
-                                if (startbrandAmb != "<B>" || endbrandAmb != "<B>")
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule7);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule7.Length).Font.Bold = false;
-                                }
-                                else if (brandAmb.Contains("data") || brandAmb.Contains("not") || brandAmb.Contains("available") ||
-                                         brandAmb.Contains("data not") ||
-                                         brandAmb.Contains("data not available") || brandAmb.Contains("Data") || brandAmb.Contains("Not") || brandAmb.Contains("Available") ||
-                                         brandAmb.Contains("Data Not"))
-                                {
-                                    if (brandAmb != "<B>Data Not Available<B>")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
-                        //company address
-                        else if ((j + 1) == 6)
-                        {
-                            string comAddress = dataTable.Rows[i][j].ToString();
-                            
-                            string lastText = comAddress.Substring(comAddress.Length - 1, 1);
-                            if (lastText.Contains(",") || lastText.Contains("."))
-                            {
-                                comAddress = comAddress.Substring(0, comAddress.Length - 1);
-                            }
-                            if (comAddress != "" && comAddress.Length >= 3)
-                            {
-                                if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule11.Length).Font.Bold = false;
-                                }
-                                else if (comAddress.Contains("data") || comAddress.Contains("not") || comAddress.Contains("available") ||
-                                         comAddress.Contains("data not") ||
-                                         comAddress.Contains("data not available") || comAddress.Contains("Data") || comAddress.Contains("Not") || comAddress.Contains("Available") ||
-                                         comAddress.Contains("Data Not"))
-                                {
-                                    if (comAddress != "Data Not Available")
                                     {
                                         worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
                                         worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
@@ -552,16 +653,16 @@ namespace DataFillingSoftDeskApp.ui
                         else
                         {
                             string data = dataTable.Rows[i][j].ToString();
-                            if (data.Contains("data") || data.Contains("not") || data.Contains("available") ||
-                                data.Contains("data not") ||
-                                data.Contains("data not available") || data.Contains("Data") || data.Contains("Not") || data.Contains("Available") ||
-                                data.Contains("Data Not"))
+                            if (data == "")
                             {
-                                if (data.ToUpper() == "DATA NOT MENTIONED" || data.ToUpper()=="DATA CITY" || data.ToUpper()=="DATA ANYTHING" )
-                                {
-                                    
-                                }
-                                else if (data != "Data Not Available")
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                            else if (StringValidationCheck(data))
+                            {
+                                if (data != "Data Not Available")
                                 {
                                     worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
                                     worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
@@ -569,12 +670,9 @@ namespace DataFillingSoftDeskApp.ui
                                         .Characters(5, ruleSpell.Length).Font.Bold = false;
                                 }
                             }
-                            else if (data == "")
+                            else
                             {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
+                                //no condition
                             }
                         }
                     }
@@ -614,6 +712,17 @@ namespace DataFillingSoftDeskApp.ui
                 return false;
             }
         }
+
+        private bool StringValidationCheck(string data)
+        {
+            bool ans = false;
+
+            if (data.ToUpper().Contains("DATA NOT AVAILABLE"))
+            {
+                ans = true;
+            }
+            return ans;
+        }
         private void SaveZip()
         {
             try
@@ -623,14 +732,29 @@ namespace DataFillingSoftDeskApp.ui
                     File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
                                 @"\" + userName + ".zip");
                 }
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + "ExportData.zip"))
+                {
+                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                                @"\" + userName + "ExportData.zip");
+                }
                 //Creates a ZipFile object that will ultimately be saved
                 using (ZipFile zip = new ZipFile())
                 {
 
-                    zip.Password = "1234";
+                    zip.Password = "transonic@USA1201";
                     string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
                     zip.AddDirectory(fileName);
                     zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
+
+                }
+                //Creates a ZipFile object that will ultimately be saved for no valid
+                using (ZipFile zip = new ZipFile())
+                {
+
+                    zip.Password = "transonic@USA1201";
+                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportZipViewData";
+                    zip.AddDirectory(fileName);
+                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + "ExportData.zip");
 
                 }
 
@@ -677,6 +801,10 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
+                NoValidExportToExcel(LoadDataTable(),
+                   Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx");
+                Thread.Sleep(TimeSpan.FromSeconds(8));
                 bool ans = ExportToExcel(TableData(),
                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
                     ".xlsx");
@@ -689,7 +817,7 @@ namespace DataFillingSoftDeskApp.ui
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
                         message.From = new MailAddress(txtEmail.Text);
-                        message.To.Add(new MailAddress("softreview3@gmail.com"));
+                        message.To.Add(new MailAddress("transonictec@gmail.com"));
                         message.Subject = txtSubject.Text;
                         message.IsBodyHtml = true; //to make message body as html  
                         message.Body = txtMessage.Text;
@@ -716,7 +844,9 @@ namespace DataFillingSoftDeskApp.ui
                         mymessage.Body = txtMessage.Text;
                         //attachment
                         System.Net.Mail.Attachment myattachment;
-                        myattachment = new System.Net.Mail.Attachment(filePath);
+                        string fileNoValidPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
+                                          userName + "ExportData.zip";
+                        myattachment = new System.Net.Mail.Attachment(fileNoValidPath);
                         mymessage.Attachments.Add(myattachment);
                         mysmtp.Port = 587;
                         mysmtp.Host = "smtp.gmail.com"; //for gmail host  
@@ -757,7 +887,67 @@ namespace DataFillingSoftDeskApp.ui
                 }
             }
         }
+        private void NoValidExportToExcel(DataTable dataTable, string filePath)
+        {
+            try
+            {
+                if (dataTable == null || dataTable.Columns.Count == 0)
+                {
+                    function.MessageBox("Null or empty data table", "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
 
+                //Load Excel
+                Excel.Application excelApp = new Excel.Application();
+                excelApp.Workbooks.Add();
+                //single worksheet
+                Excel.Worksheet worksheet = excelApp.ActiveSheet;
+                //column headings
+
+                for (int i = 0; i < dataTable.Columns.Count; i++)
+                {
+                    worksheet.Cells[1, (i + 1)] = dataTable.Columns[i].ColumnName;
+                }
+
+                //rows
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataTable.Columns.Count; j++)
+                    {
+                        worksheet.Cells[(i + 2), (j + 1)] = dataTable.Rows[i][j];
+                    }
+                }
+
+                //check filepath
+                if (filePath != null || filePath != "")
+                {
+                    try
+                    {
+                        if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx"))
+                        {
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx");
+                        }
+
+                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportZipViewData");
+                        worksheet.SaveAs(filePath, Type.Missing);
+                        excelApp.Quit();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Excel file can\'t be saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
