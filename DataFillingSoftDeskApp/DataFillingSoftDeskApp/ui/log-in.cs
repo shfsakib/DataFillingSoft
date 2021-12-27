@@ -55,14 +55,10 @@ namespace DataFillingSoftDeskApp.ui
                 this.Location = mousePos; //move the form to the desired location
             }
         }
-
-
-
         private void txtUserName_MouseDown(object sender, MouseEventArgs e)
         {
             this.Text = null;
         }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
