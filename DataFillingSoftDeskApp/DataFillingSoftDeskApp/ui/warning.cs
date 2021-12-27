@@ -58,7 +58,7 @@ namespace DataFillingSoftDeskApp.ui
             if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+
             }
             else if (Properties.Settings.Default.AuthKey.ToString() == "")
             {
@@ -84,7 +84,7 @@ namespace DataFillingSoftDeskApp.ui
                     // Assuming http://localhost:4354/api/ as BaseAddress 
 
                     var response = client.GetStringAsync("remove/authKey/" + Properties.Settings.Default.AuthKey).Result;
-                        if (response == "1")
+                    if (response == "1")
                     {
                         if (File.Exists(Path.GetFullPath("users.txt")))
                         {
@@ -108,6 +108,16 @@ namespace DataFillingSoftDeskApp.ui
                         Properties.Settings.Default.registrationdate = DateTime.Now.ToString("MM/dd/yyyy_hh:mm_tt");
                         Properties.Settings.Default.Save();
                         DialogResult dialogResult = MessageBox.Show("Your project is reset successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            this.Hide();
+                            log_in logIn = new log_in();
+                            logIn.Show();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Can\'t reset now. Please try again later.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
                             this.Hide();
