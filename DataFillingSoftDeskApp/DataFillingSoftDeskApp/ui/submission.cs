@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -165,7 +166,7 @@ namespace DataFillingSoftDeskApp.ui
                     }
                     else if (j == 0)
                     {
-                        row[j] = (j + 1).ToString();
+                        row[j] = (i + 1).ToString();
                     }
                     else
                         row[j] = values[j].Trim();
@@ -210,6 +211,7 @@ namespace DataFillingSoftDeskApp.ui
                         string emailError = "User:\r\nEamil column must be lower case";
                         string contactError = "User:\r\nSpecial character, space and characters are not allowed";
                         string ruleMissing = "User:\r\nMissing Data.\r\nKindly refer the form.";
+
                         //form no
                         if ((j + 1) == 3)
                         {
@@ -288,9 +290,16 @@ namespace DataFillingSoftDeskApp.ui
                             if (comAddress != "")
                             {
                                 string lastText = comAddress.Substring(comAddress.Length - 1, 1);
+                                string checkingText = comAddress.Substring(0, comAddress.Length - 1);
                                 if (lastText.Contains(",") || lastText.Contains("."))
                                 {
-                                    
+                                    if (!checkingText.Contains(",  ") || !checkingText.Contains(".  "))
+                                    {
+                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
+                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                            .Characters(5, rule11.Length).Font.Bold = false;
+                                    }
                                 }
                                 else if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
                                 {
@@ -650,6 +659,9 @@ namespace DataFillingSoftDeskApp.ui
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
                             }
                         }
+                        else if ((j + 1) == 33)
+                        {
+                        }
                         else
                         {
                             string data = dataTable.Rows[i][j].ToString();
@@ -659,6 +671,13 @@ namespace DataFillingSoftDeskApp.ui
                                 worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
                                 worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
+                            }
+                            else if (!FirstLetterCapitalCheck(dataTable.Rows[i][j].ToString()))
+                            {
+                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                                    .Characters(5, ruleSpell.Length).Font.Bold = false;
                             }
                             else if (StringValidationCheck(data))
                             {
@@ -721,6 +740,27 @@ namespace DataFillingSoftDeskApp.ui
             {
                 ans = true;
             }
+            return ans;
+        }
+
+        private bool FirstLetterCapitalCheck(string data)
+        {
+            bool ans = false;
+            if (data.Length > 0)
+            {
+                string dataSubstring = data.Substring(0, 1);
+                string capitalLetter = char.ToUpper(data[0]).ToString();
+                var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
+                if (!regexItem.IsMatch(dataSubstring))
+                {
+                    ans = false;
+                }
+                else if (dataSubstring == capitalLetter)
+                {
+                    ans = true;
+                }
+            }
+
             return ans;
         }
         private void SaveZip()
@@ -804,7 +844,7 @@ namespace DataFillingSoftDeskApp.ui
                 NoValidExportToExcel(LoadDataTable(),
                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
                                         @"\ExportZipViewData\" + userName + "ExportData.xlsx");
-                Thread.Sleep(TimeSpan.FromSeconds(8));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 bool ans = ExportToExcel(TableData(),
                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
                     ".xlsx");

@@ -90,7 +90,7 @@ namespace DataFillingSoftDeskApp.ui
 
             lblDate.Text = DateTime.Now.ToString();
             string regDate = date;
-            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(120)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
+            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(21)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
                 btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
@@ -156,7 +156,6 @@ namespace DataFillingSoftDeskApp.ui
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
             mouse_offset = new Point(-e.X, -e.Y);
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -327,7 +327,7 @@
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(136, 143);
+            this.txtConfirmPass.Location = new System.Drawing.Point(136, 109);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(176, 26);
@@ -338,7 +338,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 150);
+            this.label12.Location = new System.Drawing.Point(6, 116);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(121, 17);
             this.label12.TabIndex = 24;
@@ -346,7 +346,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(136, 107);
+            this.txtPass.Location = new System.Drawing.Point(136, 73);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(176, 26);
             this.txtPass.TabIndex = 2;
@@ -355,7 +355,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(61, 114);
+            this.label11.Location = new System.Drawing.Point(61, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 22;
@@ -363,7 +363,7 @@
             // 
             // txtUserId
             // 
-            this.txtUserId.Location = new System.Drawing.Point(136, 71);
+            this.txtUserId.Location = new System.Drawing.Point(136, 37);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(176, 26);
             this.txtUserId.TabIndex = 1;
@@ -372,7 +372,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(69, 78);
+            this.label10.Location = new System.Drawing.Point(69, 44);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 17);
             this.label10.TabIndex = 20;
@@ -380,23 +380,25 @@
             // 
             // txtNoForms
             // 
-            this.txtNoForms.Location = new System.Drawing.Point(136, 35);
+            this.txtNoForms.Location = new System.Drawing.Point(441, 37);
             this.txtNoForms.Name = "txtNoForms";
             this.txtNoForms.ReadOnly = true;
             this.txtNoForms.Size = new System.Drawing.Size(100, 26);
             this.txtNoForms.TabIndex = 0;
             this.txtNoForms.Text = "21";
+            this.txtNoForms.Visible = false;
             this.txtNoForms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoForms_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(37, 42);
+            this.label9.Location = new System.Drawing.Point(342, 44);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 17);
             this.label9.TabIndex = 18;
             this.label9.Text = "No. of Forms";
+            this.label9.Visible = false;
             // 
             // btnSubmit
             // 
