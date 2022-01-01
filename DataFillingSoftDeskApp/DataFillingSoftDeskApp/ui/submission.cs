@@ -772,11 +772,7 @@ namespace DataFillingSoftDeskApp.ui
                     File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
                                 @"\" + userName + ".zip");
                 }
-                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + "ExportData.zip"))
-                {
-                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                @"\" + userName + "ExportData.zip");
-                }
+                
                 //Creates a ZipFile object that will ultimately be saved
                 using (ZipFile zip = new ZipFile())
                 {
@@ -787,16 +783,7 @@ namespace DataFillingSoftDeskApp.ui
                     zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
 
                 }
-                //Creates a ZipFile object that will ultimately be saved for no valid
-                using (ZipFile zip = new ZipFile())
-                {
-
-                    zip.Password = "transonic@USA1201";
-                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportZipViewData";
-                    zip.AddDirectory(fileName);
-                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + "ExportData.zip");
-
-                }
+                
 
             }
             catch (Exception ex)
@@ -841,10 +828,7 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
-                NoValidExportToExcel(LoadDataTable(),
-                   Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx");
-                Thread.Sleep(TimeSpan.FromSeconds(5));
+                
                 bool ans = ExportToExcel(TableData(),
                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
                     ".xlsx");
@@ -874,29 +858,7 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
-                        //mail to my email
-                        MailMessage mymessage = new MailMessage();
-                        SmtpClient mysmtp = new SmtpClient();
-                        mymessage.From = new MailAddress(txtEmail.Text);
-                        mymessage.To.Add(new MailAddress(txtEmail.Text));
-                        mymessage.Subject = txtSubject.Text;
-                        mymessage.IsBodyHtml = true; //to make mymessage body as html  
-                        mymessage.Body = txtMessage.Text;
-                        //attachment
-                        System.Net.Mail.Attachment myattachment;
-                        string fileNoValidPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
-                                          userName + "ExportData.zip";
-                        myattachment = new System.Net.Mail.Attachment(fileNoValidPath);
-                        mymessage.Attachments.Add(myattachment);
-                        mysmtp.Port = 587;
-                        mysmtp.Host = "smtp.gmail.com"; //for gmail host  
-                        mysmtp.EnableSsl = true;
-                        mysmtp.UseDefaultCredentials = false;
-                        //mysmtp.Credentials = new NetworkCredential("softreview3@gmail.com", "public@123");
-                        mysmtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
-
-                        mysmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        mysmtp.Send(mymessage);
+                         
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
@@ -927,67 +889,7 @@ namespace DataFillingSoftDeskApp.ui
                 }
             }
         }
-        private void NoValidExportToExcel(DataTable dataTable, string filePath)
-        {
-            try
-            {
-                if (dataTable == null || dataTable.Columns.Count == 0)
-                {
-                    function.MessageBox("Null or empty data table", "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-
-                //Load Excel
-                Excel.Application excelApp = new Excel.Application();
-                excelApp.Workbooks.Add();
-                //single worksheet
-                Excel.Worksheet worksheet = excelApp.ActiveSheet;
-                //column headings
-
-                for (int i = 0; i < dataTable.Columns.Count; i++)
-                {
-                    worksheet.Cells[1, (i + 1)] = dataTable.Columns[i].ColumnName;
-                }
-
-                //rows
-                for (int i = 0; i < dataTable.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dataTable.Columns.Count; j++)
-                    {
-                        worksheet.Cells[(i + 2), (j + 1)] = dataTable.Rows[i][j];
-                    }
-                }
-
-                //check filepath
-                if (filePath != null || filePath != "")
-                {
-                    try
-                    {
-                        if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx"))
-                        {
-                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\ExportZipViewData\" + userName + "ExportData.xlsx");
-                        }
-
-                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\ExportZipViewData");
-                        worksheet.SaveAs(filePath, Type.Missing);
-                        excelApp.Quit();
-
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Excel file can\'t be saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+         
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
