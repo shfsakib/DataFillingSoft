@@ -90,7 +90,7 @@ namespace DataFillingSoftDeskApp.ui
 
             lblDate.Text = DateTime.Now.ToString();
             string regDate = date;
-            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(21)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
+            lblExpireDate.Text = (Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(20)).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
                 btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
@@ -1300,7 +1300,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             DialogResult dialogResult =
                 MessageBox.Show(
-                    "Have your project completed?\r\n\r\nAfter submission of your project you will not able to work with this project\r\n\r\nAre you sure?",
+                    "Have you completed the project?\r\n\r\nAfter submission of your project you will not able to work with this project\r\n\r\nAre you sure?",
                     "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {

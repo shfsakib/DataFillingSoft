@@ -45,72 +45,9 @@ namespace DataFillingSoftDeskApp.ui
         {
             userName = Properties.Settings.Default.userid.Trim();
             txtEmail.Text = Properties.Settings.Default.email.Trim();
-            txtAttachName.Text = userName + ".zip";
+            txtAttachName.Text = "DFS" + userName + ".zip";
         }
-        private DataTable LoadDataTable()
-        {
-            noValidTable.Columns.Add("Data_Id", typeof(string));
-            noValidTable.Columns.Add("FileName", typeof(string));
-            noValidTable.Columns.Add("FormNo", typeof(string));
-            noValidTable.Columns.Add("CompanyCode", typeof(string));
-            noValidTable.Columns.Add("CompanyName", typeof(string));
-            noValidTable.Columns.Add("CompanyAddress", typeof(string));
-            noValidTable.Columns.Add("ZipCode", typeof(string));
-            noValidTable.Columns.Add("Fax", typeof(string));
-            noValidTable.Columns.Add("Website", typeof(string));
-            noValidTable.Columns.Add("Email", typeof(string));
-            noValidTable.Columns.Add("ContactNo", typeof(string));
-            noValidTable.Columns.Add("State", typeof(string));
-            noValidTable.Columns.Add("Country", typeof(string));
-            noValidTable.Columns.Add("Headquarter", typeof(string));
-            noValidTable.Columns.Add("NoOfEmployees", typeof(string));
-            noValidTable.Columns.Add("Industry", typeof(string));
-            noValidTable.Columns.Add("BrandAmbassador", typeof(string));
-            noValidTable.Columns.Add("MediaPartner", typeof(string));
-            noValidTable.Columns.Add("SocialMedia", typeof(string));
-            noValidTable.Columns.Add("FrenchiesPartner", typeof(string));
-            noValidTable.Columns.Add("Investor", typeof(string));
-            noValidTable.Columns.Add("AdvertisingPartner", typeof(string));
-            noValidTable.Columns.Add("Product", typeof(string));
-            noValidTable.Columns.Add("Services", typeof(string));
-            noValidTable.Columns.Add("Manager", typeof(string));
-            noValidTable.Columns.Add("RegistrationDate", typeof(string));
-            noValidTable.Columns.Add("YearlyRevenue", typeof(string));
-            noValidTable.Columns.Add("Subclassification", typeof(string));
-            noValidTable.Columns.Add("Landmark", typeof(string));
-            noValidTable.Columns.Add("AccoutAudit", typeof(string));
-            noValidTable.Columns.Add("Currency", typeof(string));
-            noValidTable.Columns.Add("YearlyExpense", typeof(string));
-            noValidTable.Columns.Add("USER_ID", typeof(string));
-            if (!File.Exists(Path.GetFullPath("form-data.txt")))
-            {
-                MessageBox.Show("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return null;
-            }
-            string[] allLine = File.ReadAllLines("form-data.txt");
-            string[] values;
-            for (int i = 0; i < allLine.Length; i++)
-            {
-                values = allLine[i].ToString().Split(new string[] { "/?" }, StringSplitOptions.None);
-                string[] row = new string[values.Length + 1];
-                for (int j = 0; j < values.Length + 1; j++)
-                {
-                    if (j == values.Length)
-                    {
-                        row[j] = Properties.Settings.Default.userid;
-                    }
-                    else if (j == 0)
-                    {
-                        row[j] = (i + 1).ToString();
-                    }
-                    else
-                        row[j] = values[j].Trim();
-                }
 
-                noValidTable.Rows.Add(row);
-            }
-            return noValidTable;
-        }
         private DataTable TableData()
         {
             table.Columns.Add("Data_Id", typeof(string));
@@ -282,51 +219,51 @@ namespace DataFillingSoftDeskApp.ui
                                     .Characters(5, ruleMissing.Length).Font.Bold = false;
                             }
                         }
-                        //company address
-                        else if ((j + 1) == 6)
-                        {
-                            string comAddress = dataTable.Rows[i][j].ToString();
+                        ////company address
+                        //else if ((j + 1) == 6)
+                        //{
+                        //    string comAddress = dataTable.Rows[i][j].ToString();
 
-                            if (comAddress != "")
-                            {
-                                string lastText = comAddress.Substring(comAddress.Length - 1, 1);
-                                string checkingText = comAddress.Substring(0, comAddress.Length - 1);
-                                if (lastText.Contains(",") || lastText.Contains("."))
-                                {
-                                    if (!checkingText.Contains(",  ") || !checkingText.Contains(".  "))
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, rule11.Length).Font.Bold = false;
-                                    }
-                                }
-                                else if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
-                                {
-                                    worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                    worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
-                                    worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                        .Characters(5, rule11.Length).Font.Bold = false;
-                                }
-                                else if (StringValidationCheck(comAddress))
-                                {
-                                    if (comAddress != "Data Not Available")
-                                    {
-                                        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
-                                        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                            .Characters(5, ruleSpell.Length).Font.Bold = false;
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
-                                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
-                                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
-                                    .Characters(5, ruleMissing.Length).Font.Bold = false;
-                            }
-                        }
+                        //    if (comAddress != "")
+                        //    {
+                        //        string lastText = comAddress.Substring(comAddress.Length - 1, 1);
+                        //        string checkingText = comAddress.Substring(0, comAddress.Length - 1);
+                        //        if (lastText.Contains(",") || lastText.Contains("."))
+                        //        {
+                        //            if (!checkingText.Contains(",  ") || !checkingText.Contains(".  "))
+                        //            {
+                        //                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                        //                worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
+                        //                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                        //                    .Characters(5, rule11.Length).Font.Bold = false;
+                        //            }
+                        //        }
+                        //        else if (!comAddress.Contains(",  ") || !comAddress.Contains(".  "))
+                        //        {
+                        //            worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                        //            worksheet.Cells[(i + 2), (j + 1)].AddComment(rule11);
+                        //            worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                        //                .Characters(5, rule11.Length).Font.Bold = false;
+                        //        }
+                        //        else if (StringValidationCheck(comAddress))
+                        //        {
+                        //            if (comAddress != "Data Not Available")
+                        //            {
+                        //                worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                        //                worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleSpell);
+                        //                worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                        //                    .Characters(5, ruleSpell.Length).Font.Bold = false;
+                        //            }
+                        //        }
+                        //    }
+                        //    else
+                        //    {
+                        //        worksheet.Cells[(i + 2), (j + 1)].Interior.Color = Color.Yellow;
+                        //        worksheet.Cells[(i + 2), (j + 1)].AddComment(ruleMissing);
+                        //        worksheet.Cells[(i + 2), (j + 1)].Comment.Shape.TextFrame
+                        //            .Characters(5, ruleMissing.Length).Font.Bold = false;
+                        //    }
+                        //}
                         //website
                         else if ((j + 1) == 9)
                         {
@@ -703,14 +640,17 @@ namespace DataFillingSoftDeskApp.ui
                     try
                     {
                         if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\" + userName + ".xlsx"))
+                                        @"\FormZipFolder\DFS" + userName + ".xlsx"))
                         {
                             File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\" + userName + ".xlsx");
+                                        @"\FormZipFolder\DFS" + userName + ".xlsx");
                         }
 
-                        Directory.CreateDirectory(
-                                                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
+                        if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder"))
+                        {
+                            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
+                        }
+                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
                         worksheet.SaveAs(filePath, Type.Missing);
                         excelApp.Quit();
                         return true;
@@ -767,12 +707,12 @@ namespace DataFillingSoftDeskApp.ui
         {
             try
             {
-                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DFS" + userName + ".zip"))
                 {
                     File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                @"\" + userName + ".zip");
+                                @"\DFS" + userName + ".zip");
                 }
-                
+
                 //Creates a ZipFile object that will ultimately be saved
                 using (ZipFile zip = new ZipFile())
                 {
@@ -780,10 +720,10 @@ namespace DataFillingSoftDeskApp.ui
                     zip.Password = "transonic@USA1201";
                     string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
                     zip.AddDirectory(fileName);
-                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
+                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DFS" + userName + ".zip");
 
                 }
-                
+
 
             }
             catch (Exception ex)
@@ -803,7 +743,6 @@ namespace DataFillingSoftDeskApp.ui
                 dashboard dashboard = new dashboard();
                 dashboard.Show();
             }
-
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -828,9 +767,9 @@ namespace DataFillingSoftDeskApp.ui
             {
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
-                
+
                 bool ans = ExportToExcel(TableData(),
-                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\DFS" + userName +
                     ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 if (ans)
@@ -841,7 +780,7 @@ namespace DataFillingSoftDeskApp.ui
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
                         message.From = new MailAddress(txtEmail.Text);
-                        message.To.Add(new MailAddress("transonictec@gmail.com"));
+                        message.To.Add(new MailAddress("submission.transonic@gmail.com"));
                         message.Subject = txtSubject.Text;
                         message.IsBodyHtml = true; //to make message body as html  
                         message.Body = txtMessage.Text;
@@ -858,7 +797,7 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
-                         
+
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
@@ -889,7 +828,7 @@ namespace DataFillingSoftDeskApp.ui
                 }
             }
         }
-         
+
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
