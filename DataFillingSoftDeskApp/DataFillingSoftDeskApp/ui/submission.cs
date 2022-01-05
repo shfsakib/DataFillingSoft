@@ -45,7 +45,7 @@ namespace DataFillingSoftDeskApp.ui
         {
             userName = Properties.Settings.Default.userid.Trim();
             txtEmail.Text = Properties.Settings.Default.email.Trim();
-            txtAttachName.Text = "DFS" + userName + ".zip";
+            txtAttachName.Text = "" + userName + ".zip";
         }
 
         private DataTable TableData()
@@ -640,10 +640,10 @@ namespace DataFillingSoftDeskApp.ui
                     try
                     {
                         if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\DFS" + userName + ".xlsx"))
+                                        @"\FormZipFolder\" + userName + ".xlsx"))
                         {
                             File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\DFS" + userName + ".xlsx");
+                                        @"\FormZipFolder\" + userName + ".xlsx");
                         }
 
                         if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder"))
@@ -707,10 +707,10 @@ namespace DataFillingSoftDeskApp.ui
         {
             try
             {
-                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DFS" + userName + ".zip"))
+                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip"))
                 {
                     File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                @"\DFS" + userName + ".zip");
+                                @"\" + userName + ".zip");
                 }
 
                 //Creates a ZipFile object that will ultimately be saved
@@ -720,7 +720,7 @@ namespace DataFillingSoftDeskApp.ui
                     zip.Password = "transonic@USA1201";
                     string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
                     zip.AddDirectory(fileName);
-                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DFS" + userName + ".zip");
+                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
 
                 }
 
@@ -769,7 +769,7 @@ namespace DataFillingSoftDeskApp.ui
                 lblwait.Visible = true;
 
                 bool ans = ExportToExcel(TableData(),
-                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\DFS" + userName +
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
                     ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 if (ans)
