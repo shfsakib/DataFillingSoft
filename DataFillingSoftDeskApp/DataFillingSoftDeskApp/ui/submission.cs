@@ -39,13 +39,14 @@ namespace DataFillingSoftDeskApp.ui
         private void submission_Load(object sender, EventArgs e)
         {
             LoadData();
-             
+
         }
         private void LoadData()
         {
             userName = Properties.Settings.Default.userid.Trim();
-            txtEmail.Text = Properties.Settings.Default.email.Trim();
+
             txtAttachName.Text = "" + userName + ".zip";
+            txtSubject.Text = Properties.Settings.Default.userid.Trim();
         }
 
         private DataTable TableData()
@@ -747,12 +748,7 @@ namespace DataFillingSoftDeskApp.ui
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtEmail.Text))
-            {
-                MessageBox.Show("Email is required", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } 
-            else if (!function.IsConnected())
+            if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -774,38 +770,30 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         //outlook mailing system
 
-                        for (int i = 0; i < 2; i++)
-                        {
 
-                            MailMessage message = new MailMessage();
-                            SmtpClient smtp = new SmtpClient();
-                            message.From = new MailAddress("submission.transonic@outlook.com");
-                            if (i == 0)
-                            {
-                                message.To.Add(new MailAddress("submission.transonic@gmail.com"));
 
-                            }
-                            else
-                                message.To.Add(new MailAddress(txtEmail.Text));
+                        MailMessage message = new MailMessage();
+                        SmtpClient smtp = new SmtpClient();
+                        message.From = new MailAddress("submission.transonic@outlook.com");
+                        //to mail
+                        message.To.Add(new MailAddress("submission.transonic@gmail.com"));
 
-                            message.Subject = txtSubject.Text;
-                            message.IsBodyHtml = true; //to make message body as html  
-                            message.Body = txtMessage.Text;
-                            //attachment
-                            System.Net.Mail.Attachment attachment;
-                            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
-                                              userName + ".zip";
-                            attachment = new System.Net.Mail.Attachment(filePath);
-                            message.Attachments.Add(attachment);
-                            smtp.Port = 587;
-                            smtp.Host = "smtp.office365.com"; //for outlook host 
-                            smtp.EnableSsl = true;
-                            smtp.UseDefaultCredentials = false;
-                            smtp.Credentials = new NetworkCredential("submission.transonic@outlook.com", "Ayaat@786786");
-                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                            smtp.Send(message);
-
-                        }
+                        message.Subject = txtSubject.Text;
+                        message.IsBodyHtml = true; //to make message body as html  
+                        message.Body = txtMessage.Text;
+                        //attachment
+                        System.Net.Mail.Attachment attachment;
+                        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
+                                          userName + ".zip";
+                        attachment = new System.Net.Mail.Attachment(filePath);
+                        message.Attachments.Add(attachment);
+                        smtp.Port = 587;
+                        smtp.Host = "smtp.office365.com"; //for outlook host 
+                        smtp.EnableSsl = true;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential("submission.transonic@outlook.com", "Ayaat@786786");
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtp.Send(message);
 
 
                         btnSend.Enabled = true;
