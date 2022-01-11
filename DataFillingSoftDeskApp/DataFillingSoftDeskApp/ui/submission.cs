@@ -39,7 +39,7 @@ namespace DataFillingSoftDeskApp.ui
         private void submission_Load(object sender, EventArgs e)
         {
             LoadData();
-            txtPassword.Focus();
+             
         }
         private void LoadData()
         {
@@ -751,12 +751,7 @@ namespace DataFillingSoftDeskApp.ui
             {
                 MessageBox.Show("Email is required", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else if (String.IsNullOrEmpty(txtPassword.Text))
-            {
-                MessageBox.Show("Password is required", "Warning",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            } 
             else if (!function.IsConnected())
             {
                 function.MessageBox("Please connect the internet", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -777,31 +772,46 @@ namespace DataFillingSoftDeskApp.ui
                     SaveZip();
                     try
                     {
-                        MailMessage message = new MailMessage();
-                        SmtpClient smtp = new SmtpClient();
-                        message.From = new MailAddress(txtEmail.Text);
-                        message.To.Add(new MailAddress("submission.transonic@gmail.com"));
-                        message.Subject = txtSubject.Text;
-                        message.IsBodyHtml = true; //to make message body as html  
-                        message.Body = txtMessage.Text;
-                        //attachment
-                        System.Net.Mail.Attachment attachment;
-                        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
-                                          userName + ".zip";
-                        attachment = new System.Net.Mail.Attachment(filePath);
-                        message.Attachments.Add(attachment);
-                        smtp.Port = 587;
-                        smtp.Host = "smtp.gmail.com"; //for gmail host  
-                        smtp.EnableSsl = true;
-                        smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new NetworkCredential(txtEmail.Text, txtPassword.Text);
-                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                        smtp.Send(message);
+                        //outlook mailing system
+
+                        for (int i = 0; i < 2; i++)
+                        {
+
+                            MailMessage message = new MailMessage();
+                            SmtpClient smtp = new SmtpClient();
+                            message.From = new MailAddress("submission.transonic@outlook.com");
+                            if (i == 0)
+                            {
+                                message.To.Add(new MailAddress("submission.transonic@gmail.com"));
+
+                            }
+                            else
+                                message.To.Add(new MailAddress(txtEmail.Text));
+
+                            message.Subject = txtSubject.Text;
+                            message.IsBodyHtml = true; //to make message body as html  
+                            message.Body = txtMessage.Text;
+                            //attachment
+                            System.Net.Mail.Attachment attachment;
+                            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
+                                              userName + ".zip";
+                            attachment = new System.Net.Mail.Attachment(filePath);
+                            message.Attachments.Add(attachment);
+                            smtp.Port = 587;
+                            smtp.Host = "smtp.office365.com"; //for outlook host 
+                            smtp.EnableSsl = true;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = new NetworkCredential("submission.transonic@outlook.com", "Ayaat@786786");
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.Send(message);
+
+                        }
+
 
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
-                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully", "Success",
+                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully. Please check spam folder if you don\'t find it in inbox.", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
@@ -814,8 +824,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
-                        DialogResult dialogResult = MessageBox.Show(
-                            "Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.",
+                        DialogResult dialogResult = MessageBox.Show("Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.",
                             "Warning",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         if (dialogResult == DialogResult.OK)
