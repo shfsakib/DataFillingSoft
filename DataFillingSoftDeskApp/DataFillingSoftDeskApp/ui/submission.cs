@@ -799,7 +799,7 @@ namespace DataFillingSoftDeskApp.ui
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
-                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully. Please check spam folder if you don\'t find it in inbox.", "Success",
+                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully.", "Success",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {

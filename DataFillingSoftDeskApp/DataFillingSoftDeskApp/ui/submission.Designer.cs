@@ -33,6 +33,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblwait = new System.Windows.Forms.Label();
             this.tempGrid = new System.Windows.Forms.DataGridView();
             this.btnSend = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tempGrid)).BeginInit();
@@ -124,6 +124,18 @@
             this.groupBox1.Size = new System.Drawing.Size(559, 452);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(150, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(195, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Please insert your DFS id in subject field";
+            this.label3.Visible = false;
             // 
             // lblwait
             // 
@@ -214,6 +226,7 @@
             // 
             this.txtSubject.Location = new System.Drawing.Point(151, 61);
             this.txtSubject.Name = "txtSubject";
+            this.txtSubject.ReadOnly = true;
             this.txtSubject.Size = new System.Drawing.Size(375, 26);
             this.txtSubject.TabIndex = 7;
             // 
@@ -226,17 +239,6 @@
             this.label5.Size = new System.Drawing.Size(63, 17);
             this.label5.TabIndex = 6;
             this.label5.Text = "Subject :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(150, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Please insert your DFS id in subject field";
             // 
             // submission
             // 
