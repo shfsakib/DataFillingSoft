@@ -86,6 +86,7 @@ namespace DataFillingSoftDeskApp.ui
                     var response = client.GetStringAsync("remove/authKey/" + Properties.Settings.Default.AuthKey).Result;
                     if (response == "1")
                     {
+                        string userName = Properties.Settings.Default.userid.Trim();
                         if (File.Exists(Path.GetFullPath("users.txt")))
                         {
                             File.Delete(Path.GetFullPath("users.txt"));
@@ -94,6 +95,14 @@ namespace DataFillingSoftDeskApp.ui
                         if (File.Exists(Path.GetFullPath("form-data.txt")))
                         {
                             File.Delete(Path.GetFullPath("form-data.txt"));
+                        }
+                        if (File.Exists(Path.GetFullPath(userName + ".xlsx")))
+                        {
+                            File.Delete(Path.GetFullPath(userName + ".xlsx"));
+                        }
+                        if (File.Exists(Path.GetFullPath(userName + ".zip")))
+                        {
+                            File.Delete(Path.GetFullPath(userName + ".zip"));
                         }
                         DataTransferProperty.AuthKey = "";
                         Properties.Settings.Default.AuthKey = "";

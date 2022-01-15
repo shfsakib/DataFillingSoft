@@ -640,9 +640,9 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     try
                     {
-                        if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx"))
+                        if (File.Exists(Path.GetFullPath(userName + ".xlsx")))
                         {
-                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx");
+                            File.Delete(Path.GetFullPath(userName + ".xlsx"));
                         }
 
                         worksheet.SaveAs(filePath, Type.Missing);
@@ -703,10 +703,9 @@ namespace DataFillingSoftDeskApp.ui
         {
             try
             {
-                if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip"))
+                if (File.Exists(Path.GetFullPath(userName + ".zip")))
                 {
-                    File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                @"\" + userName + ".zip");
+                    File.Delete(Path.GetFullPath(userName + ".zip"));
                 }
 
                 //Creates a ZipFile object that will ultimately be saved
@@ -714,9 +713,9 @@ namespace DataFillingSoftDeskApp.ui
                 {
 
                     zip.Password = "transonic@USA1201";
-                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx";
+                    string fileName = Path.GetFullPath(userName + ".xlsx");
                     zip.AddItem(fileName, "");
-                    zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
+                    zip.Save(Path.GetFullPath(userName + ".zip"));
 
                 }
 
@@ -755,15 +754,14 @@ namespace DataFillingSoftDeskApp.ui
                 lblwait.Visible = true;
 
                 bool ans = ExportToExcel(TableData(),
-                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName +
-                    ".xlsx");
+                    Path.GetFullPath(userName + ".xlsx"));
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 if (ans)
                 {
                     SaveZip();
                     try
                     {
-                        //outlook mailing system
+                        //gmail mailing system
 
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
@@ -776,12 +774,11 @@ namespace DataFillingSoftDeskApp.ui
                         message.Body = txtMessage.Text;
                         //attachment
                         System.Net.Mail.Attachment attachment;
-                        string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" +
-                                          userName + ".zip";
+                        string filePath = Path.GetFullPath(userName + ".zip");
                         attachment = new System.Net.Mail.Attachment(filePath);
                         message.Attachments.Add(attachment);
                         smtp.Port = 587;
-                        smtp.Host = "smtp.office365.com"; //for outlook host 
+                        smtp.Host = "smtp.gmail.com"; //for gmail host 
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
                         smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
@@ -796,6 +793,17 @@ namespace DataFillingSoftDeskApp.ui
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
+                            try
+                            {
+                                if (File.Exists(Path.GetFullPath(userName + ".xlsx")))
+                                {
+                                    File.Delete(Path.GetFullPath(userName + ".xlsx"));
+                                }
+                            }
+                            catch (Exception)
+                            {
+
+                            }
                             this.Hide();
                             log_in login = new log_in();
                             login.Show();
