@@ -640,25 +640,19 @@ namespace DataFillingSoftDeskApp.ui
                 {
                     try
                     {
-                        if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\" + userName + ".xlsx"))
+                        if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx"))
                         {
-                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
-                                        @"\FormZipFolder\" + userName + ".xlsx");
+                            File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx");
                         }
 
-                        if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder"))
-                        {
-                            Directory.Delete(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
-                        }
-                        Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder");
                         worksheet.SaveAs(filePath, Type.Missing);
                         excelApp.Quit();
                         return true;
                     }
                     catch (Exception ex)
                     {
-                        function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        function.MessageBox("1st error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
 
                     }
@@ -668,7 +662,8 @@ namespace DataFillingSoftDeskApp.ui
             }
             catch (Exception ex)
             {
-                function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                function.MessageBox("2nd error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -719,8 +714,8 @@ namespace DataFillingSoftDeskApp.ui
                 {
 
                     zip.Password = "transonic@USA1201";
-                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder";
-                    zip.AddDirectory(fileName);
+                    string fileName = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".xlsx";
+                    zip.AddItem(fileName, "");
                     zip.Save(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName + ".zip");
 
                 }
@@ -760,7 +755,7 @@ namespace DataFillingSoftDeskApp.ui
                 lblwait.Visible = true;
 
                 bool ans = ExportToExcel(TableData(),
-                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\FormZipFolder\" + userName +
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\" + userName +
                     ".xlsx");
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 if (ans)
@@ -770,11 +765,9 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         //outlook mailing system
 
-
-
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
-                        message.From = new MailAddress("submission.transonic@outlook.com");
+                        message.From = new MailAddress("submission.transonic@gmail.com");
                         //to mail
                         message.To.Add(new MailAddress("submission.transonic@gmail.com"));
 
@@ -791,7 +784,7 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.Host = "smtp.office365.com"; //for outlook host 
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new NetworkCredential("submission.transonic@outlook.com", "Ayaat@786786");
+                        smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
 
@@ -817,6 +810,7 @@ namespace DataFillingSoftDeskApp.ui
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         if (dialogResult == DialogResult.OK)
                         {
+
                             this.Hide();
                             dashboard dashboard = new dashboard();
                             dashboard.Show();
