@@ -152,5 +152,17 @@ namespace DataFillingSoftDeskApp.Properties {
                 this["formserial"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string submit {
+            get {
+                return ((string)(this["submit"]));
+            }
+            set {
+                this["submit"] = value;
+            }
+        }
     }
 }

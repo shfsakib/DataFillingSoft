@@ -47,6 +47,7 @@ namespace DataFillingSoftDeskApp.ui
 
             txtAttachName.Text = "" + userName + ".zip";
             txtSubject.Text = Properties.Settings.Default.userid.Trim();
+
         }
 
         private DataTable TableData()
@@ -750,6 +751,12 @@ namespace DataFillingSoftDeskApp.ui
             }
             else
             {
+                if (Properties.Settings.Default.submit == "false")
+                {
+                    MessageBox.Show("You\'ve already submitted your project", "Warning", MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    btnSend.Enabled = false;
+                }
                 btnSend.Enabled = false;
                 lblwait.Visible = true;
 
@@ -793,6 +800,8 @@ namespace DataFillingSoftDeskApp.ui
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
+                            Properties.Settings.Default.submit = "false";
+                            Properties.Settings.Default.Save();
                             try
                             {
                                 if (File.Exists(Path.GetFullPath(userName + ".xlsx")))
