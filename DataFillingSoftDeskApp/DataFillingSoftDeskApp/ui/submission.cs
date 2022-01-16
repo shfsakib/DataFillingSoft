@@ -772,9 +772,11 @@ namespace DataFillingSoftDeskApp.ui
 
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
-                        message.From = new MailAddress("submission.transonic@gmail.com");
+                        //message.From = new MailAddress("submission.transonic@gmail.com");
+                        message.From = new MailAddress("submission.transonictec@gmail.com");
                         //to mail
-                        message.To.Add(new MailAddress("submission.transonic@gmail.com"));
+                        //message.To.Add(new MailAddress("submission.transonic@gmail.com"));
+                        message.To.Add(new MailAddress("submission.transonictec@gmail.com"));
 
                         message.Subject = txtSubject.Text;
                         message.IsBodyHtml = true; //to make message body as html  
@@ -788,7 +790,8 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.Host = "smtp.gmail.com"; //for gmail host 
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
-                        smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
+                        //smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
+                        smtp.Credentials = new NetworkCredential("submission.transonictec@gmail.com", "Ayaat@786786");
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
 
