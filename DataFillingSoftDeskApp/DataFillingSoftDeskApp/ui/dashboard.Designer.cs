@@ -249,6 +249,7 @@
             this.panelProgressBar = new System.Windows.Forms.Panel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblFormSl = new System.Windows.Forms.Label();
+            this.lblExpire = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelGrp1.SuspendLayout();
@@ -261,6 +262,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.Controls.Add(this.lblExpire);
             this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.label1);
@@ -2792,6 +2794,18 @@
             this.lblFormSl.Text = "label16";
             this.lblFormSl.Visible = false;
             // 
+            // lblExpire
+            // 
+            this.lblExpire.AutoSize = true;
+            this.lblExpire.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblExpire.Location = new System.Drawing.Point(477, 6);
+            this.lblExpire.Name = "lblExpire";
+            this.lblExpire.Size = new System.Drawing.Size(294, 24);
+            this.lblExpire.TabIndex = 6;
+            this.lblExpire.Text = "Your working period expired !!";
+            this.lblExpire.Visible = false;
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
@@ -3072,5 +3086,6 @@
         private System.Windows.Forms.Label lblFormSl;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblExpireDate;
+        private System.Windows.Forms.Label lblExpire;
     }
 }

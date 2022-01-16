@@ -93,9 +93,10 @@ namespace DataFillingSoftDeskApp.ui
             lblExpireDate.Text = Convert.ToDateTime(regDate.Substring(0, 10)).AddDays(20).ToString("MM/dd/yyyy") + " " + regDate.Substring(11, 8).Replace("_", " ");
             if (Convert.ToDateTime(lblDate.Text) >= Convert.ToDateTime(lblExpireDate.Text))
             {
-                btnLoadFiles.Enabled = btnNewForm.Enabled = btnPrevForm.Enabled = btnNextForm.Enabled =
-                    btnGroup1.Enabled = btnGroup2.Enabled =
-                        btnGroup3.Enabled = btnSave.Enabled = btnViewData.Enabled = panelGrp1.Enabled = false;
+                btnSubmit.Enabled = btnSave.Enabled = false;
+                MessageBox.Show("Your working period expired !!", "Warning", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                lblExpire.Visible = true;
             }
 
             txtFormNo.ContextMenu = emptyMenu;
