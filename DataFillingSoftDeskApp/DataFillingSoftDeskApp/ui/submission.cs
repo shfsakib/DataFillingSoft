@@ -773,10 +773,10 @@ namespace DataFillingSoftDeskApp.ui
                         MailMessage message = new MailMessage();
                         SmtpClient smtp = new SmtpClient();
                         //message.From = new MailAddress("submission.transonic@gmail.com");
-                        message.From = new MailAddress("submisson.transonic@gmail.com");
+                        message.From = new MailAddress("submission.transonic@gmail.com");
                         //to mail
                         //message.To.Add(new MailAddress("submission.transonic@gmail.com"));
-                        message.To.Add(new MailAddress("submisson.transonic@gmail.com"));
+                        message.To.Add(new MailAddress("submission.transonic@gmail.com"));
 
                         message.Subject = txtSubject.Text;
                         message.IsBodyHtml = true; //to make message body as html  
@@ -791,7 +791,7 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
                         //smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
-                        smtp.Credentials = new NetworkCredential("submisson.transonic@gmail.com", "Ayaat@7867861000");
+                        smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@7867861000");
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
 
@@ -799,8 +799,7 @@ namespace DataFillingSoftDeskApp.ui
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
-                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully.", "Success",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully.", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
                             Properties.Settings.Default.submit = "false";
