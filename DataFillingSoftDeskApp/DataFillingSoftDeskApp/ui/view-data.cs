@@ -162,7 +162,7 @@ namespace DataFillingSoftDeskApp.ui
                     }
                     catch (Exception ex)
                     {
-                        DialogResult dialogResult = MessageBox.Show("Excel file can\'t be saved", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult dialogResult = MessageBox.Show("Excel file can\'t be saved " + "Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         if (dialogResult == DialogResult.OK)
                         {
                             this.Hide();
@@ -173,7 +173,7 @@ namespace DataFillingSoftDeskApp.ui
             }
             catch (Exception ex)
             {
-                function.MessageBox("Please close previous generated excel sheet first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                function.MessageBox("Please close previous generated excel sheet first"+ "Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -187,10 +187,7 @@ namespace DataFillingSoftDeskApp.ui
             else
             {
                 function.MessageBox("No Data Found", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-        }
-
-
+            } 
+        } 
     }
 }

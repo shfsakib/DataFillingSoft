@@ -791,7 +791,7 @@ namespace DataFillingSoftDeskApp.ui
                         smtp.EnableSsl = true;
                         smtp.UseDefaultCredentials = false;
                         //smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@786786");
-                        smtp.Credentials = new NetworkCredential("submission.transonic@gmail.com", "Ayaat@7867861000");
+                        smtp.Credentials = new NetworkCredential("submission.transonictec@gmail.com", "Ayaat@7867861201");
                         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                         smtp.Send(message);
 
@@ -799,7 +799,7 @@ namespace DataFillingSoftDeskApp.ui
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
 
-                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully.", "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DialogResult dialogResult = MessageBox.Show("Mail sent successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogResult == DialogResult.OK)
                         {
                             Properties.Settings.Default.submit = "false";
@@ -811,8 +811,11 @@ namespace DataFillingSoftDeskApp.ui
                                     File.Delete(Path.GetFullPath(userName + ".xlsx"));
                                 }
                             }
-                            catch (Exception)
+                            catch (Exception ex)
                             {
+                                MessageBox.Show("Error: "+ex.Message,
+                           "Warning",
+                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                             }
                             this.Hide();
@@ -824,7 +827,7 @@ namespace DataFillingSoftDeskApp.ui
                     {
                         btnSend.Enabled = true;
                         lblwait.Visible = false;
-                        DialogResult dialogResult = MessageBox.Show("Please Kindly Make Sure to Turn On Less Secure App in Your Gmail Account Setting Or Check Your Internet Settings.",
+                        DialogResult dialogResult = MessageBox.Show("Error: " + ex.Message,
                             "Warning",
                             MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         if (dialogResult == DialogResult.OK)
